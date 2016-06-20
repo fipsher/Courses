@@ -11,11 +11,8 @@ namespace LNU.Courses.Security
 
         public CustomPrincipal(Account account)
         {
-            if (account != null)
-            {
-                _account = account;
-                Identity = new GenericIdentity(_account.Login);
-            }
+            _account = account;
+            Identity = new GenericIdentity(_account.Login);
         }
 
         public IIdentity Identity
@@ -27,14 +24,7 @@ namespace LNU.Courses.Security
         public bool IsInRole(string role)
         {
             var roles = role.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            if (_account != null)
-            {
-                return roles.Any(r => _account.Roles.Contains(r));
-            }
-            else
-            {
-                return false;
-            }
+            return roles.Any(r => _account.Roles.Contains(r));
         }
     }
 }

@@ -13,10 +13,8 @@ namespace LNU.Courses.WebUI.Models
         private readonly IHashProvider _hashProvider = new HashProvider();
         private readonly RepositoryBL _repoBl;
 
-        public AdminAccountModel(IRepository repository, IHashProvider hashProvider)
+        public AdminAccountModel()
         {
-            _repository = repository;
-            _hashProvider = hashProvider;
             _repoBl = new RepositoryBL(_repository);
         }
 

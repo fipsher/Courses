@@ -16,13 +16,36 @@ namespace LNU.Courses.Controllers
     public class AdminController : Controller
     {
         private const int MaxStdOnPage = 100;
-        private readonly IRepository _repository;
+        private readonly IRepository _repository = new Repository();
         private readonly RepositoryBL _repoBl;
-      
 
         public AdminController(IRepository repository)
         {
             _repository = repository;
+            _repoBl = new RepositoryBL(_repository);
+        }
+
+        #region temp
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        public ActionResult FirstDeadlineStart()
+        {
+            FirstDeadLineJob fdj = new FirstDeadLineJob();
+            fdj.ExecuteTemp();
+            return View("Index");
+        }
+
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        public ActionResult LastDeadlineStart()
+        {
+            LastDeadlineJob ldj = new LastDeadlineJob();
+            ldj.ExecuteTemp();
+            return View("Index");
+        }
+        #endregion
+
+
+        public AdminController()
+        {
             _repoBl = new RepositoryBL(_repository);
         }
 
@@ -35,7 +58,11 @@ namespace LNU.Courses.Controllers
         {
             return View();
         }
-
+        //[AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        //public ActionResult AboutDiscipline()
+        //{
+        //    return View();
+        //}
 
 
         [AdminAuthorize(Roles = "SuperAdmin,Admin")]
@@ -314,6 +341,9 @@ namespace LNU.Courses.Controllers
         public PartialViewResult GetDisciplineStudents(int disciplineId, int wave)
         {
             var studentsList = _repoBl.GetStudents(disciplineId, wave);
+            var admin = _repoBl.GetAdmin(SessionPersister.Login);
+            if (admin.roles == "SuperAdmin")
+                ViewBag.Admin = 1;
 
             return PartialView("_stList", studentsList);
         }
@@ -328,6 +358,10 @@ namespace LNU.Courses.Controllers
         public PartialViewResult GetDisciplinesList(string name)
         {
             var discList = _repoBl.GetDisciplines(name);
+            var admin = _repoBl.GetAdmin(SessionPersister.Login);
+            if (admin.roles == "SuperAdmin")
+                ViewBag.Admin = 1;
+
             return PartialView("_discList", discList);
         }
 
@@ -479,6 +513,8 @@ namespace LNU.Courses.Controllers
                 }
                 //ViewBag.EnabledNext = true;
             }
+		if (_repoBl.GetAdmin(SessionPersister.Login).roles == "SuperAdmin")
+                	ViewBag.Admin = 1;
             return PartialView("_stList", studentsList);
         }
         #endregion

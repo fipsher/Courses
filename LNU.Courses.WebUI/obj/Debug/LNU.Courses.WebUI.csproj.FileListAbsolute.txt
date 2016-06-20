@@ -960,119 +960,285 @@ C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.WebUI\bin\Microso
 C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.WebUI\obj\Debug\LNU.Courses.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.WebUI\obj\Debug\LNU.Courses.dll
 C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.WebUI\obj\Debug\LNU.Courses.pdb
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.WebUI\bin\Autofac.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.WebUI\bin\Autofac.Integration.Mvc.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.WebUI\bin\Autofac.xml
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.WebUI\bin\Autofac.Integration.Mvc.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\ApplicationInsights.config
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\csc.exe
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\vbc.exe
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\VBCSCompiler.exe
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.dll.config
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\ActionMailer.Net.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Antlr3.Runtime.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Autofac.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Autofac.Integration.Mvc.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Common.Logging.Core.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Common.Logging.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Entities.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\EntityFramework.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\EntityFramework.SqlServer.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.BLL.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.Jobs.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.PeriodicalJobMaker.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.Repositories.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AI.Web.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.Owin.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Newtonsoft.Json.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Owin.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Quartz.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.Helpers.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.Mvc.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.Optimization.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.Razor.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.WebPages.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.WebPages.Razor.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\WebGrease.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.12.0.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\EnvDTE.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\EnvDTE80.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextManager.Interop.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.Shell.Interop.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\stdole.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.OLE.Interop.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.Jobs.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.BLL.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.Repositories.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Entities.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\LNU.Courses.PeriodicalJobMaker.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\ActionMailer.Net.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\ActionMailer.Net.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Antlr3.Runtime.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Autofac.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Autofac.Integration.Mvc.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Common.Logging.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Common.Logging.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Common.Logging.Core.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Common.Logging.Core.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AI.Web.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.Owin.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Newtonsoft.Json.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Quartz.pdb
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Quartz.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.Helpers.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.Mvc.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.Razor.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.WebPages.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.WebPages.Razor.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\System.Web.Optimization.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\EntityFramework.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\EntityFramework.SqlServer.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.12.0.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextManager.Interop.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.Shell.Interop.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.OLE.Interop.xml
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\obj\Debug\LNU.Courses.WebUI.csprojResolveAssemblyReference.cache
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\obj\Debug\LNU.Courses.dll
-C:\Users\Андрій\Downloads\TestsAndDI\LNU.Courses.WebUI\obj\Debug\LNU.Courses.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ApplicationInsights.config
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\csc.exe
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\System.Collections.Immutable.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\vbc.exe
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\VBCSCompiler.exe
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\VBCSCompiler.exe.config
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.dll.config
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.Core.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Entities.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EntityFramework.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EntityFramework.SqlServer.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.BLL.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.Jobs.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.PeriodicalJobMaker.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.Repositories.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.DependencyCollector.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.Web.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.WindowsServer.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.ApplicationInsights.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.Web.Infrastructure.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Owin.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Quartz.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Helpers.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Mvc.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Razor.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.Deployment.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.Razor.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.12.0.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EnvDTE.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EnvDTE80.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\stdole.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.Jobs.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.BLL.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.Repositories.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Entities.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.PeriodicalJobMaker.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.Core.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.Core.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.DependencyCollector.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.Web.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.WindowsServer.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.ApplicationInsights.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.Owin.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Quartz.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Quartz.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Helpers.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Mvc.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Razor.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.Deployment.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.Razor.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EntityFramework.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EntityFramework.SqlServer.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.12.0.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\obj\Debug\LNU.Courses.WebUI.csprojResolveAssemblyReference.cache
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\obj\Debug\LNU.Courses.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\obj\Debug\LNU.Courses.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ApplicationInsights.config
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\csc.exe
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\vbc.exe
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.dll.config
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.Core.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Entities.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EntityFramework.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.BLL.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.Jobs.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.PeriodicalJobMaker.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.Repositories.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.Web.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Owin.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Quartz.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Helpers.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Mvc.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Razor.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.12.0.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EnvDTE.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EnvDTE80.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\stdole.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.Jobs.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.BLL.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.Repositories.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Entities.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\LNU.Courses.PeriodicalJobMaker.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.Core.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Common.Logging.Core.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.Web.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.Owin.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Quartz.pdb
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Quartz.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Helpers.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Mvc.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.Razor.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EntityFramework.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\EntityFramework.SqlServer.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.12.0.xml
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\obj\Debug\LNU.Courses.WebUI.csprojResolveAssemblyReference.cache
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\obj\Debug\LNU.Courses.dll
+C:\Users\Andriy\Desktop\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Courses.WebUI\obj\Debug\LNU.Courses.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\ApplicationInsights.config
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\csc.exe
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\vbc.exe
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.dll.config
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\ActionMailer.Net.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Common.Logging.Core.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Common.Logging.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Entities.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\EntityFramework.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.BLL.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.Jobs.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.PeriodicalJobMaker.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AI.Web.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Newtonsoft.Json.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Owin.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Quartz.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.Helpers.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.Mvc.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.Razor.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.WebPages.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.12.0.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\EnvDTE.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\EnvDTE80.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\stdole.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.Jobs.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.BLL.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Entities.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\LNU.Courses.PeriodicalJobMaker.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\ActionMailer.Net.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\ActionMailer.Net.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\ActionMailer.Net.Mvc.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Common.Logging.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Common.Logging.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Common.Logging.Core.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Common.Logging.Core.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AI.Web.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.Owin.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Quartz.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Quartz.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.Helpers.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.Mvc.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.Razor.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.WebPages.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\EntityFramework.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\EntityFramework.SqlServer.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.AspNet.Scaffolding.12.0.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.TextManager.Interop.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.Shell.Interop.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Microsoft.VisualStudio.OLE.Interop.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\obj\Debug\LNU.Courses.WebUI.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\obj\Debug\LNU.Courses.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\obj\Debug\LNU.Courses.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Autofac.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Autofac.Integration.Mvc.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Autofac.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Courses.WebUI\bin\Autofac.Integration.Mvc.xml

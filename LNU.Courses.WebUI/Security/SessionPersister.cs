@@ -16,7 +16,11 @@ namespace LNU.Courses.Security
                 }
 
                 var sessionVar = HttpContext.Current.Session[userSessionVar];
-                return sessionVar as string;
+                if (sessionVar != null)
+                {
+                    return sessionVar as string;
+                }
+                return null;
             }
             set
             {

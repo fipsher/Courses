@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Entities;
@@ -62,58 +62,6 @@ namespace LNU.Courses.Repositories
             }
         }
 
-        //public IEnumerable<string> GetStdEmailsForSecondWay()
-        //{
-        //    using (var context = new CoursesOfChoiceEntities())
-        //    {
-        //        var studentsList = context.Students.ToList();
-        //        var stInGr = context.StudentsInGroups.ToList();
-
-        //        var eMails = (from std in studentsList
-        //                      where std.locked == false
-        //                      join sig in context.StudentsInGroups on std.id equals sig.studentID into lj
-        //                      from subSig in lj.DefaultIfEmpty()
-        //                      where subSig == null
-        //                      select std.eMail).ToList();
-
-        //        var temp = from std in studentsList
-        //                   join sig in stInGr on std.id equals sig.studentID into loj
-        //                   from l in loj.DefaultIfEmpty()
-        //                   where l != null
-        //                   group std by std.id into grp
-        //                   where grp.Count() == 1
-        //                   select grp.Key;
-
-        //        var onceRegisteredStdMails = (from std in studentsList
-        //                                      join t in temp on std.id equals t
-        //                                      select std.eMail).ToList();
-
-        //        eMails.AddRange(onceRegisteredStdMails);
-        //        return eMails;
-        //    }
-        //}
-
-        //public void CreateNewGroups(int wave)
-        //{
-        //    using (var context = new CoursesOfChoiceEntities())
-        //    {
-        //        var disciplines = context.Disciplines.ToList();
-
-        //        for (var i = 0; i < disciplines.Count; i++)
-        //        {
-        //            context.Group.Add(new Group()
-        //            {
-        //                disciplinesID = disciplines[i].id,
-        //                year = DateTime.Now.Year,
-        //                Status = false,
-        //                Deleted = false,
-        //                Wave = wave
-        //            });
-        //        }
-        //        context.SaveChanges();
-        //    }
-        //}
-
         public void DeleteGroups()
         {
             using (var context = new CoursesOfChoiceEntities())
@@ -126,26 +74,6 @@ namespace LNU.Courses.Repositories
 
 
         #region admins
-        //public void ChangeAdminPass(string login, string newPass)
-        //{
-        //    using (var context = new CoursesOfChoiceEntities())
-        //    {
-        //        var adminAcc = context.Administrators.SingleOrDefault(acc => acc.login == login);
-        //        if (adminAcc != null) adminAcc.password = _hashProvider.Encrypt(newPass);
-        //        context.SaveChanges();
-        //    }
-        //}
-
-        //public Administrators AdminLogIn(string login, string password)
-        //{
-        //    password = _hashProvider.Encrypt(password);
-        //    using (var context = new CoursesOfChoiceEntities())
-        //    {
-        //        var admin = context.Administrators.SingleOrDefault(el => el.login == login && el.password == password);
-
-        //        return admin;
-        //    }
-        //}
 
         public bool DeleteAdmin(string login)
         {
@@ -213,45 +141,7 @@ namespace LNU.Courses.Repositories
         #endregion
 
         #region students 
-        //public IEnumerable<string> GetStudentEmails()
-        //{
-        //    var students = GetStudents().Where(student => student.fio.Contains(" ") && student.Deleted == false && !string.IsNullOrEmpty(student.eMail));
 
-        //    var result =
-        //        from student in students
-        //        select student.eMail;
-        //    return result.ToList();
-
-        //}
-
-
-        /// <summary>
-        /// get student by his Id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        //public Students GetStudentById(string id)
-        //{
-        //    using (var context = new CoursesOfChoiceEntities())
-        //    {
-        //        var student = context.Students.SingleOrDefault(st => st.id == id);
-        //        return student;
-        //    }
-        //}
-
-        /// <summary>
-        /// get student whose name contains partOfName param
-        /// </summary>
-        /// <param name="partOfName"></param>
-        /// <returns></returns>
-        //public IEnumerable<Students> GetStudents(string partOfName)
-        //{
-        //    using (var context = new CoursesOfChoiceEntities())
-        //    {
-        //        var students = context.Students.Where(el => el.fio.Contains(partOfName));
-        //        return students.ToList();
-        //    }
-        //}
 
         /// <summary>
         /// Get students list that have the same discipline by discipline id
@@ -374,50 +264,27 @@ namespace LNU.Courses.Repositories
             using (var context = new CoursesOfChoiceEntities())
             {
                 var discipline = context.Disciplines.SingleOrDefault(disc => disc.id == id);
-                if (discipline == null )
+                if (discipline == null)
                 {
                     return false;
                 }
                 else
                 {
                     var singleOrDefault = discipline.Group.SingleOrDefault(gr => gr.Deleted == false && gr.Wave == 1);
-                  //  if (singleOrDefault != null && singleOrDefault.AmountOfStudent == 0)
+                    var groups = discipline.Group.ToList();
+                    foreach (var gr in groups)
                     {
-                        var groups = discipline.Group.ToList();
-                        foreach (var gr in groups)
-                        {
-                            var sigs = gr.StudentsInGroups;
-
-                            context.Set<StudentsInGroups>().RemoveRange(sigs);
-                            context.Set<Group>().Remove(gr);
-                        }
-                        
-
-                        context.Set<Disciplines>().Remove(discipline);
-                        context.SaveChanges();
-                        return true;
+                        var sigs = gr.StudentsInGroups;
+                        context.Set<StudentsInGroups>().RemoveRange(sigs);
+                        context.Set<Group>().Remove(gr);
                     }
-                  //  else
-                    {
-                        return false;
-                    }
+                    context.Set<Disciplines>().Remove(discipline);
+                    context.SaveChanges();
+                    return true;
                 }
             }
         }
 
-        /// <summary>
-        /// Get list of Disciplines filtered by name
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        //public IEnumerable<Disciplines> GetDisciplines(string name)
-        //{
-        //    using (var context = new CoursesOfChoiceEntities())
-        //    {
-        //        var disciplines = context.Disciplines.Where(el => el.name.Contains(name));
-        //        return disciplines.ToList();
-        //    }
-        //}
 
         /// <summary>
         /// Get discipline which has id == id

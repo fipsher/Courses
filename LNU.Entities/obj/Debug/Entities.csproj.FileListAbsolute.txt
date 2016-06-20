@@ -75,3 +75,40 @@ C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\bin\Debug\Entity
 C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
 C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\obj\Debug\Entities.dll
 C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\obj\Debug\Entities.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Entities\bin\Debug\Entities.dll.config
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Entities\bin\Debug\Entities.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Entities\bin\Debug\Entities.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Entities\bin\Debug\EntityFramework.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Entities\bin\Debug\EntityFramework.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Entities\bin\Debug\EntityFramework.SqlServer.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Entities\obj\Debug\Entities.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\LNU.Entities\obj\Debug\Entities.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\Entities.dll.config
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\Entities.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\Entities.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\Autofac.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.Helpers.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.Mvc.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.Razor.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.WebPages.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\Autofac.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\Autofac.Integration.Mvc.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.Helpers.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.Mvc.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.Razor.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.WebPages.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\obj\Debug\Entities.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\LNU.Entities\obj\Debug\Entities.pdb

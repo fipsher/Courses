@@ -128,7 +128,6 @@ namespace LNU.Courses.Tests
 
         private List<Students> _students = new List<Students>();
         private List<Users> _users = new List<Users>();
-
         private List<Group> _groups = new List<Group>();
         private List<Disciplines> _disciplines = new List<Disciplines>();
     }

@@ -54,7 +54,7 @@
                         @Html.DisplayFor(modelItem => course)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.description)
+                        @Html.DisplayFor(modelItem => item.description) @Html.ActionLink("Детальніше", "AboutDiscipline")
                     </td>
                     <td>
                         @{
@@ -106,7 +106,10 @@
                                                 }
                                             </td>
                                             <td>
+                                                @if (ViewBag.NotDisciplines != item.id)
+                                                {
                                                 @Html.ActionLink("Register", "RegisteringInTheCourse", new { id = item.id })
+                                                }
                                             </td>
 
                                         </tr>
@@ -145,7 +148,10 @@
                                                                 }
                                                             </td>
                                                             <td>
-                                                                @Html.ActionLink("Register", "RegisteringInTheCourse", new { id = item.id })
+                                                                @if (ViewBag.NotDisciplines != item.id)
+                                                                {
+                                                                    @Html.ActionLink("Register", "RegisteringInTheCourse", new { id = item.id })
+                                                                }
                                                             </td>
 
                                                         </tr>

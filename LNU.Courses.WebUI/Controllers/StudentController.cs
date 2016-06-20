@@ -13,13 +13,23 @@ namespace LNU.Courses.Controllers
     [StudentAuthorize(Roles = "User")]
     public class StudentController : Controller
     {
-        private readonly IRepository _repository;
+        private readonly IRepository repository;
         private readonly RepositoryBL _repoBl;
 
-        public StudentController(IRepository repository)
+        public StudentController(IRepository repo)
         {
-            _repository = repository;
-            _repoBl = new RepositoryBL(_repository);
+            repository = repo;
+            _repoBl = new RepositoryBL(repository);
+        }
+
+        public StudentController()
+        {
+            _repoBl = new RepositoryBL(repository);
+        }
+        [StudentAuthorize(Roles = "User")]
+        public ActionResult AboutDiscipline()
+        {
+            return View();
         }
         [StudentAuthorize(Roles = "User")]
 
@@ -33,9 +43,9 @@ namespace LNU.Courses.Controllers
         [StudentAuthorize(Roles = "User")]
         public ActionResult Index()
         {
-            if (_repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+            if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
                 return View("EditPhone");
-            if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
 
             return View();
@@ -45,20 +55,20 @@ namespace LNU.Courses.Controllers
 
             return View();
         }
-        public ActionResult YouAreRegisted()
+        public ActionResult YouAreRegisted(int id)
         {
-            if (_repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+            if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
                 return View("EditPhone");
-            if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
 
-            return View();
+            return View(repository.GetDiscipline(id));
         }
         public ActionResult RegisteringInTheCourse()
         {
-            if (_repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+            if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
                 return View("EditPhone");
-            if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
 
 
@@ -67,28 +77,27 @@ namespace LNU.Courses.Controllers
         [HttpGet]
         public ActionResult DeleteFromTheCourse(int id)
         {
-            if (_repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+            if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
                 return View("EditPhone");
-            if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
 
-
-            _repository.DeleteMyDiscipline(id, SessionPersister.Login);
-            _repository.deleteAmountStudent(_repository.GetGroupByDisciplinesId(id).id);
-            return View("DeletedDicipline");
+            repository.DeleteMyDiscipline(id, SessionPersister.Login);
+            repository.deleteAmountStudent(repository.GetGroupByDisciplinesId(id).id);
+            return View("DeletedDicipline", repository.GetDiscipline(id));
         }
         [HttpGet]
         public ActionResult RegisteringInTheCourse(int id)
         {
-            if (_repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+            if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
                 return View("EditPhone");
-            if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
 
 
-            var disciplineAcc = _repository.GetDiscipline(id);
+            var disciplineAcc = repository.GetDiscipline(id);
             var studInGroup = new StudentsInGroups();
-            var group = _repository.GetGroupByDisciplinesId(disciplineAcc.id);
+            var group = repository.GetGroupByDisciplinesId(disciplineAcc.id);
             studInGroup.groupID = group.id;
             studInGroup.studentID = SessionPersister.Login;
             studInGroup.DateOfRegister = DateTime.Now;
@@ -98,17 +107,17 @@ namespace LNU.Courses.Controllers
                 {
                     context.StudentsInGroups.Add(studInGroup);
                     context.SaveChanges();
-                    _repository.addAmountStudent(group.id);
+                    repository.addAmountStudent(group.id);
                 }
 
-            return View("YouAreRegisted");
+            return View("YouAreRegisted", disciplineAcc);
         }
         public ActionResult GetDisciplines()
         {
 
-            if (_repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+            if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
                 return View("EditPhone");
-            if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
             int datetimeNowWithStart = DateTime.Compare(DateTime.Now, staticData.StartTime);
             int datetimeNowWithFirst = DateTime.Compare(DateTime.Now, staticData.firstDeadLineTime);
@@ -125,19 +134,19 @@ namespace LNU.Courses.Controllers
 
             //if (staticData.lastDeadLineTime.Month > DateTime.Now.Month)
             //{
-            //    staticData.disciplinesID = _repository.GetDisciplinesForSecondWave();
+            //    staticData.disciplinesID = repository.GetDisciplinesForSecondWave();
             //    ViewBag.Wave = 2;
             //}
             //else
             //if (staticData.lastDeadLineTime.Month == DateTime.Now.Month)
             //    if (staticData.lastDeadLineTime.Day > DateTime.Now.Day)
             //    {
-            //        staticData.disciplinesID = _repository.GetDisciplinesForSecondWave();
+            //        staticData.disciplinesID = repository.GetDisciplinesForSecondWave();
             //        ViewBag.Wave = 2;
             //    }
 
             int checkReg = 0;
-            IEnumerable<Disciplines> disc = _repository.GetD(SessionPersister.Login);
+            IEnumerable<Disciplines> disc = repository.GetD(SessionPersister.Login);
             foreach (var item in disc)
             {
                 if (item.course == _repoBl.GetStudentById(SessionPersister.Login).course)
@@ -150,8 +159,9 @@ namespace LNU.Courses.Controllers
             ViewBag.CheckReg = checkReg;
             ViewBag.CheckLock = studentAcc.locked;
             ViewBag.Login = SessionPersister.Login;
-            ViewBag.List = _repository.GetD(SessionPersister.Login);
-            return View(_repository.GetDisciplinesSort(SessionPersister.Login,ViewBag.Wave));
+            ViewBag.List = repository.GetD(SessionPersister.Login);
+            ViewBag.NotDisciplines = repository.GetDisciplineWhereRegistered(SessionPersister.Login);
+            return View(repository.GetDisciplinesSort(SessionPersister.Login,ViewBag.Wave));
         }
         public ActionResult EditPhone()
         {
@@ -161,9 +171,9 @@ namespace LNU.Courses.Controllers
 
         public ActionResult ChangePassword()
         {
-            if (_repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+            if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
                 return View("EditPhone");
-            if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
 
 
@@ -173,13 +183,13 @@ namespace LNU.Courses.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ChangePassword(string oldPass, string newPass, string checkNewPass)
         {
-            if (_repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+            if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
                 return View("EditPhone");
-            if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
 
             var login = SessionPersister.Login;
-            var studentAcc = _repository.GetUser(login);
+            var studentAcc = repository.GetUser(login);
             IHashProvider encoder = new HashProvider();
 
             if (studentAcc.password.ToUpper() != encoder.Encrypt(oldPass))
@@ -188,7 +198,7 @@ namespace LNU.Courses.Controllers
             }
             else
             {
-                _repository.ChangeUserPass(login, newPass);
+                repository.ChangeUserPass(login, newPass);
             }
             return View();
         }
@@ -205,7 +215,7 @@ namespace LNU.Courses.Controllers
             }
             else
             {
-                _repository.ChangeStudentEMail(login, newEMail);
+                repository.ChangeStudentEMail(login, newEMail);
             }
             return View();
         }
@@ -222,16 +232,16 @@ namespace LNU.Courses.Controllers
             }
             else
             {
-                _repository.ChangeStudentPhone(login, newPhone);
+                repository.ChangeStudentPhone(login, newPhone);
             }
             return View();
         }
 
         public ActionResult MyProfile()
         {
-            if (_repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+            if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
                 return View("EditPhone");
-            if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
 
             var studentAcc = _repoBl.GetStudentById(SessionPersister.Login);
@@ -243,7 +253,7 @@ namespace LNU.Courses.Controllers
             ViewBag.EMail = studentAcc.eMail;
             ViewBag.PhoneNumber = studentAcc.phoneNumber;
 
-            return View(_repository.GetD(SessionPersister.Login));
+            return View(repository.GetD(SessionPersister.Login));
         }
 
     }

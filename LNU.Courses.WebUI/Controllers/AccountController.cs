@@ -6,20 +6,15 @@ using LNU.Courses.WebUI.Models;
 
 namespace LNU.Courses.Controllers
 {
-    [AllowAnonymous]
     public class AccountController : Controller
     {
         private readonly IRepository _repository;
         private readonly IHashProvider _hashProvider;
-
-
         public AccountController(IRepository repository, IHashProvider hashProvider)
         {
             _repository = repository;
             _hashProvider = hashProvider;
         }
-
-        // GET: Account
         [HttpGet]
         public ActionResult Login()
         {
@@ -64,7 +59,7 @@ namespace LNU.Courses.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AdminLogin(string login, string password)
         {
-            AdminAccountModel am = new AdminAccountModel(_repository, _hashProvider);          
+            AdminAccountModel am = new AdminAccountModel();          
 
             if (ModelState.IsValid)
             {

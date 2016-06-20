@@ -192,20 +192,64 @@ C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\EntityFramewor
 C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\obj\Debug\LNU.Courses.Jobs.csprojResolveAssemblyReference.cache
 C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\obj\Debug\LNU.Courses.Jobs.dll
 C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\obj\Debug\LNU.Courses.Jobs.pdb
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\Autofac.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\Autofac.Integration.Mvc.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\Microsoft.Web.Infrastructure.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.Helpers.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.Mvc.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.Razor.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.WebPages.Deployment.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.WebPages.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.WebPages.Razor.dll
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\Autofac.xml
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\Autofac.Integration.Mvc.xml
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.Helpers.xml
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.Mvc.xml
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.Razor.xml
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.WebPages.xml
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.WebPages.Deployment.xml
-C:\Users\Андрій\Desktop\LNU\Курсач\1\1\Jobs\bin\Debug\System.Web.WebPages.Razor.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\LNU.Courses.Jobs.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\LNU.Courses.Jobs.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Common.Logging.Core.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Common.Logging.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Entities.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\LNU.Courses.BLL.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\LNU.Courses.Repositories.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Quartz.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\EntityFramework.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\LNU.Courses.BLL.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\LNU.Courses.Repositories.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Entities.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Common.Logging.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Common.Logging.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Common.Logging.Core.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Common.Logging.Core.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Quartz.pdb
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\Quartz.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\bin\Debug\EntityFramework.xml
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\obj\Debug\LNU.Courses.Jobs.csprojResolveAssemblyReference.cache
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\obj\Debug\LNU.Courses.Jobs.dll
+D:\ОСТАННЯ ВЕРСІЯ КУРСОВОЇ\Jobs\obj\Debug\LNU.Courses.Jobs.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\LNU.Courses.Jobs.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\LNU.Courses.Jobs.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Common.Logging.Core.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Common.Logging.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Entities.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\LNU.Courses.BLL.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Quartz.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\LNU.Courses.BLL.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Entities.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Common.Logging.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Common.Logging.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Common.Logging.Core.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Common.Logging.Core.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Quartz.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Quartz.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\obj\Debug\LNU.Courses.Jobs.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\obj\Debug\LNU.Courses.Jobs.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\obj\Debug\LNU.Courses.Jobs.pdb
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Autofac.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.Helpers.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.Mvc.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.Razor.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.WebPages.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Autofac.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\Autofac.Integration.Mvc.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.Helpers.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.Mvc.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.Razor.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.WebPages.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Андрій\Downloads\OSTANNYa_VERSIYa_KURSOVOYi\Jobs\bin\Debug\System.Web.WebPages.Razor.xml

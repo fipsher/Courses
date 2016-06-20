@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 using LNU.Courses.Repositories;
@@ -50,7 +51,14 @@ namespace LNU.Courses.Jobs
             for (int i =0; i < eMails.Count; i++)
             {
                 if(eMails[i] !="")
-                message.To.Add(new MailAddress(eMails[i]));
+                    try
+                    {
+                        message.To.Add(new MailAddress(eMails[i]));
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
             }
             message.From = new MailAddress(EmailFrom);
             smtp.Credentials = new NetworkCredential(EmailFrom, Password);

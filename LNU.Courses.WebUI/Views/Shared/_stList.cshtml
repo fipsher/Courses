@@ -20,9 +20,12 @@
         <th>
             @Html.DisplayNameFor(model => model.AverageMark)
         </th>
+@if (ViewBag.Admin == 1)
+{
         <th>
             @Html.DisplayNameFor(model => model.Deleted)
         </th>
+}
         <th></th>
         <th></th>
 
@@ -46,25 +49,30 @@
             <td>
                 @Html.DisplayFor(modelItem => item.AverageMark)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Deleted)
-            </td>
-            <td>
+            @if (ViewBag.Admin == 1)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deleted)
+                </td>
+                <td>
 
-                @{
-                    string editLink = "EditStudent?id=" + item.id;
-                    string deleteLink = "DeleteStudent?id=" + item.id;
-                }
+                    @{
+                        string editLink = "EditStudent?id=" + item.id;
+                        string deleteLink = "DeleteStudent?id=" + item.id;
+                    }
 
-                <a class="btn-link" href="/Admin/@editLink" id="edit"> Змінити </a>
+                    <a class="btn-link" href="/Admin/@editLink" id="edit"> Змінити </a>
 
-            </td>
-            <td>
-                @if (item.Deleted == false)
-                {
-                    <a class="btn-link" href="/Admin/@deleteLink"> Видалити </a>
-                }
-            </td>
+                </td>
+                <td>
+                    @if (item.Deleted == false)
+                    {
+                        <a class="btn-link" href="/Admin/@deleteLink"> Видалити </a>
+                    }
+                </td>
+
+                        }
+            
         </tr>
 }
 

@@ -8,11 +8,26 @@ namespace LNU.Courses.Repositories
     public partial class Repository : IRepository
     {
         readonly IHashProvider _hashProvider = new HashProvider();
+        public int GetDisciplineWhereRegistered(string login)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var sig = context.StudentsInGroups.Where(s => s.studentID == login).ToList();
+
+                if (sig.Count == 1)
+                {
+                    var g = sig[0].Group;
+                    return g.disciplinesID;
+                }
+                else
+                    return 0;
+            }
+        }
         public void addAmountStudent(int groupID)
         {            
             using (var context = new CoursesOfChoiceEntities())
             {
-                var gr = context.Group.Where(g => g.id == groupID).SingleOrDefault();
+                var gr = context.Group.SingleOrDefault(g => g.id == groupID);
                 gr.AmountOfStudent++;
                 context.SaveChanges();
 
@@ -22,7 +37,7 @@ namespace LNU.Courses.Repositories
         {
             using (var context = new CoursesOfChoiceEntities())
             {
-                var gr = context.Group.Where(g => g.id == groupID).SingleOrDefault();
+                var gr = context.Group.SingleOrDefault(g => g.id == groupID);
                 gr.AmountOfStudent--;
                 context.SaveChanges();
 
@@ -209,16 +224,9 @@ namespace LNU.Courses.Repositories
         {
             using (var context = new CoursesOfChoiceEntities())
             {
-                try
-                {
-                    var user = context.Users.SingleOrDefault(el => el.login == login);
+                var user = context.Users.SingleOrDefault(el => el.login == login);
 
-                    return user;
-                }
-                catch
-                {
-                    return null;
-                }
+                return user;
             }
         }
         #endregion

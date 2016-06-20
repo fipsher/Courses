@@ -1,15 +1,11 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-using LNU.Courses.Repositories;
 using LNU.Courses.WebUI.Models;
 
 namespace LNU.Courses.Security
 {
     public class AdminAuthorizeAttribute : AuthorizeAttribute
     {
-        public IRepository _repository { get; set; }
-        public IHashProvider _hashProvider { get; set; }
-
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
             if (string.IsNullOrEmpty(SessionPersister.Login))
@@ -22,7 +18,7 @@ namespace LNU.Courses.Security
             }
             else
             {
-                AdminAccountModel am = new AdminAccountModel(_repository, _hashProvider);
+                AdminAccountModel am = new AdminAccountModel();
                 CustomPrincipal cp = new CustomPrincipal(am.Find(SessionPersister.Login));
 
                 if (!cp.IsInRole(Roles))

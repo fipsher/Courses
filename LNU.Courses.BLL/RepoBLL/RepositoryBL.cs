@@ -18,6 +18,7 @@ namespace LNU.Courses.BLL.RepoBLL
         }
 
 
+
         /// <summary>
         /// Get list of Disciplines filtered by name
         /// </summary>
@@ -174,5 +175,7 @@ namespace LNU.Courses.BLL.RepoBLL
             return eMails;
         }
 
+
+   
     }
 }

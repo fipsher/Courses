@@ -74,7 +74,7 @@ namespace LNU.Courses.BLL.DeadlinesBLL
 
         private void manUpGroupsSecondly(int course)
         {
-             var students = _repository.GetStudents().Where(std => std.course == course);
+            var students = _repository.GetStudents().Where(std => std.course == course);
             var groups = _repository.GetGroups().Where(gr =>
             {
                 var singleOrDefault = _repository.GetDisciplines().SingleOrDefault(d => d.id == gr.disciplinesID);

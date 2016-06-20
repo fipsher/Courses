@@ -13,5 +13,13 @@ namespace LNU.Courses.Jobs
             sd.FillGroupsWithRemainedStd();
 
         }
+
+        public void ExecuteTemp()
+        {
+            IRepository repository = new Repository();
+            SecondDeadline sd = new SecondDeadline(repository);
+            sd.FillGroupsWithRemainedStd();
+
+        }
     }
 }
