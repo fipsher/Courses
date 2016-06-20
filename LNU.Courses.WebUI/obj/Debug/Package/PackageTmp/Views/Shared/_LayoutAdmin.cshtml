@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string supAdmRole = "SuperAdmin";
+    var temp = Session["Roles"];
+    List<string> roles = ((string[])temp).ToList();
+}
+<div class="col-lg-2 navbar-brand">
+
+    @if (roles.Contains(supAdmRole))
+     {
+         <div class="row">
+             @Html.ActionLink("Список адмінів", "GetAdmins", "Admin", null, new { @class = "btn btn-default btn-large" })
+         </div>
+
+         <div class="row">
+             @Html.ActionLink("Список студентів", "GetStudents", "Admin", new {fio = " ", index = 1}, new {@class = "btn btn-default btn-large"})
+         </div>
+
+         <div class="row">
+             @Html.ActionLink("Змінити дедлайни", "ChangeDeadLine", "Admin", null, new {@class = "btn btn-default btn-large"})
+         </div>
+
+         <div class="row">
+             @Html.ActionLink("Змінити пошту", "ChangeCredentials", "Admin", null, new { @class = "btn btn-default btn-large" })
+         </div>
+     }
+    <div class="row">
+
+        @Html.ActionLink("Список дисциплін", "GetCourses", "Admin", null, new { @class = "btn btn-default btn-large" })
+    </div>
+    <div class="row">
+
+        @Html.ActionLink("Змінити пароль", "ChangePass", "Admin", null, new { @class = "btn btn-default btn-large" })
+    </div>
+</div>
+<div class="col-lg-10">
+    @RenderBody()
+</div>
+<footer class="modal-footer">
+    <p>&copy; @DateTime.Now.Year - LNU курси за вибором</p>
+</footer>

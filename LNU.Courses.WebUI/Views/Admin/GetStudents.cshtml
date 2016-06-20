@@ -1,0 +1,78 @@
+﻿@model string
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    string fioView = "";
+    int next = ViewBag.index;
+    int prev = 1;
+
+    int stdLength = ViewBag.StudLength;
+    if (next != 0)
+    {
+        prev = next - 2;
+    }
+    if (Model != null)
+    {
+        fioView = Model;
+    }
+
+    ViewBag.Title = "Студенти";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    var stdLength = @stdLength + 1;
+    var next = @next;
+    var prev = @prev;
+    function onNextBtnClick() {
+        location.href = "/Admin/GetStudents?index="+@next + "&fio=" + '@fioView';
+    }
+
+    function onPrevBtnClick() {
+        location.href = "/Admin/GetStudents?index="+@prev + "&fio=" + '@fioView';
+    }
+
+    $(document).ready(function(){
+        if ( stdLength <= next){
+            $('button.glyphicon-arrow-right').prop( "disabled", true );
+        } else{
+            $('button.glyphicon-arrow-right').prop( "disabled", false );
+        }
+        if ( prev <= 0){
+            $('button.glyphicon-arrow-left').prop( "disabled", true );
+        } else{
+            $('button.glyphicon-arrow-left').prop( "disabled", false );
+        }
+
+    } );
+</script>
+
+<h2>Студенти</h2>
+
+@using (Html.BeginForm("GetStudents", "Admin", FormMethod.Get))
+{
+
+    <input type="text" name="fio" value="@fioView" />
+
+    <input type="submit" value="Шукати"/>
+
+}
+<div class="col-lg-6">
+    <button class="glyphicon glyphicon-arrow-left btn" type="button" onclick="onPrevBtnClick()"></button>
+</div>
+<div class="col-lg-6">
+    <button class="glyphicon glyphicon-arrow-right btn" type="button" onclick="onNextBtnClick()"></button>
+</div>
+<p>
+    @Html.ActionLink("Створити нового", "CreateStudent")
+</p>
+
+@{
+            Html.RenderAction("GetStudentsList", "Admin", new { fio = fioView });
+}
+
+
+<div class="col-lg-6">
+    <button class="glyphicon glyphicon-arrow-left btn" type="button" onclick="onPrevBtnClick()"></button>
+</div>
+<div class="col-lg-6">
+    <button class="glyphicon glyphicon-arrow-right btn" type="button" onclick="onNextBtnClick()"></button>
+</div>

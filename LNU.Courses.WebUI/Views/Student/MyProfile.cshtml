@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Entities.Disciplines>
+@{
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+
+    ViewBag.Title = "Мій профіль";
+}
+<table class="table">
+    <tr>
+        <h2>Мій профіль</h2>
+        
+    </tr>
+    <tr>
+        <td>
+            Login :
+        </td>
+        <td>
+            @ViewBag.Login
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Fio :
+        </td>
+        <td>
+            @ViewBag.Fio
+        </td>
+        <td>
+           
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Course :
+        </td>
+        <td>
+            @ViewBag.Course
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Group :
+        </td>
+        <td>
+            @ViewBag.Group
+        </td>
+        <td>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            AverageMark :
+        </td>
+        <td>
+            @ViewBag.AverageMark
+        </td>
+        <td>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            EMail :
+        </td>
+        <td>
+            @ViewBag.EMail
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditEMail")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            PhoneNumber :
+        </td>
+        <td>
+            @ViewBag.PhoneNumber
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPhone")
+        </td>
+    </tr>
+</table>
+
+<table class="table">
+    <tr>
+        <h2>Дисципліни</h2>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                Курс - @item.course
+            </td>
+            <td>
+                @item.kafedra , дисципліна - @item.name
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteFromTheCourse", new { id = item.id})  
+            </td>
+        </tr>
+    }
+
+    
+</table>

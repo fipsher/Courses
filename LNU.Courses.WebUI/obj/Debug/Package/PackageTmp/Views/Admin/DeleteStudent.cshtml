@@ -1,0 +1,84 @@
+﻿@model Entities.Students
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Видалити студента";
+}
+
+<h2>Видалити студента</h2>
+
+<h3>Ви впевнені?</h3>
+<div>
+    <h4>Students</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fio)
+        </dd>
+        <dt>
+
+            @Html.DisplayNameFor(model => model.course)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.course)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.group)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.group)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageMark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageMark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deleted)
+        </dt>
+
+
+
+
+    </dl>
+
+
+    @{ if (ViewBag.DeleteStudentResult != null)
+        {
+            if (ViewBag.DeleteStudentResult == true)
+            {
+
+                <div class="alert-success">
+                    Видалено
+                </div>
+            }
+            else
+            {
+                <div class="alert-danger">
+                    Не вдалось видалити
+                </div>
+            }
+        }
+    }
+    @using (Html.BeginForm("DeleteStudent", "Admin", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.HiddenFor(model => model.id)
+            <input type="submit" value="Видалити" class="btn btn-default" /> |
+            @Html.ActionLink("Назад до спискуt", "GetStudents")
+        </div>
+    }
+</div>

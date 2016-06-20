@@ -1,0 +1,77 @@
+F:\VSProgects\LNU.Courses\Entities\bin\Debug\Entities.dll.config
+F:\VSProgects\LNU.Courses\Entities\bin\Debug\Entities.dll
+F:\VSProgects\LNU.Courses\Entities\bin\Debug\Entities.pdb
+F:\VSProgects\LNU.Courses\Entities\bin\Debug\EntityFramework.dll
+F:\VSProgects\LNU.Courses\Entities\bin\Debug\EntityFramework.SqlServer.dll
+F:\VSProgects\LNU.Courses\Entities\bin\Debug\EntityFramework.xml
+F:\VSProgects\LNU.Courses\Entities\bin\Debug\EntityFramework.SqlServer.xml
+F:\VSProgects\LNU.Courses\Entities\obj\Debug\Entities.dll
+F:\VSProgects\LNU.Courses\Entities\obj\Debug\Entities.pdb
+F:\VSProgects\LNU.Courses\LNU.Entities\bin\Debug\Entities.dll.config
+F:\VSProgects\LNU.Courses\LNU.Entities\bin\Debug\Entities.dll
+F:\VSProgects\LNU.Courses\LNU.Entities\bin\Debug\Entities.pdb
+F:\VSProgects\LNU.Courses\LNU.Entities\bin\Debug\EntityFramework.dll
+F:\VSProgects\LNU.Courses\LNU.Entities\bin\Debug\EntityFramework.SqlServer.dll
+F:\VSProgects\LNU.Courses\LNU.Entities\bin\Debug\EntityFramework.xml
+F:\VSProgects\LNU.Courses\LNU.Entities\bin\Debug\EntityFramework.SqlServer.xml
+F:\VSProgects\LNU.Courses\LNU.Entities\obj\Debug\Entities.dll
+F:\VSProgects\LNU.Courses\LNU.Entities\obj\Debug\Entities.pdb
+C:\Users\Andriy\Desktop\курсач\LNU.Entities\bin\Debug\Entities.dll.config
+C:\Users\Andriy\Desktop\курсач\LNU.Entities\bin\Debug\Entities.dll
+C:\Users\Andriy\Desktop\курсач\LNU.Entities\bin\Debug\Entities.pdb
+C:\Users\Andriy\Desktop\курсач\LNU.Entities\bin\Debug\EntityFramework.dll
+C:\Users\Andriy\Desktop\курсач\LNU.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Andriy\Desktop\курсач\LNU.Entities\bin\Debug\EntityFramework.xml
+C:\Users\Andriy\Desktop\курсач\LNU.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andriy\Desktop\курсач\LNU.Entities\obj\Debug\Entities.dll
+C:\Users\Andriy\Desktop\курсач\LNU.Entities\obj\Debug\Entities.pdb
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Entities\bin\Debug\Entities.dll.config
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Entities\bin\Debug\Entities.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Entities\bin\Debug\Entities.pdb
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Entities\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Entities\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Entities\obj\Debug\Entities.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Entities\obj\Debug\Entities.pdb
+D:\КУРСАЧ\LNU.Entities\bin\Debug\Entities.dll.config
+D:\КУРСАЧ\LNU.Entities\bin\Debug\Entities.dll
+D:\КУРСАЧ\LNU.Entities\bin\Debug\Entities.pdb
+D:\КУРСАЧ\LNU.Entities\bin\Debug\EntityFramework.dll
+D:\КУРСАЧ\LNU.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\КУРСАЧ\LNU.Entities\bin\Debug\EntityFramework.xml
+D:\КУРСАЧ\LNU.Entities\bin\Debug\EntityFramework.SqlServer.xml
+D:\КУРСАЧ\LNU.Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\КУРСАЧ\LNU.Entities\obj\Debug\Entities.dll
+D:\КУРСАЧ\LNU.Entities\obj\Debug\Entities.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Entities\bin\Debug\Entities.dll.config
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Entities\bin\Debug\Entities.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Entities\bin\Debug\Entities.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Entities\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Entities\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Entities\obj\Debug\Entities.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Entities\obj\Debug\Entities.pdb
+D:\курсова робота\LNU.Entities\bin\Debug\Entities.dll.config
+D:\курсова робота\LNU.Entities\bin\Debug\Entities.dll
+D:\курсова робота\LNU.Entities\bin\Debug\Entities.pdb
+D:\курсова робота\LNU.Entities\bin\Debug\EntityFramework.dll
+D:\курсова робота\LNU.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\курсова робота\LNU.Entities\bin\Debug\EntityFramework.xml
+D:\курсова робота\LNU.Entities\bin\Debug\EntityFramework.SqlServer.xml
+D:\курсова робота\LNU.Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\курсова робота\LNU.Entities\obj\Debug\Entities.dll
+D:\курсова робота\LNU.Entities\obj\Debug\Entities.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\bin\Debug\Entities.dll.config
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\bin\Debug\Entities.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\bin\Debug\Entities.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\obj\Debug\Entities.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Entities\obj\Debug\Entities.pdb

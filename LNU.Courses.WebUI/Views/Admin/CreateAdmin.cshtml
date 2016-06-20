@@ -1,0 +1,75 @@
+﻿@model Entities.Administrators
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Створити адміна";
+}
+
+<h2>Створити адміна</h2>
+@if (ViewBag.AddAdminResult != null)
+{
+    if (ViewBag.AddAdminResult == true)
+    {
+
+        <div class="alert-success">
+            Успішно додано
+        </div>
+    }
+    else
+    {
+        <div class="alert-danger">
+            Не вдалось додати
+        </div>
+    }
+}
+@using (Html.BeginForm(Html.BeginForm("CreateAdmin", "Admin", FormMethod.Post)))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Логін", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.login, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.login, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Пароль", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })*@
+                <input type="password" name="password" class="form-control" />
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Роль", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @{
+                    var list = new List<SelectListItem>()
+                    {
+                        new SelectListItem() { Value = "SuperAdmin", Text = "SuperAdmin" },
+                        new SelectListItem() { Value = "Admin", Text = "Admin", Selected = true }
+                    };
+                }
+                @Html.DropDownList("Roles", list,null, new {  @class = "btn btn-default dropdown-toggle" })
+  
+                @Html.ValidationMessageFor(model => model.roles, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Створити" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+                    }
+
+<div>
+    @Html.ActionLink("Назад до списку", "GetAdmins")
+</div>

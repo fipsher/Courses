@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "ChangeDeadLine";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Змінити дедлайни</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+
+        <div class="form-group">
+            @Html.Label("Старт першого кола:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" name="start" class="col-md-2 form-control" value="2016-09-01"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Кінець першого та початок другого кіл:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" name="firstDeadline" class="col-md-2 form-control"  value="2016-11-30"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Кінець другого кола:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" name="lastDeadline" class="col-md-2 form-control"  value="2016-12-31"/>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Зберегти" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+

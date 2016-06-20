@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Entities.Disciplines>
+
+    
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kafedra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lecturer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayName("Зареєстровано студентів I хвиля")
+        </th>
+        <th>
+            @Html.DisplayName("Зареєстровано студентів II хвиля")
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kafedra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lecturer)
+        </td>
+        <td>@{ 
+            var course = item.course + 1;
+        }
+            @Html.DisplayFor(modelItem => course)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @{
+                Html.RenderAction("GetDisciplineStudentCount", "Admin", new { disciplineId = item.id, wave = 1});
+            }
+        </td>
+        <td>
+            @{
+                Html.RenderAction("GetDisciplineStudentCount", "Admin", new { disciplineId = item.id, wave = 2 });
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Змінити", "EditDiscipline", new { id=item.id })
+           
+        </td>
+        <td>
+            @Html.ActionLink("Деталі", "DetailsOfDiscipline", new { id = item.id })
+        </td>
+        <td>
+            @Html.ActionLink("Видалити", "DeleteDiscipline", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

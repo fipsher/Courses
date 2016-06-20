@@ -1,0 +1,113 @@
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.csprojResolveAssemblyReference.cache
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll.config
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.pdb
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\bin\Debug\Entities.dll
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\bin\Debug\EntityFramework.dll
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\bin\Debug\Entities.pdb
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\bin\Debug\EntityFramework.xml
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.dll
+F:\VSProgects\LNU.Courses\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll.config
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\bin\Debug\Entities.dll
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\bin\Debug\Entities.pdb
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.csprojResolveAssemblyReference.cache
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.dll
+C:\Users\Andriy\Desktop\курсач\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll.config
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\bin\Debug\Entities.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\bin\Debug\Entities.pdb
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.pdb
+D:\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll.config
+D:\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll
+D:\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.pdb
+D:\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\Entities.dll
+D:\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\EntityFramework.dll
+D:\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+D:\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\Entities.pdb
+D:\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\EntityFramework.xml
+D:\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+D:\КУРСАЧ\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.csprojResolveAssemblyReference.cache
+D:\КУРСАЧ\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.dll
+D:\КУРСАЧ\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll.config
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\Entities.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\Entities.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.pdb
+D:\курсова робота\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.csprojResolveAssemblyReference.cache
+D:\курсова робота\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.dll
+D:\курсова робота\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.pdb
+D:\курсова робота\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll.config
+D:\курсова робота\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll
+D:\курсова робота\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.pdb
+D:\курсова робота\LNU.Courses.Repositories\bin\Debug\Entities.dll
+D:\курсова робота\LNU.Courses.Repositories\bin\Debug\EntityFramework.dll
+D:\курсова робота\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+D:\курсова робота\LNU.Courses.Repositories\bin\Debug\Entities.pdb
+D:\курсова робота\LNU.Courses.Repositories\bin\Debug\EntityFramework.xml
+D:\курсова робота\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+D:\КУРСАЧ\1\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll.config
+D:\КУРСАЧ\1\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll
+D:\КУРСАЧ\1\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.pdb
+D:\КУРСАЧ\1\LNU.Courses.Repositories\bin\Debug\Entities.dll
+D:\КУРСАЧ\1\LNU.Courses.Repositories\bin\Debug\EntityFramework.dll
+D:\КУРСАЧ\1\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+D:\КУРСАЧ\1\LNU.Courses.Repositories\bin\Debug\Entities.pdb
+D:\КУРСАЧ\1\LNU.Courses.Repositories\bin\Debug\EntityFramework.xml
+D:\КУРСАЧ\1\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+D:\КУРСАЧ\1\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.csprojResolveAssemblyReference.cache
+D:\КУРСАЧ\1\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.dll
+D:\КУРСАЧ\1\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll.config
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\Entities.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\Entities.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\Autofac.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.Helpers.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.Mvc.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.Razor.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.WebPages.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\Autofac.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\Autofac.Integration.Mvc.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.Helpers.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.Mvc.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.Razor.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.WebPages.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.Repositories\bin\Debug\System.Web.WebPages.Razor.xml

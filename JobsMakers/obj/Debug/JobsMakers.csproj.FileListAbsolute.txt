@@ -1,0 +1,14 @@
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\JobsMakers.dll
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\JobsMakers.pdb
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\Common.Logging.Core.dll
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\Common.Logging.dll
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\Quartz.dll
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\Common.Logging.pdb
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\Common.Logging.xml
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\Common.Logging.Core.pdb
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\Common.Logging.Core.xml
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\Quartz.pdb
+F:\VSProgects\LNU.Courses\JobsMakers\bin\Debug\Quartz.xml
+F:\VSProgects\LNU.Courses\JobsMakers\obj\Debug\JobsMakers.dll
+F:\VSProgects\LNU.Courses\JobsMakers\obj\Debug\JobsMakers.pdb
+F:\VSProgects\LNU.Courses\JobsMakers\obj\Debug\JobsMakers.csprojResolveAssemblyReference.cache

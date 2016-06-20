@@ -1,0 +1,26 @@
+﻿@model string
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    string name = "";
+    if (Model != null)
+    {
+        name = Model;
+    }
+
+    ViewBag.Title = "Курси";
+}
+
+<h2>Курси</h2>
+
+@using (Html.BeginForm("GetCourses", "Admin", FormMethod.Get))
+{
+    <input type="text" name="name" value="@name"/>
+    <input type="submit" value="Шукати" />
+}
+
+<p>
+    @Html.ActionLink("Створити новий", "CreateDiscipline")
+</p>
+@{
+    Html.RenderAction("GetDisciplinesList", "Admin", new { name = name });
+}

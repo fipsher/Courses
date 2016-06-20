@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "ChangeDeadLine";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    string month = ViewBag.Start.Month < 10 ? "0" + ViewBag.Start.Month.ToString() : ViewBag.Start.Month.ToString();
+    string day = ViewBag.Start.Day < 10 ? "0" + ViewBag.Start.Day.ToString() : ViewBag.Start.Day.ToString();
+    string start = $"{DateTime.Now.Year}-{month}-{day}";
+
+    month = ViewBag.FirstDeadline.Month < 10 ? "0" + ViewBag.FirstDeadline.Month.ToString() : ViewBag.FirstDeadline.Month.ToString();
+    day = ViewBag.FirstDeadline.Day < 10 ? "0" + ViewBag.FirstDeadline.Day.ToString() : ViewBag.FirstDeadline.Day.ToString();
+    string firstDeadline = $"{DateTime.Now.Year}-{month}-{day}";
+
+    month = ViewBag.LastDeadline.Month < 10 ? "0" + ViewBag.LastDeadline.Month.ToString() : ViewBag.LastDeadline.Month.ToString();
+    day = ViewBag.LastDeadline.Day < 10 ? "0" + ViewBag.LastDeadline.Day.ToString() : ViewBag.LastDeadline.Day.ToString();
+    string lastDeadline = $"{DateTime.Now.Year}-{month}-{day}";
+}
+
+<h2>Змінити дедлайни</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+
+        <div class="form-group">
+            @Html.Label("Старт першого кола:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                <input type="date" name="start" class="col-md-2 form-control" value="@start" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Кінець першого та початок другого кіл:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" name="firstDeadline" class="col-md-2 form-control" value="@firstDeadline" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Кінець другого кола:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" name="lastDeadline" class="col-md-2 form-control" value="@lastDeadline" />
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Зберегти" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+

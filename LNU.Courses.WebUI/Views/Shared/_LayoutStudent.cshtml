@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-lg-2 navbar-brand">
+    <div class="row">
+        @Html.ActionLink("Мій профіль", "MyProfile", "Student", null, new { @class = "btn btn-default btn-large" })
+    </div>
+    <div class="row">
+        @Html.ActionLink("Доступні дисципліни", "GetDisciplines", "Student", null, new { @class = "btn btn-default btn-large" })
+    </div>
+    <div class="row">
+        @Html.ActionLink("Змінити пароль", "ChangePassword", "Student", null, new { @class = "btn btn-default btn-large" })
+    </div>
+</div>
+<div class="col-lg-10">
+    @RenderBody()
+</div>
+<footer class="modal-footer">
+    <p>&copy; @DateTime.Now.Year - LNU курси за вибором</p>
+</footer>

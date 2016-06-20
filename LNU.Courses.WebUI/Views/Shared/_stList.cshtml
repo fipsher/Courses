@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Entities.Students>
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.group)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AverageMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deleted)
+        </th>
+        <th></th>
+        <th></th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.course)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.group)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AverageMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deleted)
+            </td>
+            <td>
+
+                @{
+                    string editLink = "EditStudent?id=" + item.id;
+                    string deleteLink = "DeleteStudent?id=" + item.id;
+                }
+
+                <a class="btn-link" href="/Admin/@editLink" id="edit"> Змінити </a>
+
+            </td>
+            <td>
+                @if (item.Deleted == false)
+                {
+                    <a class="btn-link" href="/Admin/@deleteLink"> Видалити </a>
+                }
+            </td>
+        </tr>
+}
+
+</table>
+
+

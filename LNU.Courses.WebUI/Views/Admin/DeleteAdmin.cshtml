@@ -1,0 +1,50 @@
+﻿@model Entities.Administrators
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "DeleteAdmin";
+}
+
+<h2>DeleteAdmin</h2>
+
+<h3>Ви впевнені?</h3>
+<div>
+    <h4>Administrators</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Логін")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.login)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Роль")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roles)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @if (Model.roles != null && Model.roles == "SuperAdmin")
+            {
+                <input type="submit" value="Видалити" class="btn btn-default" disabled="disabled" />
+            }
+            else
+            {
+                <input type="submit" value="Видалити" class="btn btn-default" /> 
+
+            }
+            |@Html.ActionLink("Назад до списку", "GetAdmins")
+        </div>
+    }
+</div>

@@ -1,0 +1,13 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Адміністратори";
+}
+
+<h2>Адміністратори</h2>
+<p>
+    @Html.ActionLink("Створити нового", "CreateAdmin")
+</p>
+@{
+    Html.RenderAction("GetAdminsList", "Admin");
+}

@@ -1,0 +1,162 @@
+﻿@using LNU.Courses.WebUI.Models
+@model IEnumerable<Entities.Disciplines>
+@{
+    ViewBag.Title = "Доступні дисципліни";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<h2>Доступні дисципліни </h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kafedra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lecturer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayName("Зареєстровано студентів I хвиля")
+        </th>
+        <th>
+            @Html.DisplayName("Зареєстровано студентів II хвиля")
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        
+        if (ViewBag.Wave == 0 || ViewBag.CheckLock == true || ViewBag.CheckReg == 2)
+        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.kafedra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.lecturer)
+                    </td>
+                    <td>
+                        @{
+                            var course = item.course + 1;
+                        }
+                        @Html.DisplayFor(modelItem => course)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.description)
+                    </td>
+                    <td>
+                        @{
+                            Html.RenderAction("GetDisciplineStudentCount", "Student", new { disciplineId = item.id, wave = 1 });
+                        }
+                    </td>
+                    <td>
+                        @{
+                            Html.RenderAction("GetDisciplineStudentCount", "Student", new { disciplineId = item.id, wave = 2 });
+                        }
+                    </td>
+                    <td>
+                        
+                    </td>
+
+                </tr>
+                            }
+                            else
+                      if (ViewBag.Wave == 1)
+                            {
+
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.name)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.kafedra)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.lecturer)
+                                            </td>
+                                            <td>
+                                                @{
+                                                    var course = item.course + 1;
+                                                }
+                                                @Html.DisplayFor(modelItem => course)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.description)
+                                            </td>
+                                            <td>
+                                                @{
+                                                    Html.RenderAction("GetDisciplineStudentCount", "Student", new { disciplineId = item.id, wave = 1 });
+                                                }
+                                            </td>
+                                            <td>
+                                                @{
+                                                    Html.RenderAction("GetDisciplineStudentCount", "Student", new { disciplineId = item.id, wave = 2 });
+                                                }
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Register", "RegisteringInTheCourse", new { id = item.id })
+                                            </td>
+
+                                        </tr>
+                                                    }
+                                                    else
+                                               if (ViewBag.Wave == 2 && staticData.checkInList(item.id) == true )
+                                                    {
+
+                                                        <tr>
+                                                            <td>
+                                                                @Html.DisplayFor(modelItem => item.name)
+                                                            </td>
+                                                            <td>
+                                                                @Html.DisplayFor(modelItem => item.kafedra)
+                                                            </td>
+                                                            <td>
+                                                                @Html.DisplayFor(modelItem => item.lecturer)
+                                                            </td>
+                                                            <td>
+                                                                @{
+                                                                    var course = item.course + 1;
+                                                                }
+                                                                @Html.DisplayFor(modelItem => course)
+                                                            </td>
+                                                            <td>
+                                                                @Html.DisplayFor(modelItem => item.description)
+                                                            </td>
+                                                            <td>
+                                                                @{
+                                                                    Html.RenderAction("GetDisciplineStudentCount", "Student", new { disciplineId = item.id, wave = 1 });
+                                                                }
+                                                            </td>
+                                                            <td>
+                                                                @{
+                                                                    Html.RenderAction("GetDisciplineStudentCount", "Student", new { disciplineId = item.id, wave = 2 });
+                                                                }
+                                                            </td>
+                                                            <td>
+                                                                @Html.ActionLink("Register", "RegisteringInTheCourse", new { id = item.id })
+                                                            </td>
+
+                                                        </tr>
+
+                                                                        }
+
+
+
+
+
+
+                                                                    }
+
+    </table>

@@ -1,0 +1,79 @@
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.pdb
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\bin\Debug\Entities.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\bin\Debug\Entities.pdb
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.dll
+C:\Users\Андрій\Downloads\kursach\курсач\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.pdb
+D:\КУРСАЧ\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.dll
+D:\КУРСАЧ\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.pdb
+D:\КУРСАЧ\LNU.Courses.BLL\bin\Debug\Entities.dll
+D:\КУРСАЧ\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.dll
+D:\КУРСАЧ\LNU.Courses.BLL\bin\Debug\EntityFramework.dll
+D:\КУРСАЧ\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.pdb
+D:\КУРСАЧ\LNU.Courses.BLL\bin\Debug\Entities.pdb
+D:\КУРСАЧ\LNU.Courses.BLL\bin\Debug\EntityFramework.xml
+D:\КУРСАЧ\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.csprojResolveAssemblyReference.cache
+D:\КУРСАЧ\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.dll
+D:\КУРСАЧ\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\bin\Debug\Entities.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\bin\Debug\Entities.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\КУРСАЧ\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.pdb
+D:\курсова робота\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.dll
+D:\курсова робота\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.pdb
+D:\курсова робота\LNU.Courses.BLL\bin\Debug\Entities.dll
+D:\курсова робота\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.dll
+D:\курсова робота\LNU.Courses.BLL\bin\Debug\EntityFramework.dll
+D:\курсова робота\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.pdb
+D:\курсова робота\LNU.Courses.BLL\bin\Debug\Entities.pdb
+D:\курсова робота\LNU.Courses.BLL\bin\Debug\EntityFramework.xml
+D:\курсова робота\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.csprojResolveAssemblyReference.cache
+D:\курсова робота\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.dll
+D:\курсова робота\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\bin\Debug\Entities.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\bin\Debug\Entities.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\KursovaToKukharsijTest\курсова робота\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.pdb
+D:\КУРСАЧ\1\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.dll
+D:\КУРСАЧ\1\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.pdb
+D:\КУРСАЧ\1\LNU.Courses.BLL\bin\Debug\Entities.dll
+D:\КУРСАЧ\1\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.dll
+D:\КУРСАЧ\1\LNU.Courses.BLL\bin\Debug\EntityFramework.dll
+D:\КУРСАЧ\1\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.pdb
+D:\КУРСАЧ\1\LNU.Courses.BLL\bin\Debug\Entities.pdb
+D:\КУРСАЧ\1\LNU.Courses.BLL\bin\Debug\EntityFramework.xml
+D:\КУРСАЧ\1\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.csprojResolveAssemblyReference.cache
+D:\КУРСАЧ\1\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.dll
+D:\КУРСАЧ\1\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\bin\Debug\LNU.Courses.BLL.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\bin\Debug\Entities.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\bin\Debug\LNU.Courses.Repositories.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\bin\Debug\Entities.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\obj\Debug\LNU.Courses.BLL.pdb
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\bin\Debug\Autofac.dll
+C:\Users\Андрій\Desktop\LNU\Курсач\1\1\LNU.Courses.BLL\bin\Debug\Autofac.xml

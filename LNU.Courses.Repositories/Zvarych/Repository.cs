@@ -1,0 +1,486 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Entities;
+
+namespace LNU.Courses.Repositories
+{
+    public partial class Repository : IRepository
+    {
+        public IEnumerable<Users> GetUsers()
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                return context.Users.ToList();
+            }
+        }
+
+        public List<int> GetDisciplinesForSecondWave()
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var groups = context.Group.Where(gr => gr.StudentsInGroups.Count >= 25 && gr.Wave == 1).ToList();
+                return groups.Select(item => item.disciplinesID).ToList();
+            }
+        }
+        public IEnumerable<Disciplines> GetDisciplines()
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var disciplines = context.Disciplines.ToList();
+
+                return disciplines;
+            }
+        }
+
+        public void AddGroup(Group group)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                context.Group.Add(group);
+
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateGroup(Group group)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var gr = context.Group.SingleOrDefault(el => el.id == group.id);
+                if (gr != null)
+                {
+                    gr.Deleted = group.Deleted;
+                    gr.AmountOfStudent = group.AmountOfStudent;
+                    gr.Status = group.Status;
+                    gr.Wave = group.Wave;
+                    gr.disciplinesID = group.disciplinesID;
+                    gr.year = group.year;
+
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        //public IEnumerable<string> GetStdEmailsForSecondWay()
+        //{
+        //    using (var context = new CoursesOfChoiceEntities())
+        //    {
+        //        var studentsList = context.Students.ToList();
+        //        var stInGr = context.StudentsInGroups.ToList();
+
+        //        var eMails = (from std in studentsList
+        //                      where std.locked == false
+        //                      join sig in context.StudentsInGroups on std.id equals sig.studentID into lj
+        //                      from subSig in lj.DefaultIfEmpty()
+        //                      where subSig == null
+        //                      select std.eMail).ToList();
+
+        //        var temp = from std in studentsList
+        //                   join sig in stInGr on std.id equals sig.studentID into loj
+        //                   from l in loj.DefaultIfEmpty()
+        //                   where l != null
+        //                   group std by std.id into grp
+        //                   where grp.Count() == 1
+        //                   select grp.Key;
+
+        //        var onceRegisteredStdMails = (from std in studentsList
+        //                                      join t in temp on std.id equals t
+        //                                      select std.eMail).ToList();
+
+        //        eMails.AddRange(onceRegisteredStdMails);
+        //        return eMails;
+        //    }
+        //}
+
+        //public void CreateNewGroups(int wave)
+        //{
+        //    using (var context = new CoursesOfChoiceEntities())
+        //    {
+        //        var disciplines = context.Disciplines.ToList();
+
+        //        for (var i = 0; i < disciplines.Count; i++)
+        //        {
+        //            context.Group.Add(new Group()
+        //            {
+        //                disciplinesID = disciplines[i].id,
+        //                year = DateTime.Now.Year,
+        //                Status = false,
+        //                Deleted = false,
+        //                Wave = wave
+        //            });
+        //        }
+        //        context.SaveChanges();
+        //    }
+        //}
+
+        public void DeleteGroups()
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                context.Group.ToList().ForEach(gr => gr.Deleted = true);
+                context.SaveChanges();
+            }
+        }
+
+
+
+        #region admins
+        //public void ChangeAdminPass(string login, string newPass)
+        //{
+        //    using (var context = new CoursesOfChoiceEntities())
+        //    {
+        //        var adminAcc = context.Administrators.SingleOrDefault(acc => acc.login == login);
+        //        if (adminAcc != null) adminAcc.password = _hashProvider.Encrypt(newPass);
+        //        context.SaveChanges();
+        //    }
+        //}
+
+        //public Administrators AdminLogIn(string login, string password)
+        //{
+        //    password = _hashProvider.Encrypt(password);
+        //    using (var context = new CoursesOfChoiceEntities())
+        //    {
+        //        var admin = context.Administrators.SingleOrDefault(el => el.login == login && el.password == password);
+
+        //        return admin;
+        //    }
+        //}
+
+        public bool DeleteAdmin(string login)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var admin = context.Administrators.SingleOrDefault(st => st.login == login);
+                context.Administrators.Remove(admin);
+                context.SaveChanges();
+                return true;
+            }
+        }
+
+
+        public bool AddAdmin(Administrators admin)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                bool valToReturn = true;
+                if (context.Administrators.Any(el => el.login == admin.login))
+                {
+                    valToReturn = false;
+                }
+                else
+                {
+                    admin.password = _hashProvider.Encrypt(admin.password);
+                    context.Administrators.Add(admin);
+                    context.SaveChanges();
+                }
+
+                return valToReturn;
+            }
+        }
+
+        public void UpdateAdmin(Administrators adminAcc)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var admin = context.Administrators.SingleOrDefault(el => el.login == adminAcc.login);
+                if (admin != null) admin.roles = adminAcc.roles;
+
+                context.SaveChanges();
+            }
+        }
+
+
+        //public Administrators GetAdmin(string login)
+        //{
+        //    using (var context = new CoursesOfChoiceEntities())
+        //    {
+        //        var admin = context.Administrators.SingleOrDefault(el => el.login == login);
+
+        //        return admin;
+        //    }
+        //}
+
+        public IEnumerable<Administrators> GetAdmins()
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var adminList = context.Administrators;
+
+                return adminList.ToList();
+            }
+        }
+        #endregion
+
+        #region students 
+        //public IEnumerable<string> GetStudentEmails()
+        //{
+        //    var students = GetStudents().Where(student => student.fio.Contains(" ") && student.Deleted == false && !string.IsNullOrEmpty(student.eMail));
+
+        //    var result =
+        //        from student in students
+        //        select student.eMail;
+        //    return result.ToList();
+
+        //}
+
+
+        /// <summary>
+        /// get student by his Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        //public Students GetStudentById(string id)
+        //{
+        //    using (var context = new CoursesOfChoiceEntities())
+        //    {
+        //        var student = context.Students.SingleOrDefault(st => st.id == id);
+        //        return student;
+        //    }
+        //}
+
+        /// <summary>
+        /// get student whose name contains partOfName param
+        /// </summary>
+        /// <param name="partOfName"></param>
+        /// <returns></returns>
+        //public IEnumerable<Students> GetStudents(string partOfName)
+        //{
+        //    using (var context = new CoursesOfChoiceEntities())
+        //    {
+        //        var students = context.Students.Where(el => el.fio.Contains(partOfName));
+        //        return students.ToList();
+        //    }
+        //}
+
+        /// <summary>
+        /// Get students list that have the same discipline by discipline id
+        /// </summary>
+        /// <param name="disciplineId"></param>
+        /// <param name="wave"></param>
+        /// <returns></returns>
+        private IEnumerable<Students> GetStudents(int disciplineId, int wave)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var discipline = context.Disciplines.SingleOrDefault(disc => disc.id == disciplineId);
+                if (discipline != null)
+                {
+                    var groupList = discipline.Group;
+                    var existingGroups = groupList.SingleOrDefault(gr => gr.Deleted == false && gr.Wave == wave);
+
+                    var stInGroup = existingGroups?.StudentsInGroups;
+                    if (stInGroup != null)
+                    {
+                        var stList =
+                            from stInGr in stInGroup
+                            join student in context.Students on stInGr.studentID equals student.id
+                            where student.Deleted == false
+                            select student;
+
+                        return stList.ToList();
+                    }
+
+                }
+
+                return new List<Students>();
+
+            }
+        }
+
+        /// <summary>
+        /// Update student who has id == student.id
+        /// </summary>
+        /// <param name="student"></param>
+        public void UpdateStudent(Students student)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var studentToUpdate = context.Students.SingleOrDefault(st => st.id == student.id);
+                if (studentToUpdate != null)
+                {
+                    studentToUpdate.fio = student.fio;
+                    studentToUpdate.course = student.course;
+                    studentToUpdate.@group = student.@group;
+                    studentToUpdate.AverageMark = student.AverageMark;
+                    studentToUpdate.Deleted = student.Deleted;
+                }
+
+
+                context.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// Add new student
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
+        public bool AddStudent(Students student)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                bool valToReturn = true;
+                if (context.Students.Any(el => el.id == student.id))
+                {
+                    valToReturn = false;
+                }
+                else
+                {
+                    context.Students.Add(student);
+                    context.SaveChanges();
+                }
+
+                return valToReturn;
+            }
+        }
+
+        /// <summary>
+        /// "Deleting" student ( means make his Deleted attr true)
+        /// </summary>
+        /// <param name="id">Student id</param>
+        /// <returns>State of operation</returns>
+        public bool DeleteStudent(string id)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var student = context.Students.SingleOrDefault(st => st.id == id);
+
+                if (student != null && student.Deleted)
+                {
+                    return false;
+                }
+                else
+                {
+                    if (student != null) student.Deleted = true;
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+        }
+
+
+        #endregion
+
+        #region disciplines
+
+
+        /// <summary>
+        /// Delete discipline
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool DeleteDiscipline(int id)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var discipline = context.Disciplines.SingleOrDefault(disc => disc.id == id);
+                if (discipline == null )
+                {
+                    return false;
+                }
+                else
+                {
+                    var singleOrDefault = discipline.Group.SingleOrDefault(gr => gr.Deleted == false && gr.Wave == 1);
+                  //  if (singleOrDefault != null && singleOrDefault.AmountOfStudent == 0)
+                    {
+                        var groups = discipline.Group.ToList();
+                        foreach (var gr in groups)
+                        {
+                            var sigs = gr.StudentsInGroups;
+
+                            context.Set<StudentsInGroups>().RemoveRange(sigs);
+                            context.Set<Group>().Remove(gr);
+                        }
+                        
+
+                        context.Set<Disciplines>().Remove(discipline);
+                        context.SaveChanges();
+                        return true;
+                    }
+                  //  else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Get list of Disciplines filtered by name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        //public IEnumerable<Disciplines> GetDisciplines(string name)
+        //{
+        //    using (var context = new CoursesOfChoiceEntities())
+        //    {
+        //        var disciplines = context.Disciplines.Where(el => el.name.Contains(name));
+        //        return disciplines.ToList();
+        //    }
+        //}
+
+        /// <summary>
+        /// Get discipline which has id == id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Disciplines GetDiscipline(int id)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var disciplines = context.Disciplines.Where(d => d.id == id).ToList();
+
+                return disciplines.SingleOrDefault();
+            }
+        }
+
+        /// <summary>
+        /// Update discipline with values from discipline param
+        /// </summary>
+        /// <param name="discipline"></param>
+        public void UpdateDiscipline(Disciplines discipline)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var disciplineToUpdate = context.Disciplines.SingleOrDefault(disc => disc.id == discipline.id);
+                if (disciplineToUpdate != null)
+                {
+                    disciplineToUpdate.name = discipline.name;
+                    disciplineToUpdate.lecturer = discipline.lecturer;
+                    disciplineToUpdate.kafedra = discipline.kafedra;
+                    disciplineToUpdate.course = discipline.course;
+                    disciplineToUpdate.description = discipline.description;
+                }
+
+
+                context.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// Add new discipline
+        /// </summary>
+        /// <param name="discipline"></param>
+        /// <returns></returns>
+        public bool AddDiscipline(Disciplines discipline)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var valToReturn = true;
+                if (context.Disciplines.Any(el => el.name == discipline.name))
+                {
+                    valToReturn = false;
+                }
+                else
+                {
+                    context.Disciplines.Add(discipline);
+                    context.SaveChanges();
+                }
+
+                return valToReturn;
+            }
+        }
+
+        #endregion
+    }
+}
