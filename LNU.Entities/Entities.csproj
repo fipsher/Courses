@@ -111,6 +111,9 @@
     <Compile Include="Group.cs">
       <DependentUpon>CoursesDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Lecturer.cs">
+      <DependentUpon>CoursesDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Students.cs">
       <DependentUpon>CoursesDataModel.tt</DependentUpon>

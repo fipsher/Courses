@@ -265,7 +265,7 @@ namespace LNU.Courses.Repositories
 
         #endregion
         #region Discipline
-        public IEnumerable<Disciplines> GetDisciplinesSort(string login,int wave)
+        public List<Disciplines> GetDisciplinesSort(string login,int wave)
         {
             //tyt
             using (var context = new CoursesOfChoiceEntities())
@@ -297,8 +297,13 @@ namespace LNU.Courses.Repositories
                         }
                     }
                 }
-
-                return disciplines;
+                disciplines.ForEach(el =>
+                {
+                    Lecturer toAdd = new Lecturer();
+                    toAdd.fullName = el.Lecturers.fullName;
+                    el.Lecturers = toAdd;
+                });
+                return disciplines.ToList();
             }
         }
 
@@ -329,13 +334,18 @@ namespace LNU.Courses.Repositories
                 var groups = from gr in context.Group
                              join sig in sTinGroup on gr.id equals sig.groupID
                              select gr;
-                var discplines = (from gr in groups
+                var disciplines = (from gr in groups
                                   join dic in context.Disciplines on gr.disciplinesID equals dic.id
                                   select dic).ToList();
 
+                disciplines.ForEach(el =>
+                {
+                    Lecturer toAdd = new Lecturer();
+                    toAdd.fullName = el.Lecturers.fullName;
+                    el.Lecturers = toAdd;
+                });
 
-
-                return discplines;
+                return disciplines;
             }
         }
 

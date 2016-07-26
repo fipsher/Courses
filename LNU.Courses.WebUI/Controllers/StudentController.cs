@@ -33,11 +33,11 @@ namespace LNU.Courses.Controllers
         }
         [StudentAuthorize(Roles = "User")]
 
-        [ChildActionOnly]
-        public PartialViewResult GetDisciplineStudentCount(int disciplineId, int wave)
+
+        public int GetDisciplineStudentCount(int disciplineId, int wave)
         {
             var studCount = _repoBl.GetStudents(disciplineId, wave).Count();
-            return PartialView("_disciplineStudentAmount", studCount);
+            return studCount;
         }
         // GET: Student
         [StudentAuthorize(Roles = "User")]
@@ -101,7 +101,7 @@ namespace LNU.Courses.Controllers
             studInGroup.groupID = group.id;
             studInGroup.studentID = SessionPersister.Login;
             studInGroup.DateOfRegister = DateTime.Now;
-            
+
             if (DateTime.Now.Year == group.year)
                 using (var context = new CoursesOfChoiceEntities())
                 {
@@ -112,7 +112,7 @@ namespace LNU.Courses.Controllers
 
             return View("YouAreRegisted", disciplineAcc);
         }
-        public ActionResult GetDisciplines()
+        public ActionResult GetDisciplines(DisciplineSortingEnum? sortBy)
         {
 
             if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
@@ -161,7 +161,50 @@ namespace LNU.Courses.Controllers
             ViewBag.Login = SessionPersister.Login;
             ViewBag.List = repository.GetD(SessionPersister.Login);
             ViewBag.NotDisciplines = repository.GetDisciplineWhereRegistered(SessionPersister.Login);
-            return View(repository.GetDisciplinesSort(SessionPersister.Login,ViewBag.Wave));
+
+            List<Disciplines> disciplines = repository.GetDisciplinesSort(SessionPersister.Login, ViewBag.Wave);
+            List<DisciplineViewModel> disciplinesSort = new List<DisciplineViewModel>();
+            disciplines.ForEach(el =>
+            {
+                disciplinesSort.Add(new DisciplineViewModel(el));
+                disciplinesSort.Last().firstWave = GetDisciplineStudentCount(el.id, 1);
+                disciplinesSort.Last().secondWave = GetDisciplineStudentCount(el.id, 2);
+            });
+
+
+
+            if (sortBy.HasValue)
+            {
+                switch (sortBy)
+                {
+                    case DisciplineSortingEnum.Course:
+                        {
+                            disciplinesSort.Sort((el1, el2) => el1.course.CompareTo(el2.course));
+                        }
+                        break;
+                    case DisciplineSortingEnum.Kafedra:
+                        {
+                            disciplinesSort.Sort((el1, el2) => String.Compare(el1.kafedra, el2.kafedra, StringComparison.Ordinal));
+                        }
+                        break;
+                    case DisciplineSortingEnum.Name:
+                        {
+                            disciplinesSort.Sort((el1, el2) => String.Compare(el1.name, el2.name, StringComparison.Ordinal));
+                        }
+                        break;
+                    case DisciplineSortingEnum.FirstWave:
+                        {
+                            disciplinesSort.Sort((el1, el2) => el1.firstWave.CompareTo(el2.firstWave) * (-1));
+                        }
+                        break;
+                    case DisciplineSortingEnum.SecondWave:
+                        {
+                            disciplinesSort.Sort((el1, el2) => el1.secondWave.CompareTo(el2.secondWave) * (-1));
+                        }
+                        break;
+                }
+            }
+            return View(disciplinesSort);
         }
         public ActionResult EditPhone()
         {

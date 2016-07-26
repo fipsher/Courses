@@ -157,7 +157,7 @@ namespace LNU.Courses.BLL.DeadlinesBLL
             var studentsInGroups = stdInGroups as IList<StudentsInGroups> ?? stdInGroups.ToList();
             var studentsList = students as IList<Students> ?? students.ToList();
 
-            //find std id that registered only once
+            //find std id that is notregistered
             var notRegisteredStd = (from std in studentsList
                                     join sig in studentsInGroups on std.id equals sig.studentID into loj
                                     from l in loj.DefaultIfEmpty()

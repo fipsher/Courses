@@ -25,8 +25,8 @@ namespace LNU.Courses.Security
                 {
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new
                     {
-                        controller = "Home",
-                        action = "Index"
+                        controller = "Account",
+                        action = "AccessDenied"
                     }));
                 }
             }

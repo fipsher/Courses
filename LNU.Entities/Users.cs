@@ -11,14 +11,13 @@ namespace Entities
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
+    
     public partial class Users
     {
-        [DisplayName("Ћог≥н")]
         public string login { get; set; }
-        [DisplayName("ѕароль")]
         public string password { get; set; }
     
         public virtual Students Students { get; set; }
+        public virtual Students Students1 { get; set; }
     }
 }

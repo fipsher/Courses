@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model LNU.Courses.Models.Account
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @ViewBag.Error
+    <div>Щоб зайти в систему будь-ласка введіть номер вашой заліковки, та вай податковий ідентифікаційний номер</div>
+    <table cellpadding="2" cellspacing="2">
+        <tr>
+            <td>@Html.Label("Номер заліковки")</td>
+            <td>
+                @*@Html.TextBoxFor(model => model.Login)*@
+                <input type="text" name="login" class="form-control" />
+            </td>
+            <td>@Html.ValidationMessageFor(model => model.Login)</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Ідентифікаційний")</td>
+            <td>
+                @*@Html.PasswordFor(model => model.Password)*@
+                <input type="password" name="password" class="form-control" />
+
+            </td>
+            <td>@Html.ValidationMessageFor(model => model.Password)</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Залогуватися" class="btn btn-default" /></td>
+        </tr>
+    </table>
+}

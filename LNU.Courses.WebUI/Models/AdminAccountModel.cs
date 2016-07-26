@@ -21,13 +21,17 @@ namespace LNU.Courses.WebUI.Models
         public Account Find(string login)
         {
             var admin = _repoBl.GetAdmin(login);
-            Account acc = new Account()
+            if (admin != null)
             {
-                Login = admin.login,
-                Password = _hashProvider.Encrypt(admin.password),
-                Roles = admin.roles.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)
-            };
-            return acc;
+                Account acc = new Account()
+                {
+                    Login = admin.login,
+                    Password = _hashProvider.Encrypt(admin.password),
+                    Roles = admin.roles.Split(new char[] {' ', ','}, StringSplitOptions.RemoveEmptyEntries)
+                };
+                return acc;
+            }
+            return null;
         }
 
         public Account Login(string login, string password)

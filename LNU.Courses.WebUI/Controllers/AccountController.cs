@@ -33,9 +33,8 @@ namespace LNU.Courses.Controllers
                 if (acc != null)
                 {
                     SessionPersister.Login = acc.Login;
-                    Session.Add("RolesOfPerson", acc.Roles);
-    
-                    return View("../Student/Index");
+                    Session.Add("Roles", acc.Roles);
+                    return RedirectToAction("GetDisciplines", "Student");
                 }
                 else
                 {
@@ -69,7 +68,7 @@ namespace LNU.Courses.Controllers
                     SessionPersister.Login = acc.Login;                  
 
                     Session.Add("Roles", acc.Roles);
-                    return View("../Admin/Index");
+                    return RedirectToAction("GetCourses", "Shared");
                 }
                 else
                 {
@@ -87,6 +86,11 @@ namespace LNU.Courses.Controllers
         {
             SessionPersister.Login = string.Empty;
             return new RedirectResult("Login");
+        }
+
+        public ActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

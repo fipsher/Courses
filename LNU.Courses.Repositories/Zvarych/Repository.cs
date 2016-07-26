@@ -7,6 +7,43 @@ namespace LNU.Courses.Repositories
 {
     public partial class Repository : IRepository
     {
+
+        public IEnumerable<Lecturer> GetLecturers()
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                return context.Lecturers.ToList();
+            }
+        }
+        public bool DeleteLecturer(Lecturer lecturer)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                try
+                {
+                    Administrators adm = GetAdmins().SingleOrDefault(el => el.lecturerId == lecturer.Id);
+                    if (adm != null) DeleteAdmin(adm.login);
+                    var lectToDelete = context.Lecturers.SingleOrDefault(el => el.Id == lecturer.Id);
+                    context.Lecturers.Remove(lectToDelete);
+                    context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public void AddLecturer(Lecturer lecturer)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                context.Lecturers.Add(lecturer);
+                context.SaveChanges();
+            }
+        }
+
         public IEnumerable<Users> GetUsers()
         {
             using (var context = new CoursesOfChoiceEntities())
@@ -28,7 +65,15 @@ namespace LNU.Courses.Repositories
             using (var context = new CoursesOfChoiceEntities())
             {
                 var disciplines = context.Disciplines.ToList();
-
+                disciplines.ForEach(el =>
+                {
+                    Lecturer toAdd = new Lecturer();
+                    if (el.Lecturers != null)
+                    {
+                        toAdd.fullName = el.Lecturers.fullName;
+                    }
+                    el.Lecturers = toAdd;
+                });
                 return disciplines;
             }
         }
@@ -112,7 +157,11 @@ namespace LNU.Courses.Repositories
             using (var context = new CoursesOfChoiceEntities())
             {
                 var admin = context.Administrators.SingleOrDefault(el => el.login == adminAcc.login);
-                if (admin != null) admin.roles = adminAcc.roles;
+                if (admin != null)
+                {
+                    admin.roles = adminAcc.roles;
+                    admin.password = adminAcc.password;
+                }
 
                 context.SaveChanges();
             }
@@ -293,12 +342,12 @@ namespace LNU.Courses.Repositories
         /// <returns></returns>
         public Disciplines GetDiscipline(int id)
         {
-            using (var context = new CoursesOfChoiceEntities())
-            {
-                var disciplines = context.Disciplines.Where(d => d.id == id).ToList();
+            var temp = GetDisciplines();
+            var disciplines = temp as IList<Disciplines> ?? temp.ToList();
 
-                return disciplines.SingleOrDefault();
-            }
+            var discipline = disciplines.SingleOrDefault(el => el.id == id);
+
+            return discipline;
         }
 
         /// <summary>
@@ -310,12 +359,13 @@ namespace LNU.Courses.Repositories
             using (var context = new CoursesOfChoiceEntities())
             {
                 var disciplineToUpdate = context.Disciplines.SingleOrDefault(disc => disc.id == discipline.id);
+
                 if (disciplineToUpdate != null)
                 {
-                    disciplineToUpdate.name = discipline.name;
-                    disciplineToUpdate.lecturer = discipline.lecturer;
-                    disciplineToUpdate.kafedra = discipline.kafedra;
-                    disciplineToUpdate.course = discipline.course;
+                    disciplineToUpdate.name = discipline.name ?? disciplineToUpdate.name;
+                    disciplineToUpdate.lecturerId = discipline.lecturerId;
+                    disciplineToUpdate.kafedra = discipline.kafedra ?? disciplineToUpdate.kafedra;
+                    disciplineToUpdate.course = discipline.course != 0 ? discipline.course : disciplineToUpdate.course;
                     disciplineToUpdate.description = discipline.description;
                 }
 

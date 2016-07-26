@@ -15,13 +15,17 @@ namespace LNU.Courses.Models
         public Account Find(string login)
         {
             var user = repository.GetUser(login);
-            Account acc = new Account()
+            if (user != null)
             {
-                Login = user.login,
-                Password = hashProvider.Encrypt(user.password),
-                Roles = new string[] { "User" }
-            };
-            return acc;
+                Account acc = new Account()
+                {
+                    Login = user.login,
+                    Password = hashProvider.Encrypt(user.password),
+                    Roles = new string[] {"User"}
+                };
+                return acc;
+            }
+            return null;
         }
 
         public Account Login(string login, string password)

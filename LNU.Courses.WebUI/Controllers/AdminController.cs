@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web.Mvc;
 using Entities;
 using LNU.Courses;
@@ -42,7 +44,75 @@ namespace LNU.Courses.Controllers
             return View("Index");
         }
         #endregion
+        [ChildActionOnly]
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        public string GetLecturerList(int? lecturerId)
+        {
+            var lectList = _repository.GetLecturers().ToList();
+            StringBuilder result = new StringBuilder();
+            result.Append("<select name = 'lecturerId' class='btn btn-default dropdown-toggle'> ");
+            result.Append($"<option value='{null}'>{null}</option>");
+            lectList.ForEach(el =>
+            {
+                string selected = el.Id == lecturerId ? "selected" : "";
+                result.Append($"<option {selected} value='{el.Id}'>{el.fullName}</option>");
+            });
+            result.Append("</select>");
 
+            return result.ToString();
+        }
+
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        public ActionResult DeleteLecturer(int id)
+        {
+            var lecturer = _repository.GetLecturers().SingleOrDefault(el => el.Id == id);
+            return View(lecturer);
+        }
+
+        [HttpPost]
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        public ActionResult DeleteLecturer(Lecturer lecturer)
+        {
+            ViewBag.Status = _repository.DeleteLecturer(lecturer);
+
+            return View(lecturer);
+        }
+
+
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        public ActionResult GetLecturers()
+        {
+            var lecturers = _repository.GetLecturers();
+            return View(lecturers);
+        }
+
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        public ActionResult CreateLecturer()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        public ActionResult CreateLecturer(LecturerWithCredentials lecturer)
+        {
+            Lecturer lect = new Lecturer()
+            {
+                fullName = lecturer.fullName,
+                phone = lecturer.phone
+            };
+            Administrators admin = new Administrators()
+            {
+                login = lecturer.login,
+                password = lecturer.password,
+                Lecturers = lect,
+                roles = "Lecturer"
+            };
+
+            _repository.AddAdmin(admin);
+            return RedirectToAction("GetLecturers", "Admin");
+
+        }
 
         public AdminController()
         {
@@ -162,7 +232,7 @@ namespace LNU.Courses.Controllers
 
         #region Admins managing
 
-        [AdminAuthorize(Roles = "SuperAdmin")]
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
         public ActionResult GetAdmins()
         {
             return View();
@@ -182,9 +252,13 @@ namespace LNU.Courses.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditAdmin(Administrators adminAcc)
         {
+            ViewBag.Status = false;
 
-            _repository.UpdateAdmin(adminAcc);
-
+            if (ModelState.IsValid)
+            {
+                ViewBag.Status = true;
+                _repository.UpdateAdmin(adminAcc);
+            }
             return View(adminAcc);
         }
 
@@ -209,6 +283,7 @@ namespace LNU.Courses.Controllers
         [AdminAuthorize(Roles = "SuperAdmin")]
         public ActionResult DeleteAdmin(string login)
         {
+
             var admin = _repoBl.GetAdmin(login);
             return View(admin);
         }
@@ -223,39 +298,49 @@ namespace LNU.Courses.Controllers
         }
 
         [ChildActionOnly]
-        [AdminAuthorize(Roles = "SuperAdmin")]
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
         public PartialViewResult GetAdminsList()
         {
-            var adminList = _repository.GetAdmins();
+            var adminList = _repository.GetAdmins().Where(el => !el.roles.Contains("Lecturer"));
             return PartialView("_adminList", adminList);
         }
         #endregion
 
         #region Courses managing
-        /// <summary>
-        /// Get table of disciplines which contains param name in their names
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        [HttpGet]
-        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
-        public ActionResult GetCourses(string name)
-        {
-            return View((object)name);
-        }
+
         /// <summary>
         /// Edit discipline which discipline.id == id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        [AdminAuthorize(Roles = "SuperAdmin,Admin, Lecturer")]
         public ActionResult EditDiscipline(int id)
         {
+            var login = SessionPersister.Login;
+            var roles = (string[])Session["Roles"];
+            bool flag = true;
+            var discipline = _repository.GetDiscipline(id);
 
-            var disc = _repository.GetDiscipline(id);
+            if (roles.Contains("Lecturer"))
+            {
+                var lectorId = _repoBl.GetAdmin(login).lecturerId;
+                if (discipline.lecturerId != lectorId)
+                {
+                    flag = false;
+                }
+            }
 
-            return View(disc);
+            if (flag)
+            {
+                ViewBag.SuperAdmin = _repoBl.GetAdmin(SessionPersister.Login).roles.ToLower().Contains("superadmin");
+                var disc = _repository.GetDiscipline(id);
+                var lectId = _repoBl.GetAdmin(login).lecturerId;
+                disc.Lecturers = _repository.GetLecturers().SingleOrDefault(el => el.Id == lectId);
+                return View(disc);
+            }
+
+            return RedirectToAction("AccessDenied", "Account");
         }
 
         /// <summary>
@@ -264,15 +349,19 @@ namespace LNU.Courses.Controllers
         /// <param name="discipline"></param>
         /// <returns></returns>
         [HttpPost]
-        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        [AdminAuthorize(Roles = "SuperAdmin,Admin, Lecturer")]
         [ValidateAntiForgeryToken]
         public ActionResult EditDiscipline(Disciplines discipline)
         {
             if (ModelState.IsValid)
             {
+                if (discipline.Lecturers == null)
+                {
+                    //discipline.lecturerId = null;
+                }
                 _repository.UpdateDiscipline(discipline);
             }
-            return View(discipline);
+            return View("GetCourses");
         }
 
         /// <summary>
@@ -280,7 +369,7 @@ namespace LNU.Courses.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        [AdminAuthorize(Roles = "SuperAdmin")]
         public ActionResult CreateDiscipline()
         {
             return View();
@@ -293,7 +382,7 @@ namespace LNU.Courses.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        [AdminAuthorize(Roles = "SuperAdmin")]
         public ActionResult CreateDiscipline(Disciplines discipline)
         {
             if (ModelState.IsValid)
@@ -305,15 +394,17 @@ namespace LNU.Courses.Controllers
         }
 
 
-        [AdminAuthorize(Roles = "SuperAdmin, Admin")]
-        public ActionResult DetailsOfDiscipline(int id)
-        {
-            var discipline = _repository.GetDiscipline(id);
-            return View(discipline);
-        }
+        //[AdminAuthorize(Roles = "SuperAdmin, Admin, Lecturer")]
+        //public ActionResult DetailsOfDiscipline(int id, StudentSortingEnum? sortBy)
+        //{
+        //    var discipline = _repository.GetDiscipline(id);
+        //    ViewBag.Id = id;
+        //    ViewBag.SortBy = sortBy;
+        //    return View(discipline);
+        //}
 
         [HttpGet]
-        [AdminAuthorize(Roles = "SuperAdmin, Admin")]
+        [AdminAuthorize(Roles = "SuperAdmin")]
         public ActionResult DeleteDiscipline(int id)
         {
             var discipline = _repository.GetDiscipline(id);
@@ -322,7 +413,7 @@ namespace LNU.Courses.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AdminAuthorize(Roles = "SuperAdmin, Admin")]
+        [AdminAuthorize(Roles = "SuperAdmin")]
         public ActionResult DeleteDiscipline(Disciplines discipline)
         {
             ViewBag.DeleteDisciplineResult = _repository.DeleteDiscipline(discipline.id);
@@ -338,32 +429,42 @@ namespace LNU.Courses.Controllers
         /// <returns></returns>
         [ChildActionOnly]
         [AdminAuthorize(Roles = "SuperAdmin, Admin")]
-        public PartialViewResult GetDisciplineStudents(int disciplineId, int wave)
+        public PartialViewResult GetDisciplineStudents(int disciplineId, int wave, StudentSortingEnum? sortBy)
         {
-            var studentsList = _repoBl.GetStudents(disciplineId, wave);
+            var studentsList = _repoBl.GetStudents(disciplineId, wave).ToList();
+            ViewBag.Id = disciplineId;
+            if (sortBy.HasValue)
+            {
+                switch (sortBy)
+                {
+                    case StudentSortingEnum.AverageMark:
+                        {
+                            studentsList.Sort((el1, el2) => el1.AverageMark.CompareTo(el2.AverageMark));
+                        }
+                        break;
+                    case StudentSortingEnum.Course:
+                        {
+                            studentsList.Sort((el1, el2) => el1.course.CompareTo(el2.course));
+                        }
+                        break;
+                    case StudentSortingEnum.Fio:
+                        {
+                            studentsList.Sort((el1, el2) => String.CompareOrdinal(el1.fio, el2.fio));
+                        }
+                        break;
+                    case StudentSortingEnum.Group:
+                        {
+                            studentsList.Sort((el1, el2) => String.CompareOrdinal(el1.group, el2.group));
+                        }
+                        break;
+                }
+            }
             var admin = _repoBl.GetAdmin(SessionPersister.Login);
             if (admin.roles == "SuperAdmin")
                 ViewBag.Admin = 1;
-
-            return PartialView("_stList", studentsList);
+            return PartialView("_DisciplineStudents", studentsList);
         }
 
-        /// <summary>
-        /// partial viewe of disciplines
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        [ChildActionOnly]
-        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
-        public PartialViewResult GetDisciplinesList(string name)
-        {
-            var discList = _repoBl.GetDisciplines(name);
-            var admin = _repoBl.GetAdmin(SessionPersister.Login);
-            if (admin.roles == "SuperAdmin")
-                ViewBag.Admin = 1;
-
-            return PartialView("_discList", discList);
-        }
 
         /// <summary>
         /// Get amount of students that assign to such discipline
@@ -371,14 +472,13 @@ namespace LNU.Courses.Controllers
         /// <param name="disciplineId"></param>
         /// <param name="wave"></param>
         /// <returns></returns>
-        [ChildActionOnly]
         [AdminAuthorize(Roles = "SuperAdmin,Admin")]
-        public PartialViewResult GetDisciplineStudentCount(int disciplineId, int wave)
+        public int GetDisciplineStudentCount(int disciplineId, int wave)
         {
             var temp = _repository.GetGroupByDisciplinesId(disciplineId, wave);
 
             var studCount = temp?.AmountOfStudent ?? 0;
-            return PartialView("_disciplineStudentAmount", studCount);
+            return studCount;
         }
         #endregion
 
@@ -389,14 +489,15 @@ namespace LNU.Courses.Controllers
         /// </summary>
         /// <param name="fio"></param>
         /// <param name="index"></param>
+        /// <param name="sortBy"></param>
         /// <returns></returns>
         [HttpGet]
         [AdminAuthorize(Roles = "SuperAdmin")]
-        public ActionResult GetStudents(string fio, string index = "1")
+        public ActionResult GetStudents(string fio, StudentSortingEnum? sortBy, string index = "1")
         {
             var ind = 1;
             int.TryParse(index, out ind);
-
+            ViewBag.SortBy = sortBy;
             ViewBag.StudLength = (int)(_repoBl.GetStudents(fio).Count() / (double)MaxStdOnPage);
             ViewBag.index = ind + 1;
             return View((object)fio);
@@ -424,9 +525,12 @@ namespace LNU.Courses.Controllers
         [AdminAuthorize(Roles = "SuperAdmin")]
         public ActionResult EditStudent(Students student)
         {
+            ViewBag.Status = false;
+
             if (ModelState.IsValid)
             {
                 _repository.UpdateStudent(student);
+                ViewBag.Status = true;
             }
             return View("EditStudent", student);
         }
@@ -487,15 +591,42 @@ namespace LNU.Courses.Controllers
         /// Partial view of students list who have student.fio == fio
         /// </summary>
         /// <param name="fio"></param>
+        /// <param name="sortBy"></param>
         /// <param name="index"></param>
         /// <returns></returns>
         [ChildActionOnly]
         [AdminAuthorize(Roles = "SuperAdmin")]
-        public PartialViewResult GetStudentsList(string fio, string index = "1")
+        public PartialViewResult GetStudentsList(string fio, StudentSortingEnum? sortBy, string index = "1")
         {
             var studentsList = _repoBl.GetStudents(fio).ToList();
             var ind = 1;
 
+            if (sortBy.HasValue)
+            {
+                switch (sortBy)
+                {
+                    case StudentSortingEnum.AverageMark:
+                        {
+                            studentsList.Sort((el1, el2) => el1.AverageMark.CompareTo(el2.AverageMark));
+                        }
+                        break;
+                    case StudentSortingEnum.Course:
+                        {
+                            studentsList.Sort((el1, el2) => el1.course.CompareTo(el2.course));
+                        }
+                        break;
+                    case StudentSortingEnum.Fio:
+                        {
+                            studentsList.Sort((el1, el2) => String.CompareOrdinal(el1.fio, el2.fio));
+                        }
+                        break;
+                    case StudentSortingEnum.Group:
+                        {
+                            studentsList.Sort((el1, el2) => String.CompareOrdinal(el1.group, el2.group));
+                        }
+                        break;
+                }
+            }
             int.TryParse(index, out ind);
             if ((studentsList.Count / MaxStdOnPage) > ind)
             {
@@ -513,8 +644,9 @@ namespace LNU.Courses.Controllers
                 }
                 //ViewBag.EnabledNext = true;
             }
-		if (_repoBl.GetAdmin(SessionPersister.Login).roles == "SuperAdmin")
-                	ViewBag.Admin = 1;
+            if (_repoBl.GetAdmin(SessionPersister.Login).roles == "SuperAdmin")
+                ViewBag.Admin = 1;
+            ViewBag.Fio = fio;
             return PartialView("_stList", studentsList);
         }
         #endregion

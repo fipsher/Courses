@@ -11,14 +11,14 @@ namespace Entities
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
+    
     public partial class Administrators
     {
-        [DisplayName("Логін")]
         public string login { get; set; }
-        [DisplayName("Пароль")]
         public string password { get; set; }
-        [DisplayName("Роль")]
         public string roles { get; set; }
+        public Nullable<int> lecturerId { get; set; }
+    
+        public virtual Lecturer Lecturers { get; set; }
     }
 }

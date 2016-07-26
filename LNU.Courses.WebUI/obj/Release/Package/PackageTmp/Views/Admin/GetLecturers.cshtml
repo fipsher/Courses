@@ -1,0 +1,38 @@
+﻿@model System.Collections.Generic.IEnumerable<Entities.Lecturer>
+
+@{
+    ViewBag.Title = "GetLecturers";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>GetLecturers</h2>
+
+<p>
+    @Html.ActionLink("Додати нового", "CreateLecturer")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "DeleteLecturer", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

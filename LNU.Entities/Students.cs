@@ -11,7 +11,7 @@ namespace Entities
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
+    
     public partial class Students
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,27 +19,20 @@ namespace Entities
         {
             this.StudentsInGroups = new HashSet<StudentsInGroups>();
         }
-        
+    
         public string id { get; set; }
-        [DisplayName("Фіо")]
         public string fio { get; set; }
-        [DisplayName("Курс")]
         public int course { get; set; }
-        [DisplayName("Група")]
         public string group { get; set; }
-        [DisplayName("Середній бал")]
         public double AverageMark { get; set; }
-        [DisplayName("Пошта")]
         public string eMail { get; set; }
-        [DisplayName("Телефон")]
         public string phoneNumber { get; set; }
-        [DisplayName("Видалений")]
         public bool Deleted { get; set; }
-        [DisplayName("Заблокований")]
         public bool locked { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StudentsInGroups> StudentsInGroups { get; set; }
         public virtual Users Users { get; set; }
+        public virtual Users Users1 { get; set; }
     }
 }

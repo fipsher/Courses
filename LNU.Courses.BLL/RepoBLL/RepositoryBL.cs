@@ -29,7 +29,7 @@ namespace LNU.Courses.BLL.RepoBLL
             var temp = _repository.GetDisciplines();
             var disciplines = temp as IList<Disciplines> ?? temp.ToList();
 
-            var discipline = disciplines.Where(el => el.name.Contains(name));
+            var discipline = disciplines.Where(el => el.name.ToLower().Contains(name.ToLower()));
             return discipline.ToList();
 
         }
@@ -55,7 +55,7 @@ namespace LNU.Courses.BLL.RepoBLL
         public IEnumerable<Students> GetStudents(string partOfName)
         {
 
-            var students = _repository.GetStudents().Where(el => el.fio.Contains(partOfName));
+            var students = _repository.GetStudents().Where(el => el.fio.ToLower().Contains(partOfName.ToLower()));
             return students.ToList();
 
         }
@@ -175,7 +175,54 @@ namespace LNU.Courses.BLL.RepoBLL
             return eMails;
         }
 
+        public List<Students> GetNotRegisteredStudents()
+        {
+            var students = _repository.GetStudents();
+            var groups = _repository.GetGroups().Where(gr =>
+            {
+                var singleOrDefault = _repository.GetDisciplines().SingleOrDefault(d => d.id == gr.disciplinesID);
+                return singleOrDefault != null  && gr.Deleted == false;
+            });
+            var stdInGroups = _repository.GetStudentsInGroups().Where(sig => groups.Any(gr => gr.id == sig.groupID));
 
-   
+            var studentsInGroups = stdInGroups as IList<StudentsInGroups> ?? stdInGroups.ToList();
+            var studentsList = students as IList<Students> ?? students.ToList();
+
+            //find std id that is notregistered
+            var notRegisteredStd = (from std in studentsList
+                                    join sig in studentsInGroups on std.id equals sig.studentID into loj
+                                    from l in loj.DefaultIfEmpty()
+                                    where l == null
+                                    select std).ToList();
+
+            return notRegisteredStd;
+        }
+
+        public List<Students> GetOnceRegisteredStudents()
+        {
+            var students = _repository.GetStudents();
+            var groups = _repository.GetGroups().Where(gr =>
+            {
+                var singleOrDefault = _repository.GetDisciplines().SingleOrDefault(d => d.id == gr.disciplinesID);
+                return singleOrDefault != null &&  gr.Deleted == false;
+            });
+            var stdInGroups = _repository.GetStudentsInGroups().Where(sig => groups.Any(gr => gr.id == sig.groupID));
+
+            var studentsInGroups = stdInGroups as IList<StudentsInGroups> ?? stdInGroups.ToList();
+            var studentsList = students as IList<Students> ?? students.ToList();
+
+            //find std id that registered only once
+            var temp = from std in studentsList
+                       join sig in studentsInGroups on std.id equals sig.studentID into loj
+                       from l in loj.DefaultIfEmpty()
+                       where l != null
+                       group std by std.id into grp
+                       where grp.Count() == 1
+                       select grp.Key;
+            var onceRegisteredStd = (from std in studentsList
+                                     join t in temp on std.id equals t
+                                     select std).ToList();
+            return onceRegisteredStd;
+        }
     }
 }

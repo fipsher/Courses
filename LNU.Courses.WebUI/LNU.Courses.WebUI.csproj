@@ -209,12 +209,15 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\DisciplineSortingEnum.cs" />
+    <Compile Include="Models\DisciplineViewModel.cs" />
+    <Compile Include="Models\LecturerWithCredentials.cs" />
     <Compile Include="Models\staticData.cs" />
     <Compile Include="Models\StudentAccountModel.cs" />
     <Compile Include="Models\AdminAccountModel.cs" />
@@ -243,8 +246,9 @@
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Properties\PublishProfiles\Sem.pubxml" />
+    <None Include="Properties\PublishProfiles\andrew.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\custom\editCourseValidationScript.js" />
     <Content Include="Scripts\custom\stdListManaging.js" />
     <Content Include="Scripts\custom\validationScripts.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -275,7 +279,6 @@
     <Content Include="Views\Admin\GetStudents.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Account\AdminLogin.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\EditStudent.cshtml" />
     <Content Include="Views\Shared\_stList.cshtml" />
     <Content Include="Views\Admin\CreateStudent.cshtml" />
@@ -284,7 +287,7 @@
     <Content Include="Views\Admin\GetCourses.cshtml" />
     <Content Include="Views\Admin\EditDiscipline.cshtml" />
     <Content Include="Views\Admin\CreateDiscipline.cshtml" />
-    <Content Include="Views\Admin\DetailsOfDiscipline.cshtml" />
+    <Content Include="Views\Shared\DetailsOfDiscipline.cshtml" />
     <Content Include="Views\Shared\_disciplineStudentAmount.cshtml" />
     <Content Include="Views\Admin\DeleteDiscipline.cshtml" />
     <Content Include="Views\Shared\_adminList.cshtml" />
@@ -306,6 +309,14 @@
     <Content Include="Views\Admin\ChangeDeadLine.cshtml" />
     <Content Include="Views\Admin\ChangeCredentials.cshtml" />
     <Content Include="Views\Student\AboutDiscipline.cshtml" />
+    <Content Include="Views\Account\AccessDenied.cshtml" />
+    <Content Include="Views\Shared\_statistic.cshtml" />
+    <Content Include="Views\Shared\Info.cshtml" />
+    <Content Include="Views\Shared\GetCourses.cshtml" />
+    <Content Include="Views\Shared\_DisciplineStudents.cshtml" />
+    <Content Include="Views\Admin\GetLecturers.cshtml" />
+    <Content Include="Views\Admin\DeleteLecturer.cshtml" />
+    <Content Include="Views\Admin\CreateLecturer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -27,7 +27,7 @@ namespace LNU.Courses.Repositories
         List<int> GetDisciplinesForSecondWave();
         void ManUpGroupsForSecondWave();
         bool CheckStudentForRegistered(Students st);
-        IEnumerable<Disciplines> GetDisciplinesSort(string login,int wave);
+        List<Disciplines> GetDisciplinesSort(string login,int wave);
         void DeleteMyDiscipline(int id, string login);
         IEnumerable<Disciplines> GetD(string login);
         bool CheckRegisteredStudent(string id);
@@ -84,5 +84,8 @@ namespace LNU.Courses.Repositories
         Disciplines GetDiscipline(int id);
 
         void UpdateDiscipline(Disciplines discipline);
+        void AddLecturer(Lecturer lecturer);
+        bool DeleteLecturer(Lecturer lecturer);
+        IEnumerable<Lecturer> GetLecturers();
     }
 }
