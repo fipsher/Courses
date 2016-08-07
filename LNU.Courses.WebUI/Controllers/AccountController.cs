@@ -85,6 +85,7 @@ namespace LNU.Courses.Controllers
         public ActionResult Logout()
         {
             SessionPersister.Login = string.Empty;
+            Session.RemoveAll();
             return new RedirectResult("Login");
         }
 

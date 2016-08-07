@@ -1,4 +1,21 @@
 ﻿@using LNU.Courses.Security
+@{
+    string studentRole = "User";
+
+    var flag = true;
+
+    var temp = Session["Roles"];
+    List<string> roles = new List<string>();
+    if (temp != null)
+    {
+        roles = ((string[])temp).ToList();
+        if (roles.Contains(studentRole))
+        {
+            flag = false;
+        }
+    }
+
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +36,10 @@
             </div>
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Інформація", "Info", "Shared", null, null)</li>
-                <li>@Html.ActionLink("Дисципліни", "GetCourses", "Shared", null, null)</li>
+                @if (flag)
+                {
+                    <li>@Html.ActionLink("Дисципліни", "GetCourses", "Shared", null, null)</li>                    
+                }
                 @RenderSection("Header", false)
             </ul>
 
