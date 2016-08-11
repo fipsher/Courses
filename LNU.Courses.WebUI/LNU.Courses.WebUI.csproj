@@ -247,6 +247,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\andrew.pubxml" />
+    <None Include="Properties\PublishProfiles\Courses.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom\editCourseValidationScript.js" />
     <Content Include="Scripts\custom\stdListManaging.js" />
