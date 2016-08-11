@@ -46,10 +46,20 @@ namespace LNU.Courses.Repositories
 
         public IEnumerable<Users> GetUsers()
         {
-            using (var context = new CoursesOfChoiceEntities())
+            try
             {
-                return context.Users.ToList();
+                using (var context = new CoursesOfChoiceEntities())
+                {
+                    return context.Users.ToList();
+                }
             }
+            catch
+            {
+                using (var context = new CoursesOfChoiceEntities())
+                {
+                    return context.Users.ToList();
+                }
+            }            
         }
 
         public List<int> GetDisciplinesForSecondWave()
@@ -62,20 +72,41 @@ namespace LNU.Courses.Repositories
         }
         public IEnumerable<Disciplines> GetDisciplines()
         {
-            using (var context = new CoursesOfChoiceEntities())
+            try
             {
-                var disciplines = context.Disciplines.ToList();
-                disciplines.ForEach(el =>
+                using (var context = new CoursesOfChoiceEntities())
                 {
-                    Lecturer toAdd = new Lecturer();
-                    if (el.Lecturers != null)
+                    var disciplines = context.Disciplines.ToList();
+                    disciplines.ForEach(el =>
                     {
-                        toAdd.fullName = el.Lecturers.fullName;
-                    }
-                    el.Lecturers = toAdd;
-                });
-                return disciplines;
+                        Lecturer toAdd = new Lecturer();
+                        if (el.Lecturers != null)
+                        {
+                            toAdd.fullName = el.Lecturers.fullName;
+                        }
+                        el.Lecturers = toAdd;
+                    });
+                    return disciplines;
+                }
             }
+            catch
+            {
+                using (var context = new CoursesOfChoiceEntities())
+                {
+                    var disciplines = context.Disciplines.ToList();
+                    disciplines.ForEach(el =>
+                    {
+                        Lecturer toAdd = new Lecturer();
+                        if (el.Lecturers != null)
+                        {
+                            toAdd.fullName = el.Lecturers.fullName;
+                        }
+                        el.Lecturers = toAdd;
+                    });
+                    return disciplines;
+                }
+            }
+           
         }
 
         public void AddGroup(Group group)
@@ -180,11 +211,23 @@ namespace LNU.Courses.Repositories
 
         public IEnumerable<Administrators> GetAdmins()
         {
-            using (var context = new CoursesOfChoiceEntities())
+            try
             {
-                var adminList = context.Administrators;
+                using (var context = new CoursesOfChoiceEntities())
+                {
+                    var adminList = context.Administrators;
 
-                return adminList.ToList();
+                    return adminList.ToList();
+                }
+            }
+            catch
+            {
+                using (var context = new CoursesOfChoiceEntities())
+                {
+                    var adminList = context.Administrators;
+
+                    return adminList.ToList();
+                }
             }
         }
         #endregion

@@ -256,3 +256,9 @@ PeriodicalJobMaker/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
 PeriodicalJobMaker/obj/Release/LNU.Courses.PeriodicalJobMaker.csprojResolveAssemblyReference.cache
 PeriodicalJobMaker/obj/Release/LNU.Courses.PeriodicalJobMaker.dll
 PeriodicalJobMaker/obj/Release/LNU.Courses.PeriodicalJobMaker.pdb
+LNU.Courses.Tests/bin/
+LNU.Courses.Tests/obj/Debug/LNU.Courses.Tests.csprojResolveAssemblyReference.cache
+LNU.Courses.Tests/obj/Debug/LNU.Courses.Tests.dll
+LNU.Courses.Tests/obj/Debug/LNU.Courses.Tests.pdb
+LNU.Courses.WebUI/Properties/PublishProfiles/kk.pubxml
+LNU.Courses.WebUI/Properties/PublishProfiles/kk.pubxml.user

@@ -56,6 +56,5 @@ C:\Users\EXOFT-OS-01\Documents\Courses\PeriodicalJobMaker\bin\Release\System.Web
 C:\Users\EXOFT-OS-01\Documents\Courses\PeriodicalJobMaker\bin\Release\System.Web.WebPages.xml
 C:\Users\EXOFT-OS-01\Documents\Courses\PeriodicalJobMaker\bin\Release\System.Web.WebPages.Deployment.xml
 C:\Users\EXOFT-OS-01\Documents\Courses\PeriodicalJobMaker\bin\Release\System.Web.WebPages.Razor.xml
-C:\Users\EXOFT-OS-01\Documents\Courses\PeriodicalJobMaker\obj\Release\LNU.Courses.PeriodicalJobMaker.csprojResolveAssemblyReference.cache
 C:\Users\EXOFT-OS-01\Documents\Courses\PeriodicalJobMaker\obj\Release\LNU.Courses.PeriodicalJobMaker.dll
 C:\Users\EXOFT-OS-01\Documents\Courses\PeriodicalJobMaker\obj\Release\LNU.Courses.PeriodicalJobMaker.pdb
