@@ -3,7 +3,11 @@
     string studentRole = "User";
 
     var flag = true;
+    string supAdmRole = "SuperAdmin";
+    string adminRole = "Admin";
+    string lecturerRole = "Lecturer";
 
+    var adminFlag = false;
     var temp = Session["Roles"];
     List<string> roles = new List<string>();
     if (temp != null)
@@ -12,6 +16,10 @@
         if (roles.Contains(studentRole))
         {
             flag = false;
+        }
+        if (roles.Contains(adminRole) || roles.Contains(adminRole)|| roles.Contains(lecturerRole))
+        {
+            adminFlag = true;
         }
     }
 
@@ -39,6 +47,10 @@
                 @if (flag)
                 {
                     <li>@Html.ActionLink("Дисципліни", "GetCourses", "Shared", null, null)</li>                    
+                }
+                @if (adminFlag)
+                {
+                    <li>@Html.ActionLink("Змінити пароль", "ChangePass", "Admin", null, null)</li>
                 }
                 @RenderSection("Header", false)
             </ul>

@@ -135,7 +135,7 @@ namespace LNU.Courses.Controllers
         //}
 
 
-        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        [AdminAuthorize(Roles = "SuperAdmin,Admin,Lecturer")]
         public ActionResult ChangePass()
         {
             ViewBag.ChangePassValidate = null;
@@ -144,7 +144,7 @@ namespace LNU.Courses.Controllers
         }
 
         [HttpPost]
-        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        [AdminAuthorize(Roles = "SuperAdmin,Admin,Lecturer")]
         [ValidateAntiForgeryToken]
         public ActionResult ChangePass(string oldPass, string newPass, string checkNewPass)
         {
