@@ -27,6 +27,40 @@ namespace LNU.Courses.Controllers
             _repoBl = new RepositoryBL(_repository);
         }
 
+        [HttpGet]
+        public ActionResult ChangePhoneNumber()
+        {
+            return View("ChangeLectPhoneNumb");
+        }
+
+        [HttpPost]
+        [AdminAuthorize(Roles = "Lecturer")]
+        public ActionResult ChangePhoneNumber(string phoneNumb)
+        {
+            try
+            {
+                var login = SessionPersister.Login;
+                var singleOrDefault = _repository.GetAdmins().SingleOrDefault(el => el.login == login);
+                if (singleOrDefault != null)
+                {
+                    var lectID = singleOrDefault.lecturerId;
+                    var lecturer = _repository.GetLecturers().SingleOrDefault(el => el.Id == lectID);
+                    if (lecturer != null)
+                    {
+                        lecturer.phone = phoneNumb;
+                        _repository.UpdateLecturer(lecturer);
+
+                    }
+                }
+               
+            }
+            catch
+            {
+                // ignored
+            }
+            return View("GetCourses");
+        }
+
         #region temp
         [AdminAuthorize(Roles = "SuperAdmin,Admin")]
         public ActionResult FirstDeadlineStart()

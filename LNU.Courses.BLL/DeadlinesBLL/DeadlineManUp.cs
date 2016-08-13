@@ -36,9 +36,11 @@ namespace LNU.Courses.BLL.DeadlinesBLL
         private void manUpGroupsSecondly(int course)
         {
             var students = _repository.GetStudents().Where(std => std.course == course);
+            var disciplines = _repository.GetDisciplines();
+
             var groups = _repository.GetGroups().Where(gr =>
             {
-                var singleOrDefault = _repository.GetDisciplines().SingleOrDefault(d => d.id == gr.disciplinesID);
+                var singleOrDefault = disciplines.SingleOrDefault(d => d.id == gr.disciplinesID);
                 return singleOrDefault != null && singleOrDefault.course == course && gr.Deleted == false && gr.Wave == 1;
             });
             var stdInGroups = _repository.GetStudentsInGroups().Where(sig => groups.Any(gr => gr.id == sig.groupID));
@@ -147,9 +149,11 @@ namespace LNU.Courses.BLL.DeadlinesBLL
         private void manUpGroupsFirstly(int course)
         {
             var students = _repository.GetStudents().Where(std => std.course == course);
+            var disciplines = _repository.GetDisciplines();
+
             var groups = _repository.GetGroups().Where(gr =>
             {
-                var singleOrDefault = _repository.GetDisciplines().SingleOrDefault(d => d.id == gr.disciplinesID);
+                var singleOrDefault = disciplines.SingleOrDefault(d => d.id == gr.disciplinesID);
                 return singleOrDefault != null && singleOrDefault.course == course && gr.Deleted == false && gr.Wave == 1;
             });
             var stdInGroups = _repository.GetStudentsInGroups().Where(sig => groups.Any(gr => gr.id == sig.groupID));

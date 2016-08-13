@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel;
+
 namespace Entities
 {
     using System;
@@ -14,9 +16,11 @@ namespace Entities
     
     public partial class Users
     {
+        [DisplayName("Заліковка")] 
         public string login { get; set; }
+        [DisplayName("Ідентифікаційний")] 
         public string password { get; set; }
-    
+
         public virtual Students Students { get; set; }
         public virtual Students Students1 { get; set; }
     }

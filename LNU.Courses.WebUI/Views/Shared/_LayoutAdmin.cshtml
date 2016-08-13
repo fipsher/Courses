@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     string supAdmRole = "SuperAdmin";
+    string lectRole = "Lecturer";
+
     var temp = Session["Roles"];
     List<string> roles = new List<string>();
     if (temp != null)
@@ -14,7 +16,7 @@
 }
 
 @section Header {
- 
+
     @if (roles.Contains(supAdmRole))
     {
         <li>
@@ -37,16 +39,17 @@
     }
     @*<li>
 
-        @Html.ActionLink("Змінити пароль", "ChangePass", "Admin", null, null)
-    </li>*@
+            @Html.ActionLink("Змінити пароль", "ChangePass", "Admin", null, null)
+        </li>*@
     @*<li>
 
-            @Html.ActionLink("1 deadline", "FirstDeadlineStart", "Admin", null, null)
-        </li>
-        <li>
+        @Html.ActionLink("1 deadline", "FirstDeadlineStart", "Admin", null, null)
+    </li>
+    <li>
 
-            @Html.ActionLink("2 deadline", "LastDeadlineStart", "Admin", null, null)
-        </li>*@
+        @Html.ActionLink("2 deadline", "LastDeadlineStart", "Admin", null, null)
+    </li>*@
+    
 }
 
 

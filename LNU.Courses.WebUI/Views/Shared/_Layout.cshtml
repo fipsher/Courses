@@ -34,7 +34,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #002561; border-color: #002561;">
         <div class="container">
             
             <div class="navbar-header">
@@ -51,6 +51,12 @@
                 @if (adminFlag)
                 {
                     <li>@Html.ActionLink("Змінити пароль", "ChangePass", "Admin", null, null)</li>
+                }
+                @if (roles.Contains(lecturerRole))
+                {
+                    <li>
+                        @Html.ActionLink("Змінити телефон", "ChangePhoneNumber", "Admin", null, null)
+                    </li>
                 }
                 @RenderSection("Header", false)
             </ul>

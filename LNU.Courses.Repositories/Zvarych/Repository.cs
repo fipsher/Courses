@@ -15,6 +15,22 @@ namespace LNU.Courses.Repositories
                 return context.Lecturers.ToList();
             }
         }
+
+        public void UpdateLecturer(Lecturer lecturer)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var lecturerToUpd = context.Lecturers.SingleOrDefault(el => el.Id == lecturer.Id);
+
+                if (lecturerToUpd != null)
+                {
+                    lecturerToUpd.fullName = lecturer.fullName;
+                    lecturerToUpd.phone = lecturer.phone;
+                }
+                context.SaveChanges();
+            }
+        }
+
         public bool DeleteLecturer(Lecturer lecturer)
         {
             using (var context = new CoursesOfChoiceEntities())

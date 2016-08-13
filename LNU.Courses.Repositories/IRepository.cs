@@ -39,19 +39,11 @@ namespace LNU.Courses.Repositories
         Users UserLogIn(string login, string password);
         Users GetUser(string login);        
 
-        //IEnumerable<string> GetStdEmailsForSecondWay();
 
         void AddGroup(Group group);
 
-        //void CreateNewGroups(int wave);
-
         void DeleteGroups();
 
-        //IEnumerable<string> GetStudentEmails();
-
-        //void ChangeAdminPass(string login, string newPass);
-
-        //Administrators AdminLogIn(string login, string password);
 
         bool DeleteAdmin(string id);
 
@@ -62,29 +54,22 @@ namespace LNU.Courses.Repositories
         bool DeleteDiscipline(int id);
 
         bool AddDiscipline(Disciplines discipline);
-
-        //Administrators GetAdmin(string login);
+  
 
         IEnumerable<Administrators> GetAdmins();
 
-        //IEnumerable<Students> GetStudents(string partOfName);
-
-        //IEnumerable<Students> GetStudents(int disciplineId, int wave);
-
         void UpdateStudent(Students student);
-
-        //Students GetStudentById(string id);//
+    
 
         bool AddStudent(Students student);
 
         bool DeleteStudent(string id);
 
-        //IEnumerable<Disciplines> GetDisciplines(string name);
-
         Disciplines GetDiscipline(int id);
 
         void UpdateDiscipline(Disciplines discipline);
         void AddLecturer(Lecturer lecturer);
+        void UpdateLecturer(Lecturer lecturer);
         bool DeleteLecturer(Lecturer lecturer);
         IEnumerable<Lecturer> GetLecturers();
     }

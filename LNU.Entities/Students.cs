@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel;
+
 namespace Entities
 {
     using System;
@@ -21,15 +23,23 @@ namespace Entities
         }
     
         public string id { get; set; }
+        [DisplayName("П.І.Б")] 
         public string fio { get; set; }
+        [DisplayName("Курс")] 
         public int course { get; set; }
+        [DisplayName("Група")] 
         public string group { get; set; }
+        [DisplayName("Оцінка")] 
         public double AverageMark { get; set; }
+        [DisplayName("Email")] 
         public string eMail { get; set; }
+        [DisplayName("Телефон")] 
         public string phoneNumber { get; set; }
+        [DisplayName("Видалено")] 
         public bool Deleted { get; set; }
+        [DisplayName("Заблоковано")] 
         public bool locked { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StudentsInGroups> StudentsInGroups { get; set; }
         public virtual Users Users { get; set; }

@@ -319,6 +319,7 @@
     <Content Include="Views\Admin\GetLecturers.cshtml" />
     <Content Include="Views\Admin\DeleteLecturer.cshtml" />
     <Content Include="Views\Admin\CreateLecturer.cshtml" />
+    <Content Include="Views\Admin\ChangeLectPhoneNumb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

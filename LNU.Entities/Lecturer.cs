@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel;
+
 namespace Entities
 {
     using System;
@@ -22,9 +24,11 @@ namespace Entities
         }
     
         public int Id { get; set; }
+        [DisplayName("П.І.Б")] 
         public string fullName { get; set; }
+        [DisplayName("Телефон")] 
         public string phone { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Administrators> Administrators { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
