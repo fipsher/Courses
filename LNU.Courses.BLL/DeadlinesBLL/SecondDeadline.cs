@@ -111,7 +111,7 @@ namespace LNU.Courses.BLL.DeadlinesBLL
             var smallSig = (from gr in grList
                             orderby gr.AmountOfStudent descending
                             where gr.Wave == 2 && gr.Deleted == false
-                            select new { GroupId = gr.id, Count = gr.AmountOfStudent }).ToList();
+                            select new { GroupId = gr.id, Count = gr.AmountOfStudent, DiscId = gr.disciplinesID }).ToList();
 
             var groupIndexer = 0;
 
@@ -124,7 +124,10 @@ namespace LNU.Courses.BLL.DeadlinesBLL
                     {
                         groupIndexer = 0;
                     }
+                    var frstWaveGroup = groupsFrstWave.First(el => el.disciplinesID == smallSig[groupIndexer].DiscId);
                     if (studentsInGroups.Where(el => el.groupID == smallSig[groupIndexer].GroupId)
+                                        .All(el => el.studentID != onceRegisteredStd[i].id) && 
+                        studentsInGroups.Where(el => el.groupID == frstWaveGroup.id)
                                         .All(el => el.studentID != onceRegisteredStd[i].id))
                     {
                         _repository.AddStudentInGroups(new StudentsInGroups()
