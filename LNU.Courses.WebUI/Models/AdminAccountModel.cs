@@ -36,7 +36,7 @@ namespace LNU.Courses.WebUI.Models
 
         public Account Login(string login, string password)
         {
-            var admin = _repoBl.AdminLogIn(login, password);
+            var admin = _repoBl.AdminLogIn(login.ToLower(), password);
             if (admin != null)
             {
                 Account acc = new Account()

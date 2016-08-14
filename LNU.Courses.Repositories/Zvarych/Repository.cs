@@ -190,6 +190,7 @@ namespace LNU.Courses.Repositories
                 }
                 else
                 {
+                    admin.login = admin.login.ToLower();
                     admin.password = _hashProvider.Encrypt(admin.password);
                     context.Administrators.Add(admin);
                     context.SaveChanges();

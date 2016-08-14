@@ -428,14 +428,14 @@ namespace LNU.Courses.Controllers
         }
 
 
-        //[AdminAuthorize(Roles = "SuperAdmin, Admin, Lecturer")]
-        //public ActionResult DetailsOfDiscipline(int id, StudentSortingEnum? sortBy)
-        //{
-        //    var discipline = _repository.GetDiscipline(id);
-        //    ViewBag.Id = id;
-        //    ViewBag.SortBy = sortBy;
-        //    return View(discipline);
-        //}
+        [AdminAuthorize(Roles = "SuperAdmin, Admin, Lecturer")]
+        public ActionResult DetailsOfDiscipline(int id, StudentSortingEnum? sortBy)
+        {
+            var discipline = _repository.GetDiscipline(id);
+            ViewBag.Id = id;
+            ViewBag.SortBy = sortBy;
+            return View(discipline);
+        }
 
         [HttpGet]
         [AdminAuthorize(Roles = "SuperAdmin")]
