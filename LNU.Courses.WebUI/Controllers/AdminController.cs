@@ -52,7 +52,7 @@ namespace LNU.Courses.Controllers
 
                     }
                 }
-               
+
             }
             catch
             {

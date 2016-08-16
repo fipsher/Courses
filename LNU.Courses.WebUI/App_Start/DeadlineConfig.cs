@@ -32,7 +32,8 @@ namespace LNU.Courses.WebUI.App_Start
             string lastDeadline = WebConfigurationManager.AppSettings["LastDeadLine"];
             string[] wordsLast = lastDeadline.Split(' ');
             staticData.lastDeadLineTime = new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsLast[4]), Convert.ToInt32(wordsLast[3]));
-            JobMaker.Start<FirstDeadLineJob>(lastDeadline);
+
+            JobMaker.Start<LastDeadlineJob>(lastDeadline);
         }
     }
 }
