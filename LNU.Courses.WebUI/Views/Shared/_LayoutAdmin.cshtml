@@ -15,16 +15,22 @@
     }
 }
 
+<style>
+    .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+        color: #ffffff;
+        background-color: #428bca;
+    }
+</style>
 @section Header {
 
     @if (roles.Contains(supAdmRole))
     {
-       
+
         <li class="classic-menu-dropdown">
             <a class="dropdown-toggle" data-hover="dropdown" data-close-others="true" href="javascript:;" data-toggle="dropdown">
                 Люди
             </a>
-            <ul class="dropdown-menu dropdown-menu-default custom-sub-menu">
+            <ul class="dropdown-menu dropdown-menu-default">
                 <li>
                     @Html.ActionLink("Адміни", "GetAdmins", "Admin")
                 </li>
@@ -50,13 +56,13 @@
         </li>*@
     @*<li>
 
-        @Html.ActionLink("1 deadline", "FirstDeadlineStart", "Admin", null, null)
-    </li>
-    <li>
+            @Html.ActionLink("1 deadline", "FirstDeadlineStart", "Admin", null, null)
+        </li>
+        <li>
 
-        @Html.ActionLink("2 deadline", "LastDeadlineStart", "Admin", null, null)
-    </li>*@
-    
+            @Html.ActionLink("2 deadline", "LastDeadlineStart", "Admin", null, null)
+        </li>*@
+
 }
 
 
