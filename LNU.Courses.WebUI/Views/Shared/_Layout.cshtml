@@ -84,10 +84,11 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
 
     </div>
-
+    <footer class="modal-footer">
+        <p>&copy; @DateTime.Now.Year - LNU курси за вибором</p>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
