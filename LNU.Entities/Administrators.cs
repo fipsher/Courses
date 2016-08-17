@@ -21,8 +21,8 @@ namespace Entities
         [DisplayName("Пароль")]
         public string password { get; set; }
         public string roles { get; set; }
-        public Nullable<int> lecturerId { get; set; }
-    
+        public Nullable<int> lecturerId { get; set; }    
+        [DisplayName("Лектор")]
         public virtual Lecturer Lecturers { get; set; }
     }
 }
