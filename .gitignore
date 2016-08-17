@@ -262,3 +262,4 @@ LNU.Courses.Tests/obj/Debug/LNU.Courses.Tests.dll
 LNU.Courses.Tests/obj/Debug/LNU.Courses.Tests.pdb
 LNU.Courses.WebUI/Properties/PublishProfiles/kk.pubxml
 LNU.Courses.WebUI/Properties/PublishProfiles/kk.pubxml.user
+*.user
