@@ -19,16 +19,23 @@
 
     @if (roles.Contains(supAdmRole))
     {
-        <li>
-            @Html.ActionLink("Адміни", "GetAdmins", "Admin")
+       
+        <li class="classic-menu-dropdown">
+            <a class="dropdown-toggle" data-hover="dropdown" data-close-others="true" href="javascript:;" data-toggle="dropdown">
+                Люди
+            </a>
+            <ul class="dropdown-menu dropdown-menu-default custom-sub-menu">
+                <li>
+                    @Html.ActionLink("Адміни", "GetAdmins", "Admin")
+                </li>
+                <li>
+                    @Html.ActionLink("Викладачі", "GetLecturers", "Admin")
+                </li>
+                <li>
+                    @Html.ActionLink("Студенти", "GetStudents", "Admin", new { fio = " ", index = 1 }, null)
+                </li>
+            </ul>
         </li>
-        <li>
-            @Html.ActionLink("Викладачі", "GetLecturers", "Admin")
-        </li>
-        <li>
-            @Html.ActionLink("Студенти", "GetStudents", "Admin", new { fio = " ", index = 1 }, null)
-        </li>
-
         <li>
             @Html.ActionLink("Змінити дедлайни", "ChangeDeadLine", "Admin", null, null)
         </li>
