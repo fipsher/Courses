@@ -297,10 +297,14 @@ namespace LNU.Courses.Repositories
                         }
                     }
                 }
+                
                 disciplines.ForEach(el =>
                 {
                     Lecturer toAdd = new Lecturer();
-                    toAdd.fullName = el.Lecturers.fullName;
+                    if (el.Lecturers != null)
+                    {
+                        toAdd.fullName = el.Lecturers.fullName;
+                    }
                     el.Lecturers = toAdd;
                 });
                 return disciplines.ToList();
@@ -341,7 +345,10 @@ namespace LNU.Courses.Repositories
                 disciplines.ForEach(el =>
                 {
                     Lecturer toAdd = new Lecturer();
-                    toAdd.fullName = el.Lecturers.fullName;
+                    if (el.Lecturers != null)
+                    {
+                        toAdd.fullName = el.Lecturers.fullName;
+                    }
                     el.Lecturers = toAdd;
                 });
 
