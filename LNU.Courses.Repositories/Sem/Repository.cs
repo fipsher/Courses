@@ -317,6 +317,7 @@ namespace LNU.Courses.Repositories
         {
             using (var context = new CoursesOfChoiceEntities())
             {
+                // врахувати хвилю
                 var group = context.Group.Where(el => el.disciplinesID == id && el.Deleted == false).ToList();
                 return group.SingleOrDefault();
             }

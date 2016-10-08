@@ -34,7 +34,7 @@ namespace LNU.Courses.Controllers
                 {
                     SessionPersister.Login = acc.Login;
                     Session.Add("Roles", acc.Roles);
-                    return RedirectToAction("GetDisciplines", "Student");
+                    return RedirectToAction("Welcome", "Student");
                 }
                 else
                 {

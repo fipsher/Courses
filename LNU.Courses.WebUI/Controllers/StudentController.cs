@@ -33,7 +33,12 @@ namespace LNU.Courses.Controllers
         }
         [StudentAuthorize(Roles = "User")]
 
-
+        public ActionResult Welcome()
+        {
+            var studentAcc = _repoBl.GetStudentById(SessionPersister.Login);
+            ViewBag.Fio = studentAcc.fio;
+            return View();
+        }
         public int GetDisciplineStudentCount(int disciplineId, int wave)
         {
             var studCount = _repoBl.GetStudents(disciplineId, wave).Count();
