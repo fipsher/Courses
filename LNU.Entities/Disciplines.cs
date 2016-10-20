@@ -8,6 +8,7 @@
 //------------------------------------------------------------------------------
 
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entities
 {
@@ -23,13 +24,21 @@ namespace Entities
         }
     
         public int id { get; set; }
-        [DisplayName("Назва")] 
+        [DisplayName("Назва")]
+        [MinLength(3,ErrorMessage = "Мінімальна жовжина повинна бути 3")]
+        [Required(ErrorMessage = "Обов'язково до заповнення")]
         public string name { get; set; }
-        [DisplayName("Кафедра")] 
+        [DisplayName("Кафедра")]
+        [MinLength(3,ErrorMessage = "Мінімальна жовжина повинна бути 3")]
+        [Required(ErrorMessage = "Обов'язково до заповнення")]
         public string kafedra { get; set; }
-        [DisplayName("Курс")] 
+        [DisplayName("Курс")]
+        [MinLength(3,ErrorMessage = "Мінімальна жовжина повинна бути 3")]
+        [Required(ErrorMessage = "Обов'язково до заповнення")]
         public int course { get; set; }
         [DisplayName("Опис")] 
+        [MinLength(3,ErrorMessage = "Мінімальна жовжина повинна бути 3")]
+        [Required(ErrorMessage ="Обов'язково до заповнення")]
         public string description { get; set; }
         public Nullable<int> lecturerId { get; set; }
     

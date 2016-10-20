@@ -130,22 +130,25 @@ namespace LNU.Courses.Controllers
         [AdminAuthorize(Roles = "SuperAdmin,Admin")]
         public ActionResult CreateLecturer(LecturerWithCredentials lecturer)
         {
-            Lecturer lect = new Lecturer()
+            if (ModelState.IsValid)
             {
-                fullName = lecturer.fullName,
-                phone = lecturer.phone
-            };
-            Administrators admin = new Administrators()
-            {
-                login = lecturer.login,
-                password = lecturer.password,
-                Lecturers = lect,
-                roles = "Lecturer"
-            };
+                Lecturer lect = new Lecturer()
+                {
+                    fullName = lecturer.fullName,
+                    phone = lecturer.phone
+                };
+                Administrators admin = new Administrators()
+                {
+                    login = lecturer.login,
+                    password = lecturer.password,
+                    Lecturers = lect,
+                    roles = "Lecturer"
+                };
 
-            _repository.AddAdmin(admin);
-            return RedirectToAction("GetLecturers", "Admin");
-
+                _repository.AddAdmin(admin);
+                return RedirectToAction("GetLecturers", "Admin");
+            }
+            return View();
         }
 
         public AdminController()

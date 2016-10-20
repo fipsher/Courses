@@ -3,6 +3,7 @@
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     ViewBag.Title = "Створити дисципліну";
+
 }
 
 <h2>Створити дисципліну</h2>
@@ -49,7 +50,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Lecturers.fullName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Lecturers.fullName, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.Lecturers.fullName, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @{
+                            Html.RenderAction("GetLecturerList", "Admin");
+                        }
                 @Html.ValidationMessageFor(model => model.Lecturers.fullName, "", new { @class = "text-danger" })
             </div>
         </div>
