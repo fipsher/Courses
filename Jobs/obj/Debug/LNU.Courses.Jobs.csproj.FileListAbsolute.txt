@@ -370,3 +370,5 @@ E:\Courses\Jobs\bin\Debug\EntityFramework.xml
 E:\Courses\Jobs\obj\Debug\LNU.Courses.Jobs.csprojResolveAssemblyReference.cache
 E:\Courses\Jobs\obj\Debug\LNU.Courses.Jobs.dll
 E:\Courses\Jobs\obj\Debug\LNU.Courses.Jobs.pdb
+C:\Users\Андрій\Documents\Courses\Jobs\bin\Debug\Bytescout.Spreadsheet.dll
+C:\Users\Андрій\Documents\Courses\Jobs\bin\Debug\Bytescout.Spreadsheet.xml

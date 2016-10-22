@@ -193,3 +193,5 @@ E:\Courses\LNU.Entities\bin\Debug\System.Web.WebPages.Razor.xml
 E:\Courses\LNU.Entities\obj\Debug\Entities.dll
 E:\Courses\LNU.Entities\obj\Debug\Entities.pdb
 E:\Courses\LNU.Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Documents\Courses\LNU.Entities\bin\Debug\Bytescout.Spreadsheet.dll
+C:\Users\Андрій\Documents\Courses\LNU.Entities\bin\Debug\Bytescout.Spreadsheet.xml

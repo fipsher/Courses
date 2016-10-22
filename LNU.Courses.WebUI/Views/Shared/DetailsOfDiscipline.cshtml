@@ -82,7 +82,8 @@
     {
         <p>
             @Html.ActionLink("Змінити", "EditDiscipline", "Admin", new { id = Model.id }, null) |
-            @Html.ActionLink("Назад до списку", "GetCourses", "Shared")
+            @Html.ActionLink("Назад до списку", "GetCourses", "Shared") |
+            @Html.ActionLink("Скачати список", "Download", "Admin", new {disciplineId=Model.id}, null)
         </p>
         <p>
             Список студентів
