@@ -19,7 +19,10 @@
             @Html.ActionLink("Група", "GetStudents", "Admin", new { fio = ViewBag.Fio, sortBy = StudentSortingEnum.Group }, null)
         </th>
         <th>
-            @Html.ActionLink("Середній бал", "GetStudents", "Admin", new { fio = ViewBag.Fio, sortBy = StudentSortingEnum.AverageMark}, null)
+            @Html.ActionLink("Середній бал", "GetStudents", "Admin", new {fio = ViewBag.Fio, sortBy = StudentSortingEnum.AverageMark}, null)
+        </th>
+        <th>
+            @Html.Display("Телефон")
         </th>
         @if (ViewBag.Admin == 1)
         {
@@ -49,6 +52,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AverageMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phoneNumber)
             </td>
             @if (ViewBag.Admin == 1)
             {
