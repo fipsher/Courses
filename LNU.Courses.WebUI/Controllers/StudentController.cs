@@ -79,6 +79,20 @@ namespace LNU.Courses.Controllers
 
             return View();
         }
+        //[HttpGet]
+        //public ActionResult DeleteFromTheCourse(int id)
+        //{
+        //    if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+        //        return View("EditPhone");
+        //    if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
+        //        return View("EditEMail");
+
+        //    repository.DeleteMyDiscipline(id, SessionPersister.Login);
+        //    repository.deleteAmountStudent(repository.GetGroupByDisciplinesId(id).id);
+        //    return View("DeletedDicipline", repository.GetDiscipline(id));
+        //}
+
+        int wave;
         [HttpGet]
         public ActionResult DeleteFromTheCourse(int id)
         {
@@ -86,9 +100,20 @@ namespace LNU.Courses.Controllers
                 return View("EditPhone");
             if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
+            int datetimeNowWithStart = DateTime.Compare(DateTime.Now, staticData.StartTime);
+            int datetimeNowWithFirst = DateTime.Compare(DateTime.Now, staticData.firstDeadLineTime);
+            int datetimeNowWithLast = DateTime.Compare(DateTime.Now, staticData.lastDeadLineTime);
+            if (datetimeNowWithStart < 0 || datetimeNowWithLast > 0)
+                wave = 0;
+            else
+                if (datetimeNowWithFirst < 0)
+                wave = 1;
+            else
+                if (datetimeNowWithLast < 0)
+                wave = 2;
 
-            repository.DeleteMyDiscipline(id, SessionPersister.Login);
-            repository.deleteAmountStudent(repository.GetGroupByDisciplinesId(id).id);
+            repository.DeleteMyDiscipline(id, SessionPersister.Login, wave);
+            repository.deleteAmountStudent(repository.GetGroupByDisciplinesId(id,wave).id);
             return View("DeletedDicipline", repository.GetDiscipline(id));
         }
         [HttpGet]
@@ -98,11 +123,22 @@ namespace LNU.Courses.Controllers
                 return View("EditPhone");
             if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
+            int datetimeNowWithStart = DateTime.Compare(DateTime.Now, staticData.StartTime);
+            int datetimeNowWithFirst = DateTime.Compare(DateTime.Now, staticData.firstDeadLineTime);
+            int datetimeNowWithLast = DateTime.Compare(DateTime.Now, staticData.lastDeadLineTime);
+            if (datetimeNowWithStart < 0 || datetimeNowWithLast > 0)
+                wave = 0;
+            else
+                if (datetimeNowWithFirst < 0)
+                wave = 1;
+            else
+                if (datetimeNowWithLast < 0)
+                wave = 2;
 
 
             var disciplineAcc = repository.GetDiscipline(id);
             var studInGroup = new StudentsInGroups();
-            var group = repository.GetGroupByDisciplinesId(disciplineAcc.id);
+            var group = repository.GetGroupByDisciplinesId(disciplineAcc.id,wave);
             studInGroup.groupID = group.id;
             studInGroup.studentID = SessionPersister.Login;
             studInGroup.DateOfRegister = DateTime.Now;

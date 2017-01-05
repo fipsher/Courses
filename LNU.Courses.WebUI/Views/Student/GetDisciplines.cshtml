@@ -19,7 +19,7 @@
             @Html.ActionLink("Лектор", "GetDisciplines", "Student", new { sortBy = DisciplineSortingEnum.Lecturer }, null)
         </th>
         <th>
-            @Html.ActionLink("Курс", "GetDisciplines", "Student", new { sortBy = DisciplineSortingEnum.Course }, null)
+            @Html.ActionLink("Семестр", "GetDisciplines", "Student", new { sortBy = DisciplineSortingEnum.Course }, null)
         </th>
         <th>
             @Html.ActionLink("Зареєстровано студентів I хвиля", "GetDisciplines", "Student", new { sortBy = DisciplineSortingEnum.FirstWave }, null)
@@ -96,7 +96,7 @@
                                     <td>
                                         @if (ViewBag.NotDisciplines != item.id)
                                         {
-                                            @Html.ActionLink("Обрати", "RegisteringInTheCourse", new { id = item.id })
+                                            @Html.ActionLink("Register", "RegisteringInTheCourse", new { id = item.id })
                                         }
                                     </td>
                                         }
@@ -134,7 +134,7 @@
                                             <td>
                                                 @if (ViewBag.NotDisciplines != item.id)
                                                 {
-                                                    @Html.ActionLink("Обрати", "RegisteringInTheCourse", new { id = item.id })
+                                                    @Html.ActionLink("Register", "RegisteringInTheCourse", new { id = item.id })
                                                 }
                                             </td>
 

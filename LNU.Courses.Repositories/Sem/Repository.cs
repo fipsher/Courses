@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Entities;
 
+
 namespace LNU.Courses.Repositories
 {
     public partial class Repository : IRepository
@@ -318,6 +319,7 @@ namespace LNU.Courses.Repositories
             using (var context = new CoursesOfChoiceEntities())
             {
                 // врахувати хвилю
+
                 var group = context.Group.Where(el => el.disciplinesID == id && el.Deleted == false).ToList();
                 return group.SingleOrDefault();
             }
@@ -365,6 +367,21 @@ namespace LNU.Courses.Repositories
                 foreach (var item in sig)
                 {
                     if (item.Group.Disciplines.id == id)
+                    {
+                        context.StudentsInGroups.Remove(item);
+                        context.SaveChanges();
+                    }
+                }
+            }
+        }
+        public void DeleteMyDiscipline(int id, string login,int wave)
+        {
+            using (var context = new CoursesOfChoiceEntities())
+            {
+                var sig = context.StudentsInGroups.Where(st => st.studentID == login).ToList();
+                foreach (var item in sig)
+                {
+                    if (item.Group.Disciplines.id == id  && item.Group.Wave == wave)
                     {
                         context.StudentsInGroups.Remove(item);
                         context.SaveChanges();

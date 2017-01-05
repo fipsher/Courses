@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using Entities;
 using LNU.Courses;
-using LNU.Courses.BLL.ExcelWriter;
 using LNU.Courses.Jobs;
 using LNU.Courses.PeriodicalJobMaker;
 using LNU.Courses.Repositories;
@@ -132,25 +130,22 @@ namespace LNU.Courses.Controllers
         [AdminAuthorize(Roles = "SuperAdmin,Admin")]
         public ActionResult CreateLecturer(LecturerWithCredentials lecturer)
         {
-            if (ModelState.IsValid)
+            Lecturer lect = new Lecturer()
             {
-                Lecturer lect = new Lecturer()
-                {
-                    fullName = lecturer.fullName,
-                    phone = lecturer.phone
-                };
-                Administrators admin = new Administrators()
-                {
-                    login = lecturer.login,
-                    password = lecturer.password,
-                    Lecturers = lect,
-                    roles = "Lecturer"
-                };
+                fullName = lecturer.fullName,
+                phone = lecturer.phone
+            };
+            Administrators admin = new Administrators()
+            {
+                login = lecturer.login,
+                password = lecturer.password,
+                Lecturers = lect,
+                roles = "Lecturer"
+            };
 
-                _repository.AddAdmin(admin);
-                return RedirectToAction("GetLecturers", "Admin");
-            }
-            return View();
+            _repository.AddAdmin(admin);
+            return RedirectToAction("GetLecturers", "Admin");
+
         }
 
         public AdminController()
@@ -691,26 +686,5 @@ namespace LNU.Courses.Controllers
         #endregion
 
 
-        [HttpGet]
-        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
-        public async Task<ActionResult> Download(int disciplineId)
-        {
-            var discipline = _repository.GetDiscipline(disciplineId);
-            var studentsList = _repoBl.GetStudents(disciplineId, 1).ToList();
-            var temp = _repoBl.GetStudents(disciplineId, 1).ToList();
-            studentsList.AddRange(temp);
-
-            var writer = new ExcelWriter<Students>(discipline.name);
-            var fileBytes = writer.WriteToExcel(studentsList);
-
-            var fileContent = await DownloadData(fileBytes, discipline.name);
-
-            return fileContent;
-        }
-
-        private Task<FileContentResult> DownloadData(byte[] fileBytes, string fileName)
-        {
-            return Task.FromResult(File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, $"{fileName}.xlsx"));
-        }
     }
 }

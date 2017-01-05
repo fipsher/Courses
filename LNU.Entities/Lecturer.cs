@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
 namespace Entities
 {
@@ -26,11 +25,8 @@ namespace Entities
     
         public int Id { get; set; }
         [DisplayName("П.І.Б")] 
-        [MinLength(3,ErrorMessage = "Мінімальна жовжина повинна бути 3")]
-        [Required(ErrorMessage ="Обов'язково до заповнення")]
         public string fullName { get; set; }
         [DisplayName("Телефон")] 
-        [Required(ErrorMessage ="Обов'язково до заповнення")]
         public string phone { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

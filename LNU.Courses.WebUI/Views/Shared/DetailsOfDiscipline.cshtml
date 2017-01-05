@@ -49,7 +49,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Лектор")
+            @Html.DisplayNameFor(model => model.Lecturers)
         </dt>
 
         <dd>
@@ -82,8 +82,7 @@
     {
         <p>
             @Html.ActionLink("Змінити", "EditDiscipline", "Admin", new { id = Model.id }, null) |
-            @Html.ActionLink("Назад до списку", "GetCourses", "Shared") |
-            @Html.ActionLink("Скачати список", "Download", "Admin", new {disciplineId=Model.id}, null)
+            @Html.ActionLink("Назад до списку", "GetCourses", "Shared")
         </p>
         <p>
             Список студентів

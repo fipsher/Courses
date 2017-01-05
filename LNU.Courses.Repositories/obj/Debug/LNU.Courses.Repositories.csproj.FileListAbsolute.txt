@@ -222,5 +222,3 @@ E:\Courses\LNU.Courses.Repositories\bin\Debug\System.Web.WebPages.Razor.xml
 E:\Courses\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.csprojResolveAssemblyReference.cache
 E:\Courses\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.dll
 E:\Courses\LNU.Courses.Repositories\obj\Debug\LNU.Courses.Repositories.pdb
-C:\Users\Андрій\Documents\Courses\LNU.Courses.Repositories\bin\Debug\Bytescout.Spreadsheet.dll
-C:\Users\Андрій\Documents\Courses\LNU.Courses.Repositories\bin\Debug\Bytescout.Spreadsheet.xml

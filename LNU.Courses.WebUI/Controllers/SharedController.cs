@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Entities;
-using LNU.Courses.BLL.ExcelWriter;
 using LNU.Courses.BLL.RepoBLL;
 using LNU.Courses.Repositories;
 using LNU.Courses.Security;
@@ -144,6 +142,5 @@ namespace LNU.Courses.WebUI.Controllers
             var studCount = temp?.AmountOfStudent ?? 0;
             return studCount;
         }
-
     }
 }

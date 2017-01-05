@@ -218,5 +218,3 @@ E:\Courses\PeriodicalJobMaker\bin\Debug\System.Web.WebPages.Razor.xml
 E:\Courses\PeriodicalJobMaker\obj\Debug\LNU.Courses.PeriodicalJobMaker.dll
 E:\Courses\PeriodicalJobMaker\obj\Debug\LNU.Courses.PeriodicalJobMaker.pdb
 E:\Courses\PeriodicalJobMaker\obj\Debug\LNU.Courses.PeriodicalJobMaker.csprojResolveAssemblyReference.cache
-C:\Users\Андрій\Documents\Courses\PeriodicalJobMaker\bin\Debug\Bytescout.Spreadsheet.dll
-C:\Users\Андрій\Documents\Courses\PeriodicalJobMaker\bin\Debug\Bytescout.Spreadsheet.xml

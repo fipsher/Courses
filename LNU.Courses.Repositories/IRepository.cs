@@ -6,6 +6,7 @@ namespace LNU.Courses.Repositories
     public interface IRepository
     {
         //
+        void DeleteMyDiscipline(int id, string login, int wave);
         IEnumerable<Users> GetUsers();
         int GetDisciplineWhereRegistered(string login);
         void deleteAmountStudent(int groupID);

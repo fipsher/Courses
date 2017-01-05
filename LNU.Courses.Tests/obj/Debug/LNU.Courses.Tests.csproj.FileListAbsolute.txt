@@ -92,5 +92,3 @@ E:\Courses\LNU.Courses.Tests\bin\Debug\EntityFramework.xml
 E:\Courses\LNU.Courses.Tests\obj\Debug\LNU.Courses.Tests.csprojResolveAssemblyReference.cache
 E:\Courses\LNU.Courses.Tests\obj\Debug\LNU.Courses.Tests.dll
 E:\Courses\LNU.Courses.Tests\obj\Debug\LNU.Courses.Tests.pdb
-C:\Users\Андрій\Documents\Courses\LNU.Courses.Tests\bin\Debug\Bytescout.Spreadsheet.dll
-C:\Users\Андрій\Documents\Courses\LNU.Courses.Tests\bin\Debug\Bytescout.Spreadsheet.xml
