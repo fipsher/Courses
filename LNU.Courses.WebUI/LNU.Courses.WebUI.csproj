@@ -251,6 +251,7 @@
     <None Include="Properties\PublishProfiles\ff.pubxml" />
     <None Include="Properties\PublishProfiles\ftp.pubxml" />
     <None Include="Properties\PublishProfiles\kk.pubxml" />
+    <None Include="Properties\PublishProfiles\webpack.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom\editCourseValidationScript.js" />
     <Content Include="Scripts\custom\stdListManaging.js" />
