@@ -1,0 +1,52 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@model string
+@{
+    string supAdmRole = "SuperAdmin";
+    string adminRole = "Admin";
+    string studentRole = "User";
+
+    var temp = Session["Roles"];
+    List<string> roles = new List<string>();
+    if (temp != null)
+    {
+        roles = ((string[])temp).ToList();
+        if (roles.Contains(supAdmRole) || roles.Contains(adminRole))
+        {
+            Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+        }
+        else if (roles.Contains(studentRole))
+        {
+            Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+        }
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+
+    }
+    string name = "";
+    if (Model != null)
+    {
+        name = Model;
+    }
+
+}
+
+<h2>Курси</h2>
+
+@using (Html.BeginForm("GetCourses", "Shared", FormMethod.Get))
+{
+    <input type="text" name="name" value="@name"/>
+    <input type="submit" value="Шукати" />
+}
+@if (roles.Contains(adminRole) || roles.Contains(supAdmRole))
+{
+    <p>
+        @Html.ActionLink("Створити новий", "CreateDiscipline", "Admin")
+    </p>
+}
+
+@{
+    Html.RenderAction("GetDisciplinesList", "Shared", new {name = name, sortBy = ViewBag.SortBy});   
+}

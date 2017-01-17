@@ -1,0 +1,31 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+
+@{
+    ViewBag.Title = "Info";
+    string supAdmRole = "SuperAdmin";
+    string adminRole = "Admin";
+    string studentRole = "User";
+
+    var temp = Session["Roles"];
+    if (temp != null)
+    {
+        List<string> roles = ((string[]) temp).ToList();
+        if (roles.Contains(supAdmRole) || roles.Contains(adminRole))
+        {
+            Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+        }
+        else if (roles.Contains(studentRole))
+        {
+            Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+        }
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+
+    }
+}
+
+<h2>Info</h2>
+
