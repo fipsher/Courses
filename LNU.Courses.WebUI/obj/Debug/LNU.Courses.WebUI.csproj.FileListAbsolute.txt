@@ -222,3 +222,17 @@ C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\Microsoft.VisualSt
 C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\obj\Debug\LNU.Courses.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\obj\Debug\LNU.Courses.dll
 C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\obj\Debug\LNU.Courses.pdb
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\csc.exe.config
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\csc.rsp
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\csi.exe
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\csi.rsp
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\System.AppContext.dll
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\vbc.exe.config
+C:\Users\Андрій\Documents\Courses\LNU.Courses.WebUI\bin\roslyn\vbc.rsp
