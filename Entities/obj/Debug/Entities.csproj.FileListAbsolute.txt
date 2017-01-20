@@ -1,0 +1,10 @@
+C:\Users\Андрій\Documents\Courses\Entities\bin\Debug\Entities.dll.config
+C:\Users\Андрій\Documents\Courses\Entities\bin\Debug\Entities.dll
+C:\Users\Андрій\Documents\Courses\Entities\bin\Debug\Entities.pdb
+C:\Users\Андрій\Documents\Courses\Entities\bin\Debug\EntityFramework.dll
+C:\Users\Андрій\Documents\Courses\Entities\bin\Debug\EntityFramework.xml
+C:\Users\Андрій\Documents\Courses\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Андрій\Documents\Courses\Entities\obj\Debug\Entities.dll
+C:\Users\Андрій\Documents\Courses\Entities\obj\Debug\Entities.pdb
+C:\Users\Андрій\Documents\Courses\Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрій\Documents\Courses\Entities\bin\Debug\EntityFramework.SqlServer.xml

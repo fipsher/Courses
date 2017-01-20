@@ -17,7 +17,7 @@
     <AssemblyName>LNU.Courses</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -337,6 +338,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{40e97521-3fff-4ce1-aa29-6219ff2dd6fa}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Jobs\LNU.Courses.Jobs.csproj">
       <Project>{4cc2e7b7-cce9-43dc-9aee-1bdb4e5205d2}</Project>
       <Name>LNU.Courses.Jobs</Name>
@@ -348,10 +353,6 @@
     <ProjectReference Include="..\LNU.Courses.Repositories\LNU.Courses.Repositories.csproj">
       <Project>{5bc87221-3ad7-4957-ba97-291a60dc1dc1}</Project>
       <Name>LNU.Courses.Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LNU.Entities\Entities.csproj">
-      <Project>{864ab2bc-e4e5-4ae8-82c5-6e5f6c9ec76a}</Project>
-      <Name>Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\PeriodicalJobMaker\LNU.Courses.PeriodicalJobMaker.csproj">
       <Project>{6D106F99-8F06-4D43-AF32-3E7BAAA70682}</Project>
@@ -379,7 +380,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52151</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52151/</IISUrl>
+          <IISUrl>http://localhost/LNU.Courses.WebUI</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:52151/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

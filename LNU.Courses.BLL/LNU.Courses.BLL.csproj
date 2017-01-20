@@ -82,13 +82,13 @@
     <Compile Include="RepoBLL\RepositoryBL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{40e97521-3fff-4ce1-aa29-6219ff2dd6fa}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LNU.Courses.Repositories\LNU.Courses.Repositories.csproj">
       <Project>{5bc87221-3ad7-4957-ba97-291a60dc1dc1}</Project>
       <Name>LNU.Courses.Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LNU.Entities\Entities.csproj">
-      <Project>{864ab2bc-e4e5-4ae8-82c5-6e5f6c9ec76a}</Project>
-      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

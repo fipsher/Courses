@@ -93,10 +93,9 @@
     <Compile Include="Sem\Repository.cs" />
     <Compile Include="Zvarych\Repository.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\LNU.Entities\Entities.csproj">
-      <Project>{864AB2BC-E4E5-4AE8-82C5-6E5F6C9EC76A}</Project>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{40e97521-3fff-4ce1-aa29-6219ff2dd6fa}</Project>
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>

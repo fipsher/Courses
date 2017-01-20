@@ -19,7 +19,7 @@
                  @(_DebugSymbolsIntermediatePath);
                  $(NonExistentFile);
                  @(CustomAdditionalCompileOutputs)"
-          Returns="@(VbcCommandLineArgs)"
+          Returns=""
           DependsOnTargets="$(CoreCompileDependsOn)"
     >
     <PropertyGroup>
@@ -59,7 +59,6 @@
           AdditionalFiles="@(AdditionalFiles)"
           Analyzers="@(Analyzer)"
           BaseAddress="$(BaseAddress)"
-          ChecksumAlgorithm="$(ChecksumAlgorithm)"
           CodeAnalysisRuleSet="$(ResolvedCodeAnalysisRuleSet)"
           CodePage="$(CodePage)"
           DebugType="$(DebugType)"
@@ -71,7 +70,6 @@
           EnvironmentVariables="$(VbcEnvironment)"
           ErrorLog="$(ErrorLog)"
           ErrorReport="$(ErrorReport)"
-          Features="$(Features)"
           FileAlignment="$(FileAlignment)"
           GenerateDocumentation="$(GenerateDocumentation)"
           HighEntropyVA="$(HighEntropyVA)"
@@ -88,8 +86,6 @@
           NoWarnings="$(_NoWarnings)"
           NoWin32Manifest="$(NoWin32Manifest)"
           Optimize="$(Optimize)"
-          Deterministic="$(Deterministic)"
-          PublicSign="$(PublicSign)"
           OptionCompare="$(OptionCompare)"
           OptionExplicit="$(OptionExplicit)"
           OptionInfer="$(OptionInfer)"
@@ -100,16 +96,13 @@
           Platform="$(PlatformTarget)"
           Prefer32Bit="$(Prefer32Bit)"
           PreferredUILang="$(PreferredUILang)"
-          ProvideCommandLineArgs="$(ProvideCommandLineArgs)"
           References="@(ReferencePath)"
           RemoveIntegerChecks="$(RemoveIntegerChecks)"
           ReportAnalyzer="$(ReportAnalyzer)"
           Resources="@(_CoreCompileResourceInputs);@(CompiledLicenseFile)"
           ResponseFiles="$(CompilerResponseFile)"
           RootNamespace="$(RootNamespace)"
-          RuntimeMetadataVersion="$(RuntimeMetadataVersion)"
           SdkPath="$(FrameworkPathOverride)"
-          SkipCompilerExecution="$(SkipCompilerExecution)"
           Sources="@(Compile)"
           SubsystemVersion="$(SubsystemVersion)"
           TargetCompactFramework="$(TargetCompactFramework)"
@@ -129,10 +122,8 @@
           Win32Manifest="$(Win32Manifest)"
           Win32Resource="$(Win32Resource)"
           VBRuntime="$(VBRuntime)"
-          PathMap="$(PathMap)"
-          >
-      <Output TaskParameter="CommandLineArgs" ItemName="VbcCommandLineArgs" />
-    </Vbc>
+          />
+
     <ItemGroup>
       <_CoreCompileResourceInputs Remove="@(_CoreCompileResourceInputs)" />
     </ItemGroup>

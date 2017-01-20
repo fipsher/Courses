@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <setParameter name="IIS Web Application Name" value="Default Web Site/LNU.Courses.WebUI_deploy" />
-  <setParameter name="CoursesOfChoiceEntities-Web.config Connection String" value="metadata=res://*/CoursesDataModel.csdl|res://*/CoursesDataModel.ssdl|res://*/CoursesDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=Sem;initial catalog=TestCourseOfChoice;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" />
-</parameters>

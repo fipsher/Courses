@@ -11,7 +11,7 @@ namespace LNU.Courses.Repositories
         readonly IHashProvider _hashProvider = new HashProvider();
         public int GetDisciplineWhereRegistered(string login)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var sig = context.StudentsInGroups.Where(s => s.studentID == login).ToList();
 
@@ -26,7 +26,7 @@ namespace LNU.Courses.Repositories
         }
         public void addAmountStudent(int groupID)
         {            
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var gr = context.Group.SingleOrDefault(g => g.id == groupID);
                 gr.AmountOfStudent++;
@@ -36,7 +36,7 @@ namespace LNU.Courses.Repositories
         }
         public void deleteAmountStudent(int groupID)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var gr = context.Group.SingleOrDefault(g => g.id == groupID);
                 gr.AmountOfStudent--;
@@ -46,7 +46,7 @@ namespace LNU.Courses.Repositories
         }
         public bool checkRegisteredPhoneNumber(string login)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 if (login != "")
                 {
@@ -65,7 +65,7 @@ namespace LNU.Courses.Repositories
         }
         public bool checkRegisteredEmail(string login)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 if (login != "")
                 {
@@ -84,7 +84,7 @@ namespace LNU.Courses.Repositories
         }
         public void ManUpGroupsForSecondWave()
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var notRegisteredStd = (from std in context.Students
                                         join sig in context.StudentsInGroups on std.id equals sig.studentID into loj
@@ -137,7 +137,7 @@ namespace LNU.Courses.Repositories
 
         public bool CheckStudentForRegistered(Students st)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var listSig = context.StudentsInGroups.ToList();
                 int k = listSig.Count(item => item.studentID == st.id);
@@ -150,7 +150,7 @@ namespace LNU.Courses.Repositories
 
         public IEnumerable<StudentsInGroups> GetStudentsInGroups()
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var sig = context.StudentsInGroups.Where(el => el.Students.Deleted == false).ToList();
 
@@ -160,7 +160,7 @@ namespace LNU.Courses.Repositories
         //!!!!!!!!!!!!!!!!!!!!
         public void AddStudentInGroups(StudentsInGroups sig)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 context.StudentsInGroups.Add(sig);
                 addAmountStudent(sig.groupID);
@@ -170,7 +170,7 @@ namespace LNU.Courses.Repositories
 
         public void DeleteStudentInGroups(StudentsInGroups sig)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var elToRemove = context.Set<StudentsInGroups>().SingleOrDefault(el => el.id == sig.id);
 
@@ -182,7 +182,7 @@ namespace LNU.Courses.Repositories
 
         public IEnumerable<Students> GetStudents()
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var students = context.Students.ToList();
 
@@ -192,7 +192,7 @@ namespace LNU.Courses.Repositories
 
         public IEnumerable<Group> GetGroups()
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var groups = context.Group.Where(el => el.Deleted == false).ToList();
 
@@ -203,7 +203,7 @@ namespace LNU.Courses.Repositories
         #region user
         public void ChangeUserPass(string login, string newPass)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var userAcc = context.Users.SingleOrDefault(acc => acc.login == login);
                 if (userAcc != null) userAcc.password = _hashProvider.Encrypt(newPass);
@@ -214,7 +214,7 @@ namespace LNU.Courses.Repositories
         {
 
             //password = _hashProvider.Encrypt(password);
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 Users user = context.Users.SingleOrDefault(el => el.login == login && el.password == password);
 
@@ -223,7 +223,7 @@ namespace LNU.Courses.Repositories
         }
         public Users GetUser(string login)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var user = context.Users.SingleOrDefault(el => el.login == login);
 
@@ -234,7 +234,7 @@ namespace LNU.Courses.Repositories
         #region Student
         public bool CheckRegisteredStudent(string id)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var student = context.StudentsInGroups.SingleOrDefault(st => st.studentID == id);
                 if (student == null)
@@ -247,7 +247,7 @@ namespace LNU.Courses.Repositories
 
         public void ChangeStudentEMail(string login, string newEMail)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var studentAcc = context.Students.SingleOrDefault(acc => acc.id == login);
                 if (studentAcc != null) studentAcc.eMail = newEMail;
@@ -256,7 +256,7 @@ namespace LNU.Courses.Repositories
         }
         public void ChangeStudentPhone(string login, string newPhone)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var studentAcc = context.Students.SingleOrDefault(acc => acc.id == login);
                 if (studentAcc != null) studentAcc.phoneNumber = newPhone;
@@ -269,7 +269,7 @@ namespace LNU.Courses.Repositories
         public List<Disciplines> GetDisciplinesSort(string login,int wave)
         {
             //tyt
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var student = GetStudents().SingleOrDefault(std => std.id == login);
                 var disciplines = context.Disciplines.Where(el => el.course == student.course).ToList();
@@ -316,7 +316,7 @@ namespace LNU.Courses.Repositories
         #region Group
         public Group GetGroupByDisciplinesId(int id)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 // врахувати хвилю
 
@@ -326,7 +326,7 @@ namespace LNU.Courses.Repositories
         }
         public Group GetGroupByDisciplinesId(int id, int wave)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var group = context.Group.SingleOrDefault(el => el.disciplinesID == id && el.Wave == wave && el.Deleted == false);
                 return group;
@@ -335,7 +335,7 @@ namespace LNU.Courses.Repositories
         #endregion
         public IEnumerable<Disciplines> GetD(string login)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var sTinGroup = context.StudentsInGroups.Where(gr => gr.studentID == login);
                 var groups = from gr in context.Group
@@ -361,7 +361,7 @@ namespace LNU.Courses.Repositories
 
         public void DeleteMyDiscipline(int id, string login)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var sig = context.StudentsInGroups.Where(st => st.studentID == login ).ToList();
                 foreach (var item in sig)
@@ -376,7 +376,7 @@ namespace LNU.Courses.Repositories
         }
         public void DeleteMyDiscipline(int id, string login,int wave)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new Entities.Entities())
             {
                 var sig = context.StudentsInGroups.Where(st => st.studentID == login).ToList();
                 foreach (var item in sig)
