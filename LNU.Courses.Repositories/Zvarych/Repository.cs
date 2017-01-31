@@ -10,7 +10,7 @@ namespace LNU.Courses.Repositories
 
         public IEnumerable<Lecturer> GetLecturers()
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 return context.Lecturers.ToList();
             }
@@ -18,7 +18,7 @@ namespace LNU.Courses.Repositories
 
         public void UpdateLecturer(Lecturer lecturer)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var lecturerToUpd = context.Lecturers.SingleOrDefault(el => el.Id == lecturer.Id);
 
@@ -33,7 +33,7 @@ namespace LNU.Courses.Repositories
 
         public bool DeleteLecturer(Lecturer lecturer)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 try
                 {
@@ -53,7 +53,7 @@ namespace LNU.Courses.Repositories
 
         public void AddLecturer(Lecturer lecturer)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 context.Lecturers.Add(lecturer);
                 context.SaveChanges();
@@ -64,14 +64,14 @@ namespace LNU.Courses.Repositories
         {
             try
             {
-                using (var context = new CoursesOfChoiceEntities())
+                using (var context = new CoursesDataModel())
                 {
                     return context.Users.ToList();
                 }
             }
             catch
             {
-                using (var context = new CoursesOfChoiceEntities())
+                using (var context = new CoursesDataModel())
                 {
                     return context.Users.ToList();
                 }
@@ -80,7 +80,7 @@ namespace LNU.Courses.Repositories
 
         public List<int> GetDisciplinesForSecondWave()
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var groups = context.Group.Where(gr => gr.StudentsInGroups.Count >= 25 && gr.Wave == 1).ToList();
                 return groups.Select(item => item.disciplinesID).ToList();
@@ -90,7 +90,7 @@ namespace LNU.Courses.Repositories
         {
             try
             {
-                using (var context = new CoursesOfChoiceEntities())
+                using (var context = new CoursesDataModel())
                 {
                     var disciplines = context.Disciplines.ToList();
                     disciplines.ForEach(el =>
@@ -107,7 +107,7 @@ namespace LNU.Courses.Repositories
             }
             catch
             {
-                using (var context = new CoursesOfChoiceEntities())
+                using (var context = new CoursesDataModel())
                 {
                     var disciplines = context.Disciplines.ToList();
                     disciplines.ForEach(el =>
@@ -127,7 +127,7 @@ namespace LNU.Courses.Repositories
 
         public void AddGroup(Group group)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 context.Group.Add(group);
 
@@ -137,7 +137,7 @@ namespace LNU.Courses.Repositories
 
         public void UpdateGroup(Group group)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var gr = context.Group.SingleOrDefault(el => el.id == group.id);
                 if (gr != null)
@@ -156,7 +156,7 @@ namespace LNU.Courses.Repositories
 
         public void DeleteGroups()
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 context.Group.ToList().ForEach(gr => gr.Deleted = true);
                 context.SaveChanges();
@@ -169,7 +169,7 @@ namespace LNU.Courses.Repositories
 
         public bool DeleteAdmin(string login)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var admin = context.Administrators.SingleOrDefault(st => st.login == login);
                 context.Administrators.Remove(admin);
@@ -181,7 +181,7 @@ namespace LNU.Courses.Repositories
 
         public bool AddAdmin(Administrators admin)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 bool valToReturn = true;
                 if (context.Administrators.Any(el => el.login == admin.login))
@@ -202,7 +202,7 @@ namespace LNU.Courses.Repositories
 
         public void UpdateAdmin(Administrators adminAcc)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var admin = context.Administrators.SingleOrDefault(el => el.login == adminAcc.login);
                 if (admin != null)
@@ -218,7 +218,7 @@ namespace LNU.Courses.Repositories
 
         //public Administrators GetAdmin(string login)
         //{
-        //    using (var context = new CoursesOfChoiceEntities())
+        //    using (var context = new CoursesDataModel())
         //    {
         //        var admin = context.Administrators.SingleOrDefault(el => el.login == login);
 
@@ -230,7 +230,7 @@ namespace LNU.Courses.Repositories
         {
             try
             {
-                using (var context = new CoursesOfChoiceEntities())
+                using (var context = new CoursesDataModel())
                 {
                     var adminList = context.Administrators;
 
@@ -239,7 +239,7 @@ namespace LNU.Courses.Repositories
             }
             catch
             {
-                using (var context = new CoursesOfChoiceEntities())
+                using (var context = new CoursesDataModel())
                 {
                     var adminList = context.Administrators;
 
@@ -260,7 +260,7 @@ namespace LNU.Courses.Repositories
         /// <returns></returns>
         private IEnumerable<Students> GetStudents(int disciplineId, int wave)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var discipline = context.Disciplines.SingleOrDefault(disc => disc.id == disciplineId);
                 if (discipline != null)
@@ -293,7 +293,7 @@ namespace LNU.Courses.Repositories
         /// <param name="student"></param>
         public void UpdateStudent(Students student)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var studentToUpdate = context.Students.SingleOrDefault(st => st.id == student.id);
                 if (studentToUpdate != null)
@@ -316,7 +316,7 @@ namespace LNU.Courses.Repositories
         /// <returns></returns>
         public bool AddStudent(Students student)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 bool valToReturn = true;
                 if (context.Students.Any(el => el.id == student.id))
@@ -340,7 +340,7 @@ namespace LNU.Courses.Repositories
         /// <returns>State of operation</returns>
         public bool DeleteStudent(string id)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var student = context.Students.SingleOrDefault(st => st.id == id);
 
@@ -370,7 +370,7 @@ namespace LNU.Courses.Repositories
         /// <returns></returns>
         public bool DeleteDiscipline(int id)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var discipline = context.Disciplines.SingleOrDefault(disc => disc.id == id);
                 if (discipline == null)
@@ -416,7 +416,7 @@ namespace LNU.Courses.Repositories
         /// <param name="discipline"></param>
         public void UpdateDiscipline(Disciplines discipline)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var disciplineToUpdate = context.Disciplines.SingleOrDefault(disc => disc.id == discipline.id);
 
@@ -441,7 +441,7 @@ namespace LNU.Courses.Repositories
         /// <returns></returns>
         public bool AddDiscipline(Disciplines discipline)
         {
-            using (var context = new CoursesOfChoiceEntities())
+            using (var context = new CoursesDataModel())
             {
                 var valToReturn = true;
                 if (context.Disciplines.Any(el => el.name == discipline.name))

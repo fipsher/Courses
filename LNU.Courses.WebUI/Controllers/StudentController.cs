@@ -108,7 +108,7 @@ namespace LNU.Courses.Controllers
             studInGroup.DateOfRegister = DateTime.Now;
 
             if (DateTime.Now.Year == group.year)
-                using (var context = new CoursesOfChoiceEntities())
+                using (var context = new CoursesDataModel())
                 {
                     context.StudentsInGroups.Add(studInGroup);
                     context.SaveChanges();

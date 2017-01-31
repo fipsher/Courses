@@ -4,22 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5b3c3f5ae543464681274237a98c7179" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="CoursesOfChoiceModel.Administrators" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoursesOfChoiceModel.Disciplines" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoursesOfChoiceModel.Group" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoursesOfChoiceModel.Students" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoursesOfChoiceModel.StudentsInGroups" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoursesOfChoiceModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoursesOfChoiceModel.Users" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <AssociationConnector Association="CoursesOfChoiceModel.FK_Group_Disciplines" ManuallyRouted="false" />
-        <AssociationConnector Association="CoursesOfChoiceModel.FK_StudentsInGroups_Group" ManuallyRouted="false" />
-        <AssociationConnector Association="CoursesOfChoiceModel.fk_Students_StudentsInGroup" ManuallyRouted="false" />
-        <AssociationConnector Association="CoursesOfChoiceModel.FK_Students_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="CoursesOfChoiceModel.FK_Users_Students" />
-        <EntityTypeShape EntityType="CoursesOfChoiceModel.Lecturer" Width="1.5" PointX="8.5" PointY="3.5" />
-        <AssociationConnector Association="CoursesOfChoiceModel.fk_Lecturers_administrators" />
-        <AssociationConnector Association="CoursesOfChoiceModel.fk_Lecturers_disciplines" />
+      <Diagram DiagramId="17425d9b6eb145ffac69e49ac7fb7db6" Name="Diagram1">
+        <EntityTypeShape EntityType="Entities.Administrators" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.Disciplines" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.Group" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.Lecturer" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.Students" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.StudentsInGroups" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.Users" Width="1.5" PointX="7.5" PointY="2.625" IsExpanded="true" />
+        <AssociationConnector Association="Entities.fk_Lecturers_administrators" ManuallyRouted="false" />
+        <AssociationConnector Association="Entities.FK_Group_Disciplines" ManuallyRouted="false" />
+        <AssociationConnector Association="Entities.fk_Lecturers_disciplines" ManuallyRouted="false" />
+        <AssociationConnector Association="Entities.FK_StudentsInGroups_Group1" ManuallyRouted="false" />
+        <AssociationConnector Association="Entities.FK_StudentsInGroups_Students1" ManuallyRouted="false" />
+        <AssociationConnector Association="Entities.FK_Users_Students" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

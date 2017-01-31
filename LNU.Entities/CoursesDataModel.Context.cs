@@ -13,10 +13,10 @@ namespace Entities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CoursesOfChoiceEntities : DbContext
+    public partial class CoursesDataModel : DbContext
     {
-        public CoursesOfChoiceEntities()
-            : base("name=CoursesOfChoiceEntities")
+        public CoursesDataModel()
+            : base("name=CoursesDataModel")
         {
         }
     
@@ -28,10 +28,10 @@ namespace Entities
         public virtual DbSet<Administrators> Administrators { get; set; }
         public virtual DbSet<Disciplines> Disciplines { get; set; }
         public virtual DbSet<Group> Group { get; set; }
+        public virtual DbSet<Lecturer> Lecturers { get; set; }
         public virtual DbSet<Students> Students { get; set; }
         public virtual DbSet<StudentsInGroups> StudentsInGroups { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<Lecturer> Lecturers { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Андрій\Documents\Courses\LNU.Entities\CoursesDataModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Entities\CoursesDataModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

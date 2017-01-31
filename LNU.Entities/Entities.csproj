@@ -134,13 +134,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config">
-      <SubType>Designer</SubType>
-    </None>
     <EntityDeploy Include="CoursesDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CoursesDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="CoursesDataModel.edmx.diagram">
       <DependentUpon>CoursesDataModel.edmx</DependentUpon>
     </None>
