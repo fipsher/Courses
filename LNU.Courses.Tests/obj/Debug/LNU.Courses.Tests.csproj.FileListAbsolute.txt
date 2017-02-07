@@ -115,3 +115,17 @@ C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\EntityFram
 C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\obj\Debug\LNU.Courses.Tests.csprojResolveAssemblyReference.cache
 C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\obj\Debug\LNU.Courses.Tests.dll
 C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\obj\Debug\LNU.Courses.Tests.pdb
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\LNU.Courses.Jobs.dll
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\LNU.Courses.PeriodicalJobMaker.dll
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\Quartz.dll
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\Common.Logging.Core.dll
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\Common.Logging.dll
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\LNU.Courses.Jobs.pdb
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\LNU.Courses.PeriodicalJobMaker.pdb
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\Quartz.pdb
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\Quartz.xml
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\Common.Logging.Core.pdb
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\Common.Logging.Core.xml
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\Common.Logging.pdb
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\Common.Logging.xml
+C:\Users\fipsh\OneDrive\Documents\Courses\LNU.Courses.Tests\bin\Debug\LNU.Courses.Tests.dll.config

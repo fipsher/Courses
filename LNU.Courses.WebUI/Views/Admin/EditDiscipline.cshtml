@@ -23,7 +23,7 @@
         @Html.HiddenFor(model => model.id)
         
         <div class="form-group">
-            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Назва", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @if (roles.Contains(supAdmRole))
                 {
@@ -38,7 +38,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.kafedra, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Кафедра", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @if (roles.Contains(supAdmRole))
                 {
@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Lecturers, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Лектор", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @if (roles.Contains(supAdmRole))
                 {
@@ -70,7 +70,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.course, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Семестр", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @if (roles.Contains(supAdmRole))
                 {
@@ -88,8 +88,9 @@
             </div>
         </div>
 
+
         <div class="form-group">
-            @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Опис", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextAreaFor(model => model.description, new { htmlAttributes = new { @class = "form-group" } })
                 @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })

@@ -15,7 +15,7 @@ namespace LNU.Courses.Jobs
             RepositoryBL repoBl = new RepositoryBL(repository);
 
             DeadlineManUp frst = new DeadlineManUp(repository);
-            frst.ManUpGroups();
+            frst.ManUpGroups(1);
             //repository.ManUpGroups();
 
             //repository.DetruncateStudentsFirstWave();
@@ -35,7 +35,7 @@ namespace LNU.Courses.Jobs
             RepositoryBL repoBl = new RepositoryBL(repository);
 
             DeadlineManUp frst = new DeadlineManUp(repository);
-            frst.ManUpGroups();
+            frst.ManUpGroups(1);
             //repository.ManUpGroups();
 
             //repository.DetruncateStudentsFirstWave();

@@ -17,31 +17,33 @@ namespace LNU.Courses.BLL.DeadlinesBLL
             _repository = repository;
         }
 
-        public void ManUpGroups()
+        public void ManUpGroups(int semestr)
         {
             for (int i = 1; i < MaxCourse; i++)
             {
-                manUpGroupsFirstly(i);
+                manUpGroupsFirstly(i, i * 2 - 1);
+                manUpGroupsFirstly(i, i * 2);
             }
 
             for (int i = 1; i < MaxCourse; i++)
             {
-                manUpGroupsSecondly(i);
+                manUpGroupsSecondly(i, i * 2 - 1);
+                manUpGroupsSecondly(i, i * 2);
             }
         }
 
         /// <summary>
         /// Fills groups with stdAmount less than GroupAbstractLimit with std that registered in one group 
         /// </summary>
-        private void manUpGroupsSecondly(int course)
+        private void manUpGroupsSecondly(int course, int semestr)
         {
             var students = _repository.GetStudents().Where(std => std.course == course);
             var disciplines = _repository.GetDisciplines();
 
             var groups = _repository.GetGroups().Where(gr =>
             {
-                var singleOrDefault = disciplines.SingleOrDefault(d => d.id == gr.disciplinesID);
-                return singleOrDefault != null && singleOrDefault.course == course && gr.Deleted == false && gr.Wave == 1;
+                var singleOrDefault = disciplines.SingleOrDefault(d => d.id == gr.disciplinesID);///
+                return singleOrDefault != null && singleOrDefault.course == semestr && gr.Deleted == false && gr.Wave == 1;
             });
             var stdInGroups = _repository.GetStudentsInGroups().Where(sig => groups.Any(gr => gr.id == sig.groupID));
 
@@ -146,15 +148,15 @@ namespace LNU.Courses.BLL.DeadlinesBLL
         /// <summary>
         /// Fills groups whith stdAmount less than GroupAbstractLimit with std that do not register
         /// </summary>
-        private void manUpGroupsFirstly(int course)
+        private void manUpGroupsFirstly(int course, int semestr)
         {
             var students = _repository.GetStudents().Where(std => std.course == course);
             var disciplines = _repository.GetDisciplines();
 
             var groups = _repository.GetGroups().Where(gr =>
             {
-                var singleOrDefault = disciplines.SingleOrDefault(d => d.id == gr.disciplinesID);
-                return singleOrDefault != null && singleOrDefault.course == course && gr.Deleted == false && gr.Wave == 1;
+                var singleOrDefault = disciplines.SingleOrDefault(d => d.id == gr.disciplinesID);///
+                return singleOrDefault != null && singleOrDefault.course == semestr && gr.Deleted == false && gr.Wave == 1;
             });
             var stdInGroups = _repository.GetStudentsInGroups().Where(sig => groups.Any(gr => gr.id == sig.groupID));
 

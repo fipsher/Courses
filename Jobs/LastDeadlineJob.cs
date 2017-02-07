@@ -10,7 +10,7 @@ namespace LNU.Courses.Jobs
         {
             IRepository repository = new Repository();
             SecondDeadline sd = new SecondDeadline(repository);
-            sd.FillGroupsWithRemainedStd();
+            sd.FillGroupsWithRemainedStd(2);
 
         }
 
@@ -18,7 +18,7 @@ namespace LNU.Courses.Jobs
         {
             IRepository repository = new Repository();
             SecondDeadline sd = new SecondDeadline(repository);
-            sd.FillGroupsWithRemainedStd();
+            sd.FillGroupsWithRemainedStd(2);
 
         }
     }

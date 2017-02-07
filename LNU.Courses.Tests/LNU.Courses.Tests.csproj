@@ -63,9 +63,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Jobs\LNU.Courses.Jobs.csproj">
+      <Project>{4cc2e7b7-cce9-43dc-9aee-1bdb4e5205d2}</Project>
+      <Name>LNU.Courses.Jobs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LNU.Courses.BLL\LNU.Courses.BLL.csproj">
       <Project>{498436EF-7471-4995-9C64-B28A4B5F8DFE}</Project>
       <Name>LNU.Courses.BLL</Name>
@@ -77,6 +82,10 @@
     <ProjectReference Include="..\LNU.Entities\Entities.csproj">
       <Project>{864AB2BC-E4E5-4AE8-82C5-6E5F6C9EC76A}</Project>
       <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PeriodicalJobMaker\LNU.Courses.PeriodicalJobMaker.csproj">
+      <Project>{6d106f99-8f06-4d43-af32-3e7baaa70682}</Project>
+      <Name>LNU.Courses.PeriodicalJobMaker</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

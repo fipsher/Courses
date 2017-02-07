@@ -6,6 +6,8 @@ using LNU.Courses.BLL.RepoBLL;
 using LNU.Courses.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using LNU.Courses.BLL.DeadlinesBLL;
+using LNU.Courses.Jobs;
 
 namespace LNU.Courses.Tests
 {
@@ -30,6 +32,30 @@ namespace LNU.Courses.Tests
 
             initialize();
         }
+
+        [TestMethod]
+        public void TestDeadlines()
+        {
+            IRepository repository = new Repository();
+            RepositoryBL repoBl = new RepositoryBL(repository);
+            int wave = 1;
+            // removes old and adds new Groups 
+            repository.DeleteGroups();
+            repoBl.CreateNewGroups(wave);
+
+            //frst
+            DeadlineManUp frst = new DeadlineManUp(repository);
+            frst.ManUpGroups(1);
+            List<string> eMails = repoBl.GetStdEmailsForSecondWay().ToList();
+            MailSender mailSender = new MailSender();
+            string subject = "ЛНУ Курси";
+            string body = "На жаль ти не зміг зареєструватись на вибраний курс.<br/> Але ти можеш зареєструватись на інший курс.";
+            mailSender.SendMail(subject, body, eMails);
+
+            SecondDeadline sd = new SecondDeadline(repository);
+            sd.FillGroupsWithRemainedStd(2);
+        }
+
 
         [TestMethod]
         public void TestStdSearching()

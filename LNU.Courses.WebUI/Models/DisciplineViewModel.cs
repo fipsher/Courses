@@ -23,6 +23,7 @@ namespace LNU.Courses.WebUI.Models
         public string kafedra { get; set; }
         public Lecturer lecturer { get; set; }
         public int course { get; set; }
+        public int Semestr { get; set; }
         public string description { get; set; }
         public int firstWave { get; set; }
         public int secondWave { get; set; }

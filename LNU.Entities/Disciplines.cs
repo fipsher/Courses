@@ -11,8 +11,7 @@ namespace Entities
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class Disciplines
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,13 +21,9 @@ namespace Entities
         }
     
         public int id { get; set; }
-        [DisplayName("Назва")]
         public string name { get; set; }
-        [DisplayName("Кафедра")]
         public string kafedra { get; set; }
-        [DisplayName("Курс")]
         public int course { get; set; }
-        [DisplayName("Опис")]
         public string description { get; set; }
         public Nullable<int> lecturerId { get; set; }
     

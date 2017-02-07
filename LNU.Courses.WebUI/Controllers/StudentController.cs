@@ -137,18 +137,6 @@ namespace LNU.Courses.Controllers
                 if (datetimeNowWithLast < 0)
                 ViewBag.Wave = 2;
 
-            //if (staticData.lastDeadLineTime.Month > DateTime.Now.Month)
-            //{
-            //    staticData.disciplinesID = repository.GetDisciplinesForSecondWave();
-            //    ViewBag.Wave = 2;
-            //}
-            //else
-            //if (staticData.lastDeadLineTime.Month == DateTime.Now.Month)
-            //    if (staticData.lastDeadLineTime.Day > DateTime.Now.Day)
-            //    {
-            //        staticData.disciplinesID = repository.GetDisciplinesForSecondWave();
-            //        ViewBag.Wave = 2;
-            //    }
 
             int checkReg = 0;
             IEnumerable<Disciplines> disc = repository.GetD(SessionPersister.Login);
