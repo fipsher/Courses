@@ -165,11 +165,11 @@ namespace LNU.Courses.BLL.DeadlinesBLL
                 manUpGroupsFirstly(i, i * 2);
             }
 
-            for (int i = 1; i < MaxCourse; i++)
-            {
-                manUpGroupsSecondly(i, i * 2 - 1);
-                manUpGroupsSecondly(i, i * 2);
-            }
+            //for (int i = 1; i < MaxCourse; i++)
+            //{
+            //    manUpGroupsSecondly(i, i * 2 - 1);
+            //    manUpGroupsSecondly(i, i * 2);
+            //}
         }
 
     }
