@@ -12,7 +12,7 @@
     <div class="form-horizontal">
         <hr />
         <div class="form-group">
-            @Html.Label("New EMail", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Email", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="email" id="newEMail" name="newEMail" class="form-control"/>
                 <div class="text-danger">@ViewBag.ChangePassValidate</div>
@@ -25,6 +25,3 @@
         </div>
     </div>
 }
-<div>
-    @Html.ActionLink("Come back", "MyProfile")
-</div>

@@ -15,6 +15,20 @@
     month = ViewBag.LastDeadline.Month < 10 ? "0" + ViewBag.LastDeadline.Month.ToString() : ViewBag.LastDeadline.Month.ToString();
     day = ViewBag.LastDeadline.Day < 10 ? "0" + ViewBag.LastDeadline.Day.ToString() : ViewBag.LastDeadline.Day.ToString();
     string lastDeadline = $"{DateTime.Now.Year}-{month}-{day}";
+
+    var h = ViewBag.Start.Hour < 10 ? "0" + ViewBag.Start.Hour : ViewBag.Start.Hour.ToString();
+    var m = ViewBag.Start.Minute < 10 ? "0" + ViewBag.Start.Minute : ViewBag.Start.Minute.ToString();
+    var startTime = $"{h}:{m}";
+
+
+    h = ViewBag.FirstDeadline.Hour < 10 ? "0" + ViewBag.FirstDeadline.Hour : ViewBag.FirstDeadline.Hour.ToString();
+    m = ViewBag.FirstDeadline.Minute < 10 ? "0" + ViewBag.FirstDeadline.Minute : ViewBag.FirstDeadline.Minute.ToString();
+    var firstDeadlineTime = $"{h}:{m}";
+
+
+    h = ViewBag.LastDeadline.Hour < 10 ? "0" + ViewBag.LastDeadline.Hour : ViewBag.LastDeadline.Hour.ToString();
+    m = ViewBag.LastDeadline.Minute < 10 ? "0" + ViewBag.LastDeadline.Minute : ViewBag.LastDeadline.Minute.ToString();
+    var lastDeadlineTime = $"{h}:{m}";
 }
 
 <h2>Змінити дедлайни</h2>
@@ -32,6 +46,7 @@
             <div class="col-md-10">
 
                 <input type="date" name="start" class="col-md-2 form-control" value="@start" />
+                <input type="time" name="startTime" class="col-md-2 form-control" value="@startTime" />
             </div>
         </div>
 
@@ -39,6 +54,7 @@
             @Html.Label("Кінець першого та початок другого кіл:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="date" name="firstDeadline" class="col-md-2 form-control" value="@firstDeadline" />
+                <input type="time" name="firstDeadlineTime" class="col-md-2 form-control" value="@firstDeadlineTime" />
             </div>
         </div>
 
@@ -46,7 +62,7 @@
             @Html.Label("Кінець другого кола:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="date" name="lastDeadline" class="col-md-2 form-control" value="@lastDeadline" />
-
+                <input type="time" name="lastDeadlineTime" class="col-md-2 form-control" value="@lastDeadlineTime" />
             </div>
         </div>
 

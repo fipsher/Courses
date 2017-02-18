@@ -1,10 +1,16 @@
 ﻿using System.Collections.Generic;
 using Entities;
+using System;
+using System.Linq.Expressions;
 
 namespace LNU.Courses.Repositories
 {
     public interface IRepository
     {
+        IEnumerable<Students> GetStudents(Expression<Func<Students, bool>> expression);
+        Students GetStudent(Expression<Func<Students, bool>> expression);
+        IEnumerable<Disciplines> GetDisciplines(Expression<Func<Disciplines, bool>> expression);
+        IEnumerable<Disciplines> GetUserRegisteredDisc(string login);
         //
         IEnumerable<Users> GetUsers();
         int GetDisciplineWhereRegistered(string login);

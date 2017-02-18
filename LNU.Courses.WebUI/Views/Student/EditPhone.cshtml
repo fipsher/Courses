@@ -14,7 +14,8 @@
         <div class="form-group">
             @Html.Label("New Phone", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="number" id="newPhone" name="newPhone" class="form-control" />
+                <input type="tel" id="newPhone" name="newPhone" class="form-control" required pattern='[\+]\d{2}\d{3}\d{3}\d{2}\d{2}' title='Phone Number (Format: +389999999999)' />
+
                 <div class="text-danger">@ViewBag.ChangePassValidate</div>
             </div>
         </div>
@@ -25,6 +26,4 @@
         </div>
     </div>
 }
-<div>
-    @Html.ActionLink("Come back", "EditEMail")
-</div>
+

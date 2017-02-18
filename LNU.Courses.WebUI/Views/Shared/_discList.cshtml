@@ -44,6 +44,7 @@
         <th></th>
         <th></th>
         <th></th>
+        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -59,10 +60,7 @@
                 @Html.DisplayFor(modelItem => item.lecturer.fullName)
             </td>
             <td>
-                @{
-                    var course = item.course;
-                }
-                @Html.DisplayFor(modelItem => course)
+                @Html.DisplayFor(modelItem => item.course)
             </td>
 
             <td>
@@ -97,6 +95,13 @@
                 @if (roles.Contains(supAdmRole))
                 {
                     @Html.ActionLink("Видалити", "DeleteDiscipline", "Admin", new {id = item.id}, null)
+                }
+            </td>
+            <td>
+                @if (ViewBag.Wave != 0 && (((double)item.course / 2 - Math.Truncate((double)((double)item.course / 2)) == 0.5 && ViewBag.FirstSemestr == false)
+                        || ((double)item.course / 2 - Math.Truncate((double)((double)item.course / 2)) == 0 && ViewBag.SecondSemestr == false)))
+                {
+                    @Html.ActionLink("Обрати", "RegisteringInTheCourse", "Student", new { id = item.id })
                 }
             </td>
 

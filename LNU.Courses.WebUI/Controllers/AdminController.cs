@@ -14,6 +14,8 @@ using LNU.Courses.Security;
 using LNU.Courses.WebUI.App_Start;
 using LNU.Courses.WebUI.Models;
 using LNU.Courses.BLL.RepoBLL;
+using System.Configuration;
+using System.Web.Configuration;
 
 namespace LNU.Courses.Controllers
 {
@@ -232,7 +234,7 @@ namespace LNU.Courses.Controllers
         [HttpPost]
         [AdminAuthorize(Roles = "SuperAdmin")]
         [ValidateAntiForgeryToken]
-        public ActionResult ChangeDeadLine(DateTime? start, DateTime? firstDeadline, DateTime? lastDeadline)
+        public ActionResult ChangeDeadLine(DateTime? start, DateTime? firstDeadline, DateTime? lastDeadline, DateTime startTime, DateTime firstDeadlineTime, DateTime lastDeadlineTime)
         {
             ViewBag.Result = false;
             if (start != null && firstDeadline != null && lastDeadline != null)
@@ -240,26 +242,27 @@ namespace LNU.Courses.Controllers
                 if (start < firstDeadline && firstDeadline < lastDeadline)
                 {
                     ViewBag.Result = true;
-
-                    DeadlineConfig.JobMaker.ClearSchedule();
-
-                    DateParser dp = new DateParser();
-
-                    string startPoint = dp.Parse(start);
-                    DeadlineConfig.JobMaker.Start<StartJob>(startPoint);
-
-                    string frstDeadline = dp.Parse(firstDeadline);
-                    DeadlineConfig.JobMaker.Start<FirstDeadLineJob>(frstDeadline);
-
-                    string lstDeadline = dp.Parse(lastDeadline);
-                    DeadlineConfig.JobMaker.Start<LastDeadlineJob>(lstDeadline);
-                    staticData.StartTime = new DateTime(start.Value.Year, start.Value.Month, start.Value.Day); //start;
+                    staticData.StartTime = new DateTime(start.Value.Year, start.Value.Month,
+                        start.Value.Day, startTime.Hour, startTime.Minute, 0); //start;
                     staticData.firstDeadLineTime = new DateTime(firstDeadline.Value.Year, firstDeadline.Value.Month,
-                        firstDeadline.Value.Day); // firstDeadline;
+                        firstDeadline.Value.Day, firstDeadlineTime.Hour, firstDeadlineTime.Minute, 0); // firstDeadline;
                     staticData.lastDeadLineTime = new DateTime(lastDeadline.Value.Year, lastDeadline.Value.Month,
-                        lastDeadline.Value.Day); // lastDeadline;
+                        lastDeadline.Value.Day, lastDeadlineTime.Hour, lastDeadlineTime.Minute, 0); // lastDeadline;
                     staticData.disciplinesID = _repository.GetDisciplinesForSecondWave();
 
+
+
+                    DeadlineConfig.JobMaker.ClearSchedule();
+                    DateParser dp = new DateParser();
+
+                    string startPoint = dp.Parse(staticData.StartTime);
+                    DeadlineConfig.JobMaker.Start<StartJob>(startPoint);
+
+                    string frstDeadline = dp.Parse(staticData.firstDeadLineTime);
+                    DeadlineConfig.JobMaker.Start<FirstDeadLineJob>(frstDeadline);
+
+                    string lstDeadline = dp.Parse(staticData.lastDeadLineTime);
+                    DeadlineConfig.JobMaker.Start<LastDeadlineJob>(lstDeadline);
                 }
             }
 
@@ -267,6 +270,12 @@ namespace LNU.Courses.Controllers
             ViewBag.FirstDeadline = staticData.firstDeadLineTime;
             ViewBag.LastDeadline = staticData.lastDeadLineTime;
             return View();
+        }
+
+        private string ParseToQuartzFormat(string pattern, DateTime? time)
+        {
+            var result = string.Format(pattern, time.Value.Minute, time.Value.Hour, time.Value.Day, time.Value.Month);
+            return result;
         }
 
         #region Admins managing
@@ -697,7 +706,12 @@ namespace LNU.Courses.Controllers
         {
             var discipline = _repository.GetDiscipline(disciplineId);
             var studentsList = _repoBl.GetStudents(disciplineId, 1).ToList();
-            var temp = _repoBl.GetStudents(disciplineId, 1).ToList();
+            studentsList.ForEach(st =>
+            {
+                st.Users = null;
+                st.StudentsInGroups = null;
+            });
+            var temp = _repoBl.GetStudents(disciplineId, 2).ToList();
             studentsList.AddRange(temp);
 
             var writer = new ExcelWriter<Students>(discipline.name);

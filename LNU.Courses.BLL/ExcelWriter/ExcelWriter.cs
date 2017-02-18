@@ -5,6 +5,7 @@ using System.Net;
 using Bytescout.Spreadsheet;
 using Bytescout.Spreadsheet.Constants;
 using Bytescout.Spreadsheet.Structures;
+using Entities;
 
 namespace LNU.Courses.BLL.ExcelWriter
 {
@@ -42,16 +43,21 @@ namespace LNU.Courses.BLL.ExcelWriter
                 foreach (var prop in data.GetType().GetProperties())
                 {
                     var currLine = r;
-                    var cellValue = prop.GetValue(data, null);
-
-                    if (cellValue != null)
+                    //var dataTemp = new Users() 
+                    if (prop.Name != "StudentsInGroups" && prop.Name != "Users")
                     {
-                        if (!cellValue.GetType().IsGenericType)
+                        var cellValue = prop.GetValue(data, null);
+
+                        if (cellValue != null)
                         {
-                            _worksheet.Cell(currLine, c).Value = cellValue;
+                            if (!cellValue.GetType().IsGenericType)
+                            {
+                                _worksheet.Cell(currLine, c).Value = cellValue;
+                            }
                         }
+                        c++;
                     }
-                    c++;
+                   
                 }
                 r = r + maxLines;
             }

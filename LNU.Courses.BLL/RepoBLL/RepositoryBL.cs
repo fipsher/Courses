@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Entities;
 using LNU.Courses.Repositories;
+using System.Linq.Expressions;
 
 namespace LNU.Courses.BLL.RepoBLL
 {
@@ -24,14 +25,11 @@ namespace LNU.Courses.BLL.RepoBLL
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public IEnumerable<Disciplines> GetDisciplines(string name)
+        public IEnumerable<Disciplines> GetDisciplines(Expression<Func<Disciplines, bool>> expression)
         {
-            var temp = _repository.GetDisciplines();
-            var disciplines = temp as IList<Disciplines> ?? temp.ToList();
+            var disciplines = _repository.GetDisciplines(expression);
 
-            var discipline = disciplines.Where(el => el.name.ToLower().Contains(name.ToLower()));
-            return discipline.ToList();
-
+            return disciplines.ToList();
         }
 
         /// <summary>

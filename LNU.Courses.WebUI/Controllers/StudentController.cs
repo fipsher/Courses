@@ -139,7 +139,11 @@ namespace LNU.Courses.Controllers
 
 
             int checkReg = 0;
+            var student = _repoBl.GetStudentById(SessionPersister.Login);
+
             IEnumerable<Disciplines> disc = repository.GetD(SessionPersister.Login);
+            ViewBag.FirstSemestr = disc.Any(d => d.course == student.course * 2 + 1);
+            ViewBag.SecondSemestr = disc.Any(d => d.course == student.course * 2 + 2);
             foreach (var item in disc)
             {
                 if (item.course == _repoBl.GetStudentById(SessionPersister.Login).course)

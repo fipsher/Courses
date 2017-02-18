@@ -54,7 +54,11 @@ namespace LNU.Courses.WebUI.Controllers
                 List<string> roles = ((string[])temp).ToList();
                 if (roles.Contains("User"))
                 {
-                    RedirectToAction("GetDisciplines", "Student");
+                    //RedirectToAction("GetDisciplines", "Student");
+                    if (_repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+                        return RedirectToAction("EditPhone", "Student", null);
+                    if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
+                        return RedirectToAction("EditEMail", "Student", null);
                 }                
             }
             ViewBag.SortBy = sortBy;
@@ -64,7 +68,39 @@ namespace LNU.Courses.WebUI.Controllers
         [ChildActionOnly]
         public PartialViewResult GetDisciplinesList(string name, DisciplineSortingEnum? sortBy)
         {
-            var discList = _repoBl.GetDisciplines(name);
+            IEnumerable<Disciplines> discList;
+            if (string.IsNullOrEmpty(name))
+            {
+                discList = _repository.GetDisciplines();
+            }
+            else
+            {
+                discList = _repoBl.GetDisciplines(d => d.name.ToLower().Contains(name.ToLower()));
+            }
+            var user = _repository.GetStudent(el => !string.IsNullOrEmpty(SessionPersister.Login) && el.id == SessionPersister.Login);
+            if (user != null)
+            {
+
+
+                discList = discList.Where(d => d.course == user.course * 2 + 2 || d.course == user.course * 2 + 1);
+                int datetimeNowWithStart = DateTime.Compare(DateTime.Now, staticData.StartTime);
+                int datetimeNowWithFirst = DateTime.Compare(DateTime.Now, staticData.firstDeadLineTime);
+                int datetimeNowWithLast = DateTime.Compare(DateTime.Now, staticData.lastDeadLineTime);
+
+                if (datetimeNowWithStart < 0 || datetimeNowWithLast > 0)
+                    ViewBag.Wave = 0;
+                else
+                    if (datetimeNowWithFirst < 0)
+                    ViewBag.Wave = 1;
+                else
+                    if (datetimeNowWithLast < 0)
+                    ViewBag.Wave = 2;
+                ViewBag.CheckLock = user.locked;
+
+                var stdRegisteredOn = _repository.GetUserRegisteredDisc(user.id);
+                ViewBag.FirstSemestr = stdRegisteredOn.Any(d => d.course == user.course * 2 + 1);
+                ViewBag.SecondSemestr = stdRegisteredOn.Any(d => d.course == user.course * 2 + 2);
+            }
             List<Disciplines> disciplines = discList.ToList();
             List<DisciplineViewModel> disciplinesSort = new List<DisciplineViewModel>();
             var temp = Session["Roles"];
@@ -76,7 +112,7 @@ namespace LNU.Courses.WebUI.Controllers
                     var lectId = _repoBl.GetAdmin(SessionPersister.Login).lecturerId;
 
                     List<Disciplines> tempDiscList =
-                        _repository.GetDisciplines().Where(el => el.lecturerId == lectId).ToList();
+                        _repository.GetDisciplines(el => el.lecturerId == lectId).ToList();
                     List<DisciplineViewModel> toViewBag = new List<DisciplineViewModel>();
                     tempDiscList.ForEach(el =>
                     {

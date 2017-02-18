@@ -23,40 +23,54 @@ namespace LNU.Courses.Controllers
         public ActionResult Login()
         {
 
-            IRepository repository = new Repository();
-            RepositoryBL repoBl = new RepositoryBL(repository);
-            int wave = 1;
-            // removes old and adds new Groups 
-            repository.DeleteGroups();
-            repoBl.CreateNewGroups(wave);
+            //IRepository repository = new Repository();
+            //RepositoryBL repoBl = new RepositoryBL(repository);
+            //int wave = 1;
+            //// removes old and adds new Groups 
+            //repository.DeleteGroups();
+            //repoBl.CreateNewGroups(wave);
 
-            //frst
+            ////frst
 
-            var disciplineAcc = repository.GetDiscipline(8);
-            var studInGroup = new StudentsInGroups();
-            var group = repository.GetGroupByDisciplinesId(disciplineAcc.id);
-            studInGroup.groupID = group.id;
-            studInGroup.studentID = "1114010З ";
-            studInGroup.DateOfRegister = DateTime.Now;
+            //var disciplineAcc = repository.GetDiscipline(8);
+            //var studInGroup = new StudentsInGroups();
+            //var group = repository.GetGroupByDisciplinesId(disciplineAcc.id);
+            //studInGroup.groupID = group.id;
+            //studInGroup.studentID = "1114010З ";
+            //studInGroup.DateOfRegister = DateTime.Now;
 
-            if (DateTime.Now.Year == group.year)
-                using (var context = new CoursesDataModel())
-                {
-                    context.StudentsInGroups.Add(studInGroup);
-                    context.SaveChanges();
-                    repository.addAmountStudent(group.id);
-                }
+            //if (DateTime.Now.Year == group.year)
+            //    using (var context = new CoursesDataModel())
+            //    {
+            //        context.StudentsInGroups.Add(studInGroup);
+            //        context.SaveChanges();
+            //        repository.addAmountStudent(group.id);
+            //    }
+            //disciplineAcc = repository.GetDiscipline(43);
+            //studInGroup = new StudentsInGroups();
+            //group = repository.GetGroupByDisciplinesId(disciplineAcc.id);
+            //studInGroup.groupID = group.id;
+            //studInGroup.studentID = "1115024С ";
+            //studInGroup.DateOfRegister = DateTime.Now;
 
-            DeadlineManUp frst = new DeadlineManUp(repository);
-            frst.ManUpGroups(1);
-            //List<string> eMails = repoBl.GetStdEmailsForSecondWay().ToList();
-            //MailSender mailSender = new MailSender();
-            //string subject = "ЛНУ Курси";
-            //string body = "На жаль ти не зміг зареєструватись на вибраний курс.<br/> Але ти можеш зареєструватись на інший курс.";
-            //mailSender.SendMail(subject, body, eMails);
+            //if (DateTime.Now.Year == group.year)
+            //    using (var context = new CoursesDataModel())
+            //    {
+            //        context.StudentsInGroups.Add(studInGroup);
+            //        context.SaveChanges();
+            //        repository.addAmountStudent(group.id);
+            //    }
 
-            SecondDeadline sd = new SecondDeadline(repository);
-            sd.FillGroupsWithRemainedStd(2);
+            //DeadlineManUp frst = new DeadlineManUp(repository);
+            //frst.ManUpGroups(1);
+            ////List<string> eMails = repoBl.GetStdEmailsForSecondWay().ToList();
+            ////MailSender mailSender = new MailSender();
+            ////string subject = "ЛНУ Курси";
+            ////string body = "На жаль ти не зміг зареєструватись на вибраний курс.<br/> Але ти можеш зареєструватись на інший курс.";
+            ////mailSender.SendMail(subject, body, eMails);
+
+            //SecondDeadline sd = new SecondDeadline(repository);
+            //sd.FillGroupsWithRemainedStd(2);
             return View();
         }
         [HttpPost]

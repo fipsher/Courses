@@ -77,7 +77,7 @@
                             </td>
                             <td>
                                 @{
-                                    var course = item.course + 1;
+                                    var course = item.course;
                                 }
                                 @Html.DisplayFor(modelItem => course)
                             </td>
@@ -94,7 +94,7 @@
                                     }
                                 </td>
                                     <td>
-                                        @if (ViewBag.NotDisciplines != item.id)
+                                        @if (ViewBag.NotDisciplines != item.id &&((double)item.course / 2 - Math.Truncate((double)((double)item.course / 2)) == 0.5 && ViewBag.FirstSemestr == false || ViewBag.SecondSemestr == false ) && (double)item.course / 2 - Math.Truncate((double)((double)item.course / 2)) == 0)
                                         {
                                             @Html.ActionLink("Обрати", "RegisteringInTheCourse", new { id = item.id })
                                         }
@@ -115,7 +115,7 @@
                                             </td>
                                             <td>
                                                 @{
-                                                    var course = item.course + 1;
+                                                    var course = item.course;
                                                 }
                                                 @Html.DisplayFor(modelItem => course)
                                             </td>
@@ -132,7 +132,7 @@
                                                 }
                                             </td>
                                             <td>
-                                                @if (ViewBag.NotDisciplines != item.id)
+                                                @if (ViewBag.NotDisciplines != item.id && ((double)item.course / 2 - Math.Truncate((double)((double)item.course / 2)) == 0.5 && ViewBag.FirstSemestr == false || ViewBag.SecondSemestr == false) && (double)item.course / 2 - Math.Truncate((double)((double)item.course / 2)) == 0)
                                                 {
                                                     @Html.ActionLink("Обрати", "RegisteringInTheCourse", new { id = item.id })
                                                 }

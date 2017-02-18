@@ -51,10 +51,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Інформація", "Info", "Shared", null, null)</li>
-                    @if (flag)
-                    {
+                    @*@if (flag)
+                    {*@
                         <li>@Html.ActionLink("Дисципліни", "GetCourses", "Shared", null, null)</li>
-                    }
+                    @*}*@
                     @if (adminFlag)
                     {
                         <li>@Html.ActionLink("Змінити пароль", "ChangePass", "Admin", null, null)</li>

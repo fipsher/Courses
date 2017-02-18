@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Entities;
+using System.Linq.Expressions;
 
 namespace LNU.Courses.Repositories
 {
@@ -47,11 +48,11 @@ namespace LNU.Courses.Repositories
         {
             using (var context = new CoursesDataModel())
             {
-                if (login != "")
+                if (!string.IsNullOrEmpty(login))
                 {
-                    var stud = context.Students.Where(st => st.id == login).SingleOrDefault();
+                    var stud = context.Students.SingleOrDefault(st => st.id == login);
 
-                    if (stud.phoneNumber == "")
+                    if (string.IsNullOrEmpty(stud.phoneNumber))
                         return false;
                     else
                         return true;
@@ -66,10 +67,10 @@ namespace LNU.Courses.Repositories
         {
             using (var context = new CoursesDataModel())
             {
-                if (login != "")
+                if (!string.IsNullOrEmpty(login))
                 {
-                    var stud = context.Students.Where(st => st.id == login).SingleOrDefault();
-                    if (stud.eMail == "")
+                    var stud = context.Students.SingleOrDefault(st => st.id == login);
+                    if (string.IsNullOrEmpty(stud.eMail))
                         return false;
                     else
                         return true;
@@ -231,6 +232,22 @@ namespace LNU.Courses.Repositories
         }
         #endregion
         #region Student
+        public IEnumerable<Students> GetStudents(Expression<Func<Students, bool>> expression)
+        {
+            using (var context = new CoursesDataModel())
+            {
+                var users = context.Students.Where(expression);
+                return users;
+            }
+        }
+        public Students GetStudent(Expression<Func<Students, bool>> expression)
+        {
+            using (var context = new CoursesDataModel())
+            {
+                var user = context.Students.FirstOrDefault(expression);
+                return user;
+            }
+        }
         public bool CheckRegisteredStudent(string id)
         {
             using (var context = new CoursesDataModel())
@@ -271,7 +288,7 @@ namespace LNU.Courses.Repositories
             using (var context = new CoursesDataModel())
             {
                 var student = GetStudents().SingleOrDefault(std => std.id == login);
-                var disciplines = context.Disciplines.Where(el => el.course == student.course).ToList();
+                var disciplines = context.Disciplines.Where(el => el.course == student.course * 2 + 2 || el.course == student.course * 2 + 1).ToList();
                 var countStud = disciplines.Select(d => GetStudents(d.id, wave).Count()).ToList();//
                 for (int i = 0; i < countStud.Count; i++)
                 {
@@ -338,6 +355,7 @@ namespace LNU.Courses.Repositories
                 var sTinGroup = context.StudentsInGroups.Where(gr => gr.studentID == login);
                 var groups = from gr in context.Group
                              join sig in sTinGroup on gr.id equals sig.groupID
+                             where gr.Deleted == false
                              select gr;
                 var disciplines = (from gr in groups
                                   join dic in context.Disciplines on gr.disciplinesID equals dic.id

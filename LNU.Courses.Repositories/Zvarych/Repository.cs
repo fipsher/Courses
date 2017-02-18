@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Entities;
+using System.Linq.Expressions;
 
 namespace LNU.Courses.Repositories
 {
@@ -124,6 +125,56 @@ namespace LNU.Courses.Repositories
             }
            
         }
+
+        public IEnumerable<Disciplines> GetDisciplines(Expression<Func<Disciplines, bool>> expression)
+        {
+            try
+            {
+                using (var context = new CoursesDataModel())
+                {
+                    var disciplines = context.Disciplines.Where(expression).ToList();
+                    disciplines.ForEach(el =>
+                    {
+                        Lecturer toAdd = new Lecturer();
+                        if (el.Lecturers != null)
+                        {
+                            toAdd.fullName = el.Lecturers.fullName;
+                        }
+                        el.Lecturers = toAdd;
+                    });
+                    return disciplines;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        public IEnumerable<Disciplines> GetUserRegisteredDisc(string login)
+        {
+            try
+            {
+                using (var context = new CoursesDataModel())
+                {
+                    var disciplines = (from d in context.Disciplines
+                                       join g in context.Group on d.id equals g.disciplinesID
+                                       join sig in context.StudentsInGroups on g.id equals sig.groupID
+                                       where sig.studentID == login
+                                          && g.Deleted == false
+                                       select d).ToList();
+                    
+                    return disciplines;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
 
         public void AddGroup(Group group)
         {

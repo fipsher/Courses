@@ -161,8 +161,8 @@ namespace LNU.Courses.BLL.DeadlinesBLL
         {
             for (int i = 1; i < MaxCourse; i++)
             {
-                manUpGroupsFirstly(i, i * 2 - 1);
-                manUpGroupsFirstly(i, i * 2);
+                manUpGroupsFirstly(i, i * 2 + 1);
+                manUpGroupsFirstly(i, i * 2 + 2);
             }
 
             //for (int i = 1; i < MaxCourse; i++)

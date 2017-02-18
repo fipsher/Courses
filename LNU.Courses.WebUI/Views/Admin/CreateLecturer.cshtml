@@ -16,7 +16,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.Label("П.І.Б", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("ПІБ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.fullName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.fullName, "", new { @class = "text-danger" })
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            @Html.Label("Тел.", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Тел", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="tel" pattern='[\+]\d{2}\d{3}\d{3}\d{2}\d{2}' title='Phone Number (Format: +389999999999)' name="phone" class="form-control" />
                 @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
