@@ -3,18 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using Entities;
 using LNU.Courses.Repositories;
+using LNU.Courses.Jobs;
+using LNU.Courses.BLL.RepoBLL;
+using LNU.Courses.WebUI.Models;
 
 namespace LNU.Courses.BLL.DeadlinesBLL
 {
     public class DeadlineManUp
     {
         private readonly IRepository _repository;
+        private readonly RepositoryBL repoBl;
         private const int GroupAbstractLimit = 25;
         private const int MaxCourse = 5;
+
+        private string EmailTemplate = @"Шановний студенте, Ви обрали дисципліни «{Disc_1}»
+                                         для 3 семестру та «{Disc_2}» для 4 семестру
+                                         2017/2018 навчального року.На жаль, група за дисципліною «{Disc_Remove}»                                        
+                                         не набрала потрібної кількості студентів, тому її не
+                                         сформовано.Просимо до {date} обрати іншу дисципліну з переліку пропонованих.";
 
         public DeadlineManUp(IRepository repository)
         {
             _repository = repository;
+            repoBl = new RepositoryBL(_repository);
         }
 
         public void ManUpGroups(int semestr)
@@ -60,8 +71,8 @@ namespace LNU.Courses.BLL.DeadlinesBLL
                        select grp.Key;
             //get students by theirs id 
             var onceRegisteredStd = (from std in studentsList
-                                    join t in temp on std.id equals t
-                                    select std).ToList();
+                                     join t in temp on std.id equals t
+                                     select std).ToList();
 
             // get IQueriable that have groupId and std count          
             var smallSig = (from sig in studentsInGroups
@@ -113,6 +124,36 @@ namespace LNU.Courses.BLL.DeadlinesBLL
                         var sigToRemove = studentsInGroups.Where(sig => sig.groupID == t.GroupId).ToList();
                         foreach (var sigToRem in sigToRemove)
                         {
+                            try
+                            {
+                                var stdEm = _repository.GetStudent(s => s.id == sigToRem.studentID);
+                                MailSender mailSender = new MailSender();
+                                string subject = "ЛНУ Курси";
+                                var em = new List<string>();
+                                em.Add(stdEm.eMail);
+                                var disc = _repository.GetDisciplineByGroupId(sigToRem.groupID);
+                                var discs = _repository.GetStudentsDisc(sigToRem.studentID);
+                                var body = EmailTemplate;
+                                var i = 1;
+                                foreach (var item in discs)
+                                {
+                                    body = body.Replace("{Disc_" + i + "}", discs[i - 1].name);
+                                    i++;
+                                }
+                                body = body.Replace("{Disc_Remove}", disc.name)
+                                           .Replace("{date}", staticData.lastDeadLineTime.ToString(@"HH:mm dd\/MM"))
+                                           .Replace("{Disc_1}", "")
+                                           .Replace("{Disc_2}", "");
+                                if (!string.IsNullOrEmpty(stdEm.eMail))
+                                {
+                                    mailSender.SendMail(subject, body, stdEm.eMail);
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(e);
+                            }
+
                             _repository.DeleteStudentInGroups(sigToRem);
                         }
                     }
@@ -171,7 +212,7 @@ namespace LNU.Courses.BLL.DeadlinesBLL
                                     select std).ToList();
 
 
-            //get IQueriable that have groupId and std count
+            //get IQueryable that have groupId and std count
             var smallSig = (from sig in studentsInGroups
                             group sig by sig.groupID into gSig
                             orderby gSig.Count() descending

@@ -96,7 +96,6 @@ namespace LNU.Courses.WebUI.Controllers
                     if (datetimeNowWithLast < 0)
                     ViewBag.Wave = 2;
                 ViewBag.CheckLock = user.locked;
-
                 var stdRegisteredOn = _repository.GetUserRegisteredDisc(user.id);
                 ViewBag.FirstSemestr = stdRegisteredOn.Any(d => d.course == user.course * 2 + 1);
                 ViewBag.SecondSemestr = stdRegisteredOn.Any(d => d.course == user.course * 2 + 2);
@@ -125,9 +124,13 @@ namespace LNU.Courses.WebUI.Controllers
             }
             disciplines.ForEach(el =>
             {
-                disciplinesSort.Add(new DisciplineViewModel(el));
-                disciplinesSort.Last().firstWave = GetDisciplineStudentCount(el.id, 1);
-                disciplinesSort.Last().secondWave = GetDisciplineStudentCount(el.id, 2);
+                var fWave = GetDisciplineStudentCount(el.id, 1);
+                if (user == null || (fWave > 24 || ViewBag.Wave != 2))
+                {
+                    disciplinesSort.Add(new DisciplineViewModel(el));
+                    disciplinesSort.Last().firstWave = fWave;
+                    disciplinesSort.Last().secondWave = GetDisciplineStudentCount(el.id, 2);
+                }
             });
             if (sortBy.HasValue)
             {

@@ -9,6 +9,34 @@ namespace LNU.Courses.Repositories
     public partial class Repository : IRepository
     {
         readonly IHashProvider _hashProvider = new HashProvider();
+
+        public List<Disciplines> GetStudentsDisc(string studentID)
+        {
+            using (var context = new CoursesDataModel())
+            {
+                var grs = context.StudentsInGroups
+                    .Where(el => el.studentID == studentID && el.Group.Deleted == false)
+                    .Select(el => context.Group.FirstOrDefault(g => g.id == el.groupID))
+                    .Select(el => el.Disciplines)
+                    .ToList();
+
+                return grs;
+            }
+        }
+
+        public Disciplines GetDisciplineByGroupId(int groupID)
+        {
+            using (var context = new CoursesDataModel())
+            {
+                var g = context.Group.SingleOrDefault(el => el.id == groupID && el.Deleted == false);
+
+                var d = context.Disciplines.SingleOrDefault(el => el.id == g.disciplinesID);
+                return d;
+            }
+        }
+
+
+
         public int GetDisciplineWhereRegistered(string login)
         {
             using (var context = new CoursesDataModel())
@@ -157,6 +185,15 @@ namespace LNU.Courses.Repositories
                 return sig;
             }
         }
+        public IQueryable<StudentsInGroups> GetStudentsInGroupsQuery()
+        {
+            using (var context = new CoursesDataModel())
+            {
+                var sig = context.StudentsInGroups;
+
+                return sig;
+            }
+        }
         //!!!!!!!!!!!!!!!!!!!!
         public void AddStudentInGroups(StudentsInGroups sig)
         {
@@ -185,6 +222,16 @@ namespace LNU.Courses.Repositories
             using (var context = new CoursesDataModel())
             {
                 var students = context.Students.ToList();
+
+                return students;
+            }
+        }
+
+        public IQueryable<Students> GetStudentsQuery()
+        {
+            using (var context = new CoursesDataModel())
+            {
+                var students = context.Students;
 
                 return students;
             }
@@ -237,7 +284,7 @@ namespace LNU.Courses.Repositories
             using (var context = new CoursesDataModel())
             {
                 var users = context.Students.Where(expression);
-                return users;
+                return users.ToList();
             }
         }
         public Students GetStudent(Expression<Func<Students, bool>> expression)
@@ -330,15 +377,15 @@ namespace LNU.Courses.Repositories
 
         #endregion
         #region Group
-        public Group GetGroupByDisciplinesId(int id)
-        {
-            using (var context = new CoursesDataModel())
-            {
-                // врахувати хвилю
-                var group = context.Group.Where(el => el.disciplinesID == id && el.Deleted == false).ToList();
-                return group.SingleOrDefault();
-            }
-        }
+        //public Group GetGroupByDisciplinesId(int id)
+        //{
+        //    using (var context = new CoursesDataModel())
+        //    {
+        //        // врахувати хвилю
+        //        var group = context.Group.Where(el => el.disciplinesID == id && el.Deleted == false).ToList();
+        //        return group.SingleOrDefault();
+        //    }
+        //}
         public Group GetGroupByDisciplinesId(int id, int wave)
         {
             using (var context = new CoursesDataModel())

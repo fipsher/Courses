@@ -7,6 +7,9 @@ using LNU.Courses.BLL.RepoBLL;
 using LNU.Courses.BLL.DeadlinesBLL;
 using Entities;
 using System;
+using LNU.Courses.Jobs;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LNU.Courses.Controllers
 {
@@ -23,8 +26,8 @@ namespace LNU.Courses.Controllers
         public ActionResult Login()
         {
 
-            //IRepository repository = new Repository();
-            //RepositoryBL repoBl = new RepositoryBL(repository);
+            IRepository repository = new Repository();
+            RepositoryBL repoBl = new RepositoryBL(repository);
             //int wave = 1;
             //// removes old and adds new Groups 
             //repository.DeleteGroups();
@@ -32,7 +35,7 @@ namespace LNU.Courses.Controllers
 
             ////frst
 
-            //var disciplineAcc = repository.GetDiscipline(8);
+            //var disciplineAcc = repository.GetDiscipline(91);
             //var studInGroup = new StudentsInGroups();
             //var group = repository.GetGroupByDisciplinesId(disciplineAcc.id);
             //studInGroup.groupID = group.id;
@@ -46,7 +49,7 @@ namespace LNU.Courses.Controllers
             //        context.SaveChanges();
             //        repository.addAmountStudent(group.id);
             //    }
-            //disciplineAcc = repository.GetDiscipline(43);
+            //disciplineAcc = repository.GetDiscipline(120);
             //studInGroup = new StudentsInGroups();
             //group = repository.GetGroupByDisciplinesId(disciplineAcc.id);
             //studInGroup.groupID = group.id;
@@ -69,8 +72,54 @@ namespace LNU.Courses.Controllers
             ////string body = "На жаль ти не зміг зареєструватись на вибраний курс.<br/> Але ти можеш зареєструватись на інший курс.";
             ////mailSender.SendMail(subject, body, eMails);
 
-            //SecondDeadline sd = new SecondDeadline(repository);
-            //sd.FillGroupsWithRemainedStd(2);
+            //var EmailTemplate = @"Шановний студенте, вітаємо!
+            //                     Ви обрали дисципліни «{Disc_1}» для 3 семестру та
+            //                     «{Disc_2}» для 4 семестру {years} навчальний
+            //                     рік. Бажаємо успіхів у вивченні дисциплін!
+            //                     Зі списком груп за вибраними Вами дисциплінами можна ознайомитись 
+            //                    <a href='http://194.44.198.79/Shared/DetailsOfDiscipline/{id_1}'>тут</a> та
+            //                    <a href='http://194.44.198.79/Shared/DetailsOfDiscipline/{id_2}'>тут</a>";
+
+            ////SecondDeadline sd = new SecondDeadline(repository);
+            ////sd.FillGroupsWithRemainedStd(2);
+            //var students = repository.GetStudents(s => s.Deleted == false).ToList();
+
+            //foreach (var item in students)
+            //{
+            //    try
+            //    {
+            //        MailSender mailSender = new MailSender();
+            //        string subject = "ЛНУ Курси";
+
+            //        var context = new CoursesDataModel();
+            //        var discs = context.StudentsInGroups.Where(s => s.studentID == item.id).Select(s => s.Group.Disciplines).ToList();
+
+            //        var body = EmailTemplate;
+            //        var i = 1;
+            //        foreach (var d in discs)
+            //        {
+            //            body = body.Replace("{Disc_" + i + "}", d.name).Replace("{id_" + i + "}", d.id.ToString());
+            //            i++;
+            //        }
+            //        var year = System.DateTime.Now.Year;
+            //        body = body.Replace("{years}", $"{year}/{year + 1}")
+            //                   .Replace("{Disc_1}", "")
+            //                   .Replace("{Disc_2}", "");
+            //        try
+            //        {
+            //            if (item.eMail != null)
+            //                mailSender.SendMail(subject, body, item.eMail);
+            //        }
+            //        catch (Exception e)
+            //        {
+            //            Console.WriteLine(e);
+            //        }
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine(e);
+            //    }
+            //}
             return View();
         }
         [HttpPost]
@@ -98,7 +147,7 @@ namespace LNU.Courses.Controllers
             {
                 return View();
             }
- 
+
         }
 
         [HttpGet]
@@ -111,14 +160,14 @@ namespace LNU.Courses.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AdminLogin(string login, string password)
         {
-            AdminAccountModel am = new AdminAccountModel();          
+            AdminAccountModel am = new AdminAccountModel();
 
             if (ModelState.IsValid)
             {
                 Account acc = am.Login(login, password);
                 if (acc != null)
                 {
-                    SessionPersister.Login = acc.Login;                  
+                    SessionPersister.Login = acc.Login;
 
                     Session.Add("Roles", acc.Roles);
                     return RedirectToAction("GetCourses", "Shared");

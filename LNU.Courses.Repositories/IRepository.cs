@@ -2,11 +2,14 @@
 using Entities;
 using System;
 using System.Linq.Expressions;
+using System.Linq;
 
 namespace LNU.Courses.Repositories
 {
     public interface IRepository
     {
+        IQueryable<StudentsInGroups> GetStudentsInGroupsQuery();
+        IQueryable<Students> GetStudentsQuery();
         IEnumerable<Students> GetStudents(Expression<Func<Students, bool>> expression);
         Students GetStudent(Expression<Func<Students, bool>> expression);
         IEnumerable<Disciplines> GetDisciplines(Expression<Func<Disciplines, bool>> expression);
@@ -19,6 +22,7 @@ namespace LNU.Courses.Repositories
         bool checkRegisteredPhoneNumber(string login);
         bool checkRegisteredEmail(string login);
         IEnumerable<StudentsInGroups> GetStudentsInGroups();
+        IQueryable<Group> GetGroupsQuery();
         void AddStudentInGroups(StudentsInGroups sig);
         void DeleteStudentInGroups(StudentsInGroups sig);
 
@@ -37,7 +41,7 @@ namespace LNU.Courses.Repositories
         void DeleteMyDiscipline(int id, string login);
         IEnumerable<Disciplines> GetD(string login);
         bool CheckRegisteredStudent(string id);
-        Group GetGroupByDisciplinesId(int id);
+        //Group GetGroupByDisciplinesId(int id);
         Group GetGroupByDisciplinesId(int id, int wave);//+wave
         void ChangeStudentPhone(string login, string newPhone);
         void ChangeStudentEMail(string login, string newEMail);
@@ -78,5 +82,7 @@ namespace LNU.Courses.Repositories
         void UpdateLecturer(Lecturer lecturer);
         bool DeleteLecturer(Lecturer lecturer);
         IEnumerable<Lecturer> GetLecturers();
+        Disciplines GetDisciplineByGroupId(int groupID);
+        List<Disciplines> GetStudentsDisc(string studentID);
     }
 }

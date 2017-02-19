@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using Entities;
 using LNU.Courses.BLL.RepoBLL;
 using LNU.Courses.Repositories;
 using Quartz;
@@ -17,9 +16,9 @@ namespace LNU.Courses.Jobs
             repository.DeleteGroups();
             repoBl.CreateNewGroups(wave);
 
-            MailSender mailSender = new MailSender();
-            List<string> eMails = repoBl.GetStudentEmails().ToList();
-            mailSender.SendMail("ЛНУ Курси", "Привіт!<br/> Прийшов Час зареєструватись на курси.", eMails);
+            //MailSender mailSender = new MailSender();
+            //List<string> eMails = repoBl.GetStudentEmails().ToList();
+            //mailSender.SendMail("ЛНУ Курси", "Привіт!<br/> Прийшов Час зареєструватись на курси.", eMails);
 
         }
     }

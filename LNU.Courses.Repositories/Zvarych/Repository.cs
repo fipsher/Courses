@@ -8,6 +8,13 @@ namespace LNU.Courses.Repositories
 {
     public partial class Repository : IRepository
     {
+        public IQueryable<Group> GetGroupsQuery()
+        {
+            using (var context = new CoursesDataModel())
+            {
+                return context.Group;
+            }
+        }
 
         public IEnumerable<Lecturer> GetLecturers()
         {
@@ -210,11 +217,10 @@ namespace LNU.Courses.Repositories
             using (var context = new CoursesDataModel())
             {
                 context.Group.ToList().ForEach(gr => gr.Deleted = true);
+                context.Students.ToList().ForEach(gr => gr.locked = false);
                 context.SaveChanges();
             }
         }
-
-
 
         #region admins
 

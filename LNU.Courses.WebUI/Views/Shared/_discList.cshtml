@@ -101,7 +101,7 @@
                 @if (ViewBag.Wave != 0 && (((double)item.course / 2 - Math.Truncate((double)((double)item.course / 2)) == 0.5 && ViewBag.FirstSemestr == false)
                         || ((double)item.course / 2 - Math.Truncate((double)((double)item.course / 2)) == 0 && ViewBag.SecondSemestr == false)))
                 {
-                    @Html.ActionLink("Обрати", "RegisteringInTheCourse", "Student", new { id = item.id })
+                    @Html.ActionLink("Обрати", "RegisteringInTheCourse", "Student", new { id = item.id },null)
                 }
             </td>
 

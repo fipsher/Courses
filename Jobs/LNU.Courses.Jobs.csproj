@@ -96,7 +96,6 @@
     <Compile Include="FirstDeadLineJob.cs" />
     <Compile Include="LastDeadlineJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MailSender.cs" />
     <Compile Include="StartJob.cs" />
   </ItemGroup>
   <ItemGroup>

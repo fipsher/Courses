@@ -84,6 +84,7 @@
     <Compile Include="DeadlinesBLL\DeadlineManUp.cs" />
     <Compile Include="DeadlinesBLL\SecondDeadline.cs" />
     <Compile Include="ExcelWriter\ExcelWriter.cs" />
+    <Compile Include="MailSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepoBLL\RepositoryBL.cs" />
   </ItemGroup>

@@ -67,6 +67,15 @@ namespace LNU.Courses.Controllers
 
         #region temp
         [AdminAuthorize(Roles = "SuperAdmin,Admin")]
+        public ActionResult Start()
+        {
+            _repository.DeleteGroups();
+            _repoBl.CreateNewGroups(1);
+
+            return View("Index");
+        }
+
+        [AdminAuthorize(Roles = "SuperAdmin,Admin")]
         public ActionResult FirstDeadlineStart()
         {
             FirstDeadLineJob fdj = new FirstDeadLineJob();

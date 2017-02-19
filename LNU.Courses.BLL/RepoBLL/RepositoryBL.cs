@@ -147,15 +147,15 @@ namespace LNU.Courses.BLL.RepoBLL
         public IEnumerable<string> GetStdEmailsForSecondWay()
         {
 
-            var studentsList = _repository.GetStudents().ToList();
-            var stInGr = _repository.GetStudentsInGroups().ToList();
+            var studentsList = _repository.GetStudentsQuery();
+            var stInGr = _repository.GetStudentsInGroupsQuery();
 
             var eMails = (from std in studentsList
                           where std.locked == false
                           join sig in stInGr on std.id equals sig.studentID into lj
                           from subSig in lj.DefaultIfEmpty()
-                          where subSig == null
-                          select std.eMail).Where(el => el != null).ToList();
+                          where subSig == null && !string.IsNullOrEmpty(std.eMail)
+                          select std.eMail).ToList();
 
             var temp = from std in studentsList
                        join sig in stInGr on std.id equals sig.studentID into loj
@@ -167,6 +167,7 @@ namespace LNU.Courses.BLL.RepoBLL
 
             var onceRegisteredStdMails = (from std in studentsList
                                           join t in temp on std.id equals t
+                                          where !string.IsNullOrEmpty(std.eMail)
                                           select std.eMail).ToList();
 
             eMails.AddRange(onceRegisteredStdMails.Where(el => el != null));
