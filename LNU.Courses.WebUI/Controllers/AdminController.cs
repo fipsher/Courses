@@ -234,6 +234,12 @@ namespace LNU.Courses.Controllers
         [AdminAuthorize(Roles = "SuperAdmin")]
         public ActionResult ChangeDeadLine()
         {
+            var context = new CoursesDataModel();
+
+            staticData.StartTime = context.Variables.Single(el => el.Key == "Start").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsStart[4]), Convert.ToInt32(wordsStart[3]));
+            staticData.firstDeadLineTime = context.Variables.Single(el => el.Key == "FirstDeadline").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsFrst[4]), Convert.ToInt32(wordsFrst[3]));
+            staticData.lastDeadLineTime = context.Variables.Single(el => el.Key == "LastDeadline").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsLast[4]), Convert.ToInt32(wordsLast[3]));
+
             ViewBag.Start = staticData.StartTime;
             ViewBag.FirstDeadline = staticData.firstDeadLineTime;
             ViewBag.LastDeadline = staticData.lastDeadLineTime;
@@ -259,7 +265,17 @@ namespace LNU.Courses.Controllers
                         lastDeadline.Value.Day, lastDeadlineTime.Hour, lastDeadlineTime.Minute, 0); // lastDeadline;
                     staticData.disciplinesID = _repository.GetDisciplinesForSecondWave();
 
+                    var context = new CoursesDataModel();
+                    var StartTime = context.Variables.Single(el => el.Key == "Start");
+                    var firstDeadLineTime = context.Variables.Single(el => el.Key == "FirstDeadline");
+                    var lastDeadLineTime = context.Variables.Single(el => el.Key == "LastDeadline");
 
+
+                    StartTime.Value = staticData.StartTime;
+                    firstDeadLineTime.Value = staticData.firstDeadLineTime;
+                    lastDeadLineTime.Value = staticData.lastDeadLineTime;
+
+                    context.SaveChanges();
 
                     DeadlineConfig.JobMaker.ClearSchedule();
                     DateParser dp = new DateParser();
@@ -601,7 +617,8 @@ namespace LNU.Courses.Controllers
         [AdminAuthorize(Roles = "SuperAdmin")]
         public ActionResult DeleteStudent(string id)
         {
-            var student = _repoBl.GetStudentById(id);
+            var context = new CoursesDataModel();
+            var student = context.Students.SingleOrDefault(el => el.id == id);
             return View(student);
         }
 

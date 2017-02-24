@@ -2,10 +2,10 @@
 
 @{
     Layout = "~/Views/Shared/_LayoutStudent.cshtml";
-    ViewBag.Title = "Редагування телефонного номеру";
+    ViewBag.Title = "Внесення телефонного номеру";
 }
 
-<h2>Редагування телефонного номеру</h2>
+<h2>Внесення телефонного номеру</h2>
 @using (Html.BeginForm("EditPhone", "Student", FormMethod.Post, new { onsubmit = "return validateForm()" }))
 {
     @Html.AntiForgeryToken()
@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Змінити" class="btn btn-default" />
+                <input type="submit" value="Зберегти" class="btn btn-default" />
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@
             @Html.DisplayNameFor(model => model.id)
         </th>
         <th>
-            @Html.ActionLink("П.І.Б", "GetStudents", "Admin", new { fio = ViewBag.Fio, sortBy = StudentSortingEnum.Fio }, null)
+            @Html.ActionLink("ПІБ", "GetStudents", "Admin", new { fio = ViewBag.Fio, sortBy = StudentSortingEnum.Fio }, null)
         </th>
         <th>
             @Html.ActionLink("Курс", "GetStudents", "Admin", new { fio = ViewBag.Fio, sortBy = StudentSortingEnum.Course }, null)

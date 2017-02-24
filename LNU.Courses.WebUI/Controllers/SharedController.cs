@@ -59,7 +59,7 @@ namespace LNU.Courses.WebUI.Controllers
                         return RedirectToAction("EditPhone", "Student", null);
                     if (_repository.checkRegisteredEmail(SessionPersister.Login) == false)
                         return RedirectToAction("EditEMail", "Student", null);
-                }                
+                }
             }
             ViewBag.SortBy = sortBy;
             return View((object)name);
@@ -80,6 +80,11 @@ namespace LNU.Courses.WebUI.Controllers
             var user = _repository.GetStudent(el => !string.IsNullOrEmpty(SessionPersister.Login) && el.id == SessionPersister.Login);
             if (user != null)
             {
+                var context = new CoursesDataModel();
+
+                staticData.StartTime = context.Variables.Single(el => el.Key == "Start").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsStart[4]), Convert.ToInt32(wordsStart[3]));
+                staticData.firstDeadLineTime = context.Variables.Single(el => el.Key == "FirstDeadline").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsFrst[4]), Convert.ToInt32(wordsFrst[3]));
+                staticData.lastDeadLineTime = context.Variables.Single(el => el.Key == "LastDeadline").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsLast[4]), Convert.ToInt32(wordsLast[3]));
 
 
                 discList = discList.Where(d => d.course == user.course * 2 + 2 || d.course == user.course * 2 + 1);
@@ -144,7 +149,7 @@ namespace LNU.Courses.WebUI.Controllers
                     case DisciplineSortingEnum.Kafedra:
                         {
                             disciplinesSort.Sort((el1, el2) => String.Compare(el1.kafedra, el2.kafedra, StringComparison.Ordinal));
-                        }                                           
+                        }
                         break;
                     case DisciplineSortingEnum.Name:
                         {

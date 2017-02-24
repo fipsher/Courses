@@ -89,5 +89,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="StudentsTest">
+      <EntityTypeMapping TypeName="Entities.StudentsTest">
+        <MappingFragment StoreEntitySet="StudentsTest">
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="locked" ColumnName="locked" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="AverageMark" ColumnName="AverageMark" />
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="course" ColumnName="course" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Variables">
+      <EntityTypeMapping TypeName="Entities.Variables">
+        <MappingFragment StoreEntitySet="Variables">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

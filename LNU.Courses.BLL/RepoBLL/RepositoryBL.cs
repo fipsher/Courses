@@ -52,7 +52,10 @@ namespace LNU.Courses.BLL.RepoBLL
         /// <returns></returns>
         public IEnumerable<Students> GetStudents(string partOfName)
         {
-
+            if (partOfName == null)
+            {
+                partOfName = "";
+            }
             var students = _repository.GetStudents().Where(el => el.fio.ToLower().Contains(partOfName.ToLower()));
             return students.ToList();
 

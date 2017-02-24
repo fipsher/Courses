@@ -2,10 +2,10 @@
 
 @{
     Layout = "~/Views/Shared/_LayoutStudent.cshtml";
-    ViewBag.Title = "Редагування поштової скриньки";
+    ViewBag.Title = "Внесення поштової скриньки";
 }
 
-<h2>Редагування поштової скриньки</h2>
+<h2>Внесення поштової скриньки</h2>
 @using (Html.BeginForm("EditEMail", "Student", FormMethod.Post, new { onsubmit = "return validateForm()" }))
 {
     @Html.AntiForgeryToken()

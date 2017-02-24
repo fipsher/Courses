@@ -82,6 +82,12 @@ namespace LNU.Courses.Controllers
         [HttpGet]
         public ActionResult DeleteFromTheCourse(int id)
         {
+            var context = new CoursesDataModel();
+
+            staticData.StartTime = context.Variables.Single(el => el.Key == "Start").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsStart[4]), Convert.ToInt32(wordsStart[3]));
+            staticData.firstDeadLineTime = context.Variables.Single(el => el.Key == "FirstDeadline").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsFrst[4]), Convert.ToInt32(wordsFrst[3]));
+            staticData.lastDeadLineTime = context.Variables.Single(el => el.Key == "LastDeadline").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsLast[4]), Convert.ToInt32(wordsLast[3]));
+
             var wave = 0;
             int datetimeNowWithStart = DateTime.Compare(DateTime.Now, staticData.StartTime);
             int datetimeNowWithFirst = DateTime.Compare(DateTime.Now, staticData.firstDeadLineTime);
@@ -101,8 +107,15 @@ namespace LNU.Courses.Controllers
             if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
 
-            repository.DeleteMyDiscipline(id, SessionPersister.Login);
-            repository.deleteAmountStudent(repository.GetGroupByDisciplinesId(id, wave).id);
+            try
+            {
+                repository.DeleteMyDiscipline(id, SessionPersister.Login, wave);
+                //repository.deleteAmountStudent(repository.GetGroupByDisciplinesId(id, wave).id);
+            }
+            catch
+            {
+
+            }
             return View("DeletedDicipline", repository.GetDiscipline(id));
         }
         [HttpGet]
@@ -112,6 +125,13 @@ namespace LNU.Courses.Controllers
                 return View("EditPhone");
             if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
+            var context = new CoursesDataModel();
+
+            staticData.StartTime = context.Variables.Single(el => el.Key == "Start").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsStart[4]), Convert.ToInt32(wordsStart[3]));
+            staticData.firstDeadLineTime = context.Variables.Single(el => el.Key == "FirstDeadline").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsFrst[4]), Convert.ToInt32(wordsFrst[3]));
+            staticData.lastDeadLineTime = context.Variables.Single(el => el.Key == "LastDeadline").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsLast[4]), Convert.ToInt32(wordsLast[3]));
+
+
             int datetimeNowWithStart = DateTime.Compare(DateTime.Now, staticData.StartTime);
             int datetimeNowWithFirst = DateTime.Compare(DateTime.Now, staticData.firstDeadLineTime);
             int datetimeNowWithLast = DateTime.Compare(DateTime.Now, staticData.lastDeadLineTime);
@@ -133,14 +153,19 @@ namespace LNU.Courses.Controllers
             studInGroup.DateOfRegister = DateTime.Now;
 
             if (DateTime.Now.Year == group.year)
-                using (var context = new CoursesDataModel())
+            {
+                var student = context.Students.Single(st => st.id == SessionPersister.Login);
+                var reg =  context.StudentsInGroups.Where(el => el.studentID == studInGroup.studentID && el.Group.Deleted == false)
+                                .ToList();
+                if (reg != null && reg.Count < 2 && reg.All(el => el.groupID != studInGroup.groupID))
                 {
                     context.StudentsInGroups.Add(studInGroup);
                     context.SaveChanges();
                     repository.addAmountStudent(group.id);
+                    return View("YouAreRegisted", disciplineAcc);
                 }
-
-            return View("YouAreRegisted", disciplineAcc);
+            }
+            return RedirectToAction("GetCourses", "Shared");
         }
         public ActionResult GetDisciplines(DisciplineSortingEnum? sortBy)
         {
@@ -149,6 +174,12 @@ namespace LNU.Courses.Controllers
                 return View("EditPhone");
             if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
                 return View("EditEMail");
+            var context = new CoursesDataModel();
+
+            staticData.StartTime = context.Variables.Single(el => el.Key == "Start").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsStart[4]), Convert.ToInt32(wordsStart[3]));
+            staticData.firstDeadLineTime = context.Variables.Single(el => el.Key == "FirstDeadline").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsFrst[4]), Convert.ToInt32(wordsFrst[3]));
+            staticData.lastDeadLineTime = context.Variables.Single(el => el.Key == "LastDeadline").Value; //new DateTime(DateTime.Now.Year, Convert.ToInt32(wordsLast[4]), Convert.ToInt32(wordsLast[3]));
+
             int datetimeNowWithStart = DateTime.Compare(DateTime.Now, staticData.StartTime);
             int datetimeNowWithFirst = DateTime.Compare(DateTime.Now, staticData.firstDeadLineTime);
             int datetimeNowWithLast = DateTime.Compare(DateTime.Now, staticData.lastDeadLineTime);
@@ -282,7 +313,9 @@ namespace LNU.Courses.Controllers
             {
                 repository.ChangeStudentEMail(login, newEMail);
             }
-            return View();
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
+                return RedirectToAction("EditEMail", "Student", null);
+            return RedirectToAction("GetCourses", "Shared");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -299,7 +332,12 @@ namespace LNU.Courses.Controllers
             {
                 repository.ChangeStudentPhone(login, newPhone);
             }
-            return View();
+            if (repository.checkRegisteredPhoneNumber(SessionPersister.Login) == false)
+                return RedirectToAction("EditPhone", "Student", null);
+            if (repository.checkRegisteredEmail(SessionPersister.Login) == false)
+                return RedirectToAction("EditEMail", "Student", null);
+
+            return RedirectToAction("GetCourses", "Shared");
         }
 
         public ActionResult MyProfile()

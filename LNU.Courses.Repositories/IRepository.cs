@@ -38,7 +38,7 @@ namespace LNU.Courses.Repositories
         void ManUpGroupsForSecondWave();
         bool CheckStudentForRegistered(Students st);
         List<Disciplines> GetDisciplinesSort(string login,int wave);
-        void DeleteMyDiscipline(int id, string login);
+        void DeleteMyDiscipline(int id, string login, int wave);
         IEnumerable<Disciplines> GetD(string login);
         bool CheckRegisteredStudent(string id);
         //Group GetGroupByDisciplinesId(int id);

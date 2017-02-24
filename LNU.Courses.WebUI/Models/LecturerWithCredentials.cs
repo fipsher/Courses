@@ -10,7 +10,7 @@ namespace LNU.Courses.WebUI.Models
     {
         [MinLength(3, ErrorMessage = "Мінімальна довжина повинна бути 3")]
         [Required(ErrorMessage = "Обов'язково до заповнення")]
-        [Display(Name ="П.І.Б")]
+        [Display(Name ="ПІБ")]
         public string fullName { get; set; }
         [Display(Name ="Номер телефону")]
         [Required(ErrorMessage = "Обов'язково до заповнення")]

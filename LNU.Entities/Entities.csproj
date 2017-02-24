@@ -127,10 +127,16 @@
     <Compile Include="StudentsInGroups.cs">
       <DependentUpon>CoursesDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="StudentsTest.cs">
+      <DependentUpon>CoursesDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>CoursesDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
+      <DependentUpon>CoursesDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Variables.cs">
       <DependentUpon>CoursesDataModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

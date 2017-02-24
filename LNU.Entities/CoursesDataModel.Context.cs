@@ -33,5 +33,7 @@ namespace Entities
         public virtual DbSet<StudentsInGroups> StudentsInGroups { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<StudentsTest> StudentsTest { get; set; }
+        public virtual DbSet<Variables> Variables { get; set; }
     }
 }

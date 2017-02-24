@@ -53,7 +53,7 @@ namespace LNU.Courses.Repositories
             }
         }
         public void addAmountStudent(int groupID)
-        {            
+        {
             using (var context = new CoursesDataModel())
             {
                 var gr = context.Group.SingleOrDefault(g => g.id == groupID);
@@ -141,24 +141,24 @@ namespace LNU.Courses.Repositories
                     {
                         // students that's need to add to fill group
                         int stdAmountToAdd = 25 - smallSig[i].Count;
-                        
-                            var stdToAdd = notRegisteredStd.GetRange(0, stdAmountToAdd);
 
-                            //fill this group with not registered student
-                            for (int j = 0; j < stdAmountToAdd; j++)
+                        var stdToAdd = notRegisteredStd.GetRange(0, stdAmountToAdd);
+
+                        //fill this group with not registered student
+                        for (int j = 0; j < stdAmountToAdd; j++)
+                        {
+                            notRegisteredStd.Remove(stdToAdd[j]);
+
+                            context.StudentsInGroups.Add(new StudentsInGroups()
                             {
-                                notRegisteredStd.Remove(stdToAdd[j]);
-
-                                context.StudentsInGroups.Add(new StudentsInGroups()
-                                {
-                                    studentID = stdToAdd[j].id,
-                                    groupID = smallSig[i].GroupId,
-                                    DateOfRegister = DateTime.Now
-                                });
-                            }
+                                studentID = stdToAdd[j].id,
+                                groupID = smallSig[i].GroupId,
+                                DateOfRegister = DateTime.Now
+                            });
+                        }
                     }
                 }
-                
+
                 context.SaveChanges();
             }
         }
@@ -246,7 +246,7 @@ namespace LNU.Courses.Repositories
                 return groups;
             }
         }
-        
+
         #region user
         public void ChangeUserPass(string login, string newPass)
         {
@@ -329,7 +329,7 @@ namespace LNU.Courses.Repositories
 
         #endregion
         #region Discipline
-        public List<Disciplines> GetDisciplinesSort(string login,int wave)
+        public List<Disciplines> GetDisciplinesSort(string login, int wave)
         {
             //tyt
             using (var context = new CoursesDataModel())
@@ -361,7 +361,7 @@ namespace LNU.Courses.Repositories
                         }
                     }
                 }
-                
+
                 disciplines.ForEach(el =>
                 {
                     Lecturer toAdd = new Lecturer();
@@ -405,8 +405,8 @@ namespace LNU.Courses.Repositories
                              where gr.Deleted == false
                              select gr;
                 var disciplines = (from gr in groups
-                                  join dic in context.Disciplines on gr.disciplinesID equals dic.id
-                                  select dic).ToList();
+                                   join dic in context.Disciplines on gr.disciplinesID equals dic.id
+                                   select dic).ToList();
 
                 disciplines.ForEach(el =>
                 {
@@ -422,18 +422,20 @@ namespace LNU.Courses.Repositories
             }
         }
 
-        public void DeleteMyDiscipline(int id, string login)
+        public void DeleteMyDiscipline(int id, string login, int wave)
         {
             using (var context = new CoursesDataModel())
             {
-                var sig = context.StudentsInGroups.Where(st => st.studentID == login ).ToList();
+                var sig = context.StudentsInGroups.Where(st => st.studentID == login
+                                                        && st.Group.Disciplines.id == id
+                                                        && st.Group.Wave == wave
+                                                        && st.Group.Deleted == false).ToList();
                 foreach (var item in sig)
                 {
-                    if (item.Group.Disciplines.id == id)
-                    {
-                        context.StudentsInGroups.Remove(item);
-                        context.SaveChanges();
-                    }
+                    deleteAmountStudent(item.groupID);
+
+                    context.StudentsInGroups.Remove(item);
+                    context.SaveChanges();
                 }
             }
         }

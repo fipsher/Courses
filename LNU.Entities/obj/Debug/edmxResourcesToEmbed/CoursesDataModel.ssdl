@@ -63,6 +63,20 @@
     <Property Name="studentID" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="DateOfRegister" Type="date" Nullable="false" />
   </EntityType>
+  <EntityType Name="StudentsTest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="fio" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="course" Type="int" Nullable="false" />
+    <Property Name="group" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AverageMark" Type="float" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="locked" Type="bit" Nullable="false" />
+    <Property Name="eMail" Type="nvarchar" MaxLength="50" />
+    <Property Name="phoneNumber" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -79,6 +93,13 @@
     </Key>
     <Property Name="login" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="password" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Variables">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Value" Type="datetime" Nullable="false" />
   </EntityType>
   <Association Name="FK_Group_Disciplines">
     <End Role="Disciplines" Type="Self.Disciplines" Multiplicity="1" />
@@ -159,8 +180,10 @@
     <EntitySet Name="Lecturers" EntityType="Self.Lecturers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StudentsInGroups" EntityType="Self.StudentsInGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentsTest" EntityType="Self.StudentsTest" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Variables" EntityType="Self.Variables" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Group_Disciplines" Association="Self.FK_Group_Disciplines">
       <End Role="Disciplines" EntitySet="Disciplines" />
       <End Role="Group" EntitySet="Group" />

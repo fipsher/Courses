@@ -197,5 +197,28 @@
       <End Role="Students" EntitySet="Students" />
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
+    <EntitySet Name="StudentsTest" EntityType="Entities.StudentsTest" />
+    <EntitySet Name="Variables" EntityType="Entities.Variables" />
   </EntityContainer>
+  <EntityType Name="StudentsTest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="fio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="course" Type="Int32" Nullable="false" />
+    <Property Name="group" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AverageMark" Type="Double" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="locked" Type="Boolean" Nullable="false" />
+    <Property Name="eMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Variables">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
 </Schema>
